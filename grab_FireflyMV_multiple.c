@@ -1,6 +1,5 @@
-#include <stdio.h>
+ #include <stdio.h>
 #include <stdint.h>
-#include <string.h>
 #include <dc1394/dc1394.h>
 #include <stdlib.h>
 #include <inttypes.h>
@@ -15,8 +14,7 @@
 #include <vector>
 #include <algorithm>
 
-/** UDP libs **/
-
+//sending data udp
 #include <netdb.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -26,7 +24,6 @@
 #include <arpa/inet.h>
 #include <ctime>
 
-/** OpenCV libs **/
 
 #include "opencv2/core/core.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
@@ -40,63 +37,13 @@
 #include <unistd.h>
 #endif
 
-/** Defines for setting which cameras to use **/
-
-#define USE_CAM_1 0
-#define USE_CAM_2 0
-#define USE_CAM_3 1
-#define USE_CAM_4 1
-#define USE_CAM_5 0
-#define USE_CAM_6 0
-#define USE_CAM_7 0
-#define USE_CAM_8 0
-
 using namespace std;
-
-std::vector<cv::Mat> frames; 		// vector of all processed aruco frames
-std::vector<long int> cameraID;		// vectpr of camera IDs
-
-/** Struct and methods for printing which cameras are used **/
-
-struct cam_entry {
-	char const *cam_name;
-	long int cam_id;
-};
-
-struct cam_entry cams[] = {
-	"CAM1", 49712223537630471,
-	"CAM2", 49712223537053658,
-	"CAM3", 49712223537053659,
-	"CAM4", 49712223537053660,
-	"CAM5", 49712223537630465,
-	"CAM6", 49712223537630451,
-	"CAM7", 49712223537630448,
-	"CAM8", 49712223537630468,
-	"NO_CAM", 0
-};
-
-string name_for_id(long int id)
-{
-    int i = 0;
-    long int cam_id = cams[i].cam_id;
-    while (cam_id) {
-        if (cam_id == id)
-            return cams[i].cam_name;
-        cam_id = cams[++i].cam_id;
-    }
-    return 0;
-}
-
-void print_cams(const std::vector<long int>& vec)
-{
-	std::cout << "The following cameras are used: ";
-    for (auto x: vec) {
-         std::cout << name_for_id(x) << ' ';
-    }
-    std::cout << '\n';
-}
+std::vector<cv::Mat> frames; // vector of all processed aruco frames
 
 
+std::vector<long int> cameraID {49712223537630471,49712223537053658,49712223537053659,49712223537053660,49712223537630465,49712223537630451,49712223537630448,49712223537630468}; // correct 
+// check
+//std::vector<long int> cameraID {49712223537053658,49712223537630471}; // incorrect 
 // direclty write to camera registers to enable HDR and 12-to-10 bit compounding
 bool hd    = false; // more stable measurements
 bool comp  = true;
@@ -110,103 +57,57 @@ cv::Matx33d f_rotMat;
 cv::Vec3d f_tvec;
 int f_markerID;
 
-/** Translations to e0 (ground) coordinate system **/
-
-std::vector<cv::Vec3d> transtoe0 {{0.19,0.055,0.0}, 	//0 fixed marker in dM
-                                  {0.19,0.4113,0.0}, 	//1 fixed marker
-                                  {0.268,0.0549,0.0}, 	//2 fixed marker
-                                  {0.343,0.41,0.0}, 	//3 fixed marker
-                                  {0.5269,0.055,0.0}, 	//4 fixed marker 
+//translations to e0 (ground) coordinate system
+std::vector<cv::Vec3d> transtoe0 {{0.19,0.055,0.0}, //0 fixed marker in dM
+                                  {0.19,0.4113,0.0}, //1 fixed marker
+                                  {0.268,0.0549,0.0}, //2 fixed marker
+                                  {0.343,0.41,0.0}, //3 fixed marker
+                                  {0.5269,0.055,0.0}, //4 fixed marker 
                                   {0.4865,0.4098,0.0},  //5 fixed marker
                                   {0.6559,0.0549,0.0},  //6 fixed marker
-                                  {0.6544,0.41,0.0},  	//7 fixed marker 
-                                  {0.19,0.4113,0.0} 	//8 fixed marker
+                                  {0.6544,0.41,0.0},  //7 fixed marker 
+                                  {0.19,0.4113,0.0} //8 fixed marker
 };
-
 std::vector<bool> sent_data{    0, //marker ID 51 
                                 0  //markerID 52  
 };
-
 const float markerLength_fixed=0.0203;//only for fixed markers
 const float markerLength_moving=0.013;//0.0097;//only for moving markers
-
-/** UDP SEND **/
-
-int port = 3000;
-const char *ip_send = "169.254.19.64"; //"192.168.7.50";
-int socket_status, send_status;
+/*-------------------------------UDP SEND --------------------------------------------------
+--------------------------------------------------------------------------------------------*/
+int port=3000;
+const char *ip_send="169.254.19.64";//"192.168.7.50";
+int socket_status,send_status;
 struct sockaddr_in addr;
-
 void UDPset(){
-
-	// address family set to IPv4
     addr.sin_family = AF_INET;
-
-    // convert IP addr from numbers-and-dots notation into binary
-    // return 1 if succesful, 0 otherwise
-    socket_status = inet_aton(ip_send, &addr.sin_addr);
-
-    if (socket_status == 0){
-
-        std::cout << "Error in coverting string address to binary number" << std::endl;
+    socket_status= inet_aton(ip_send,&addr.sin_addr);
+    if (socket_status==0){
+        std::cout<<"error in inet_aton "<< std::endl;
         exit(1);
 
+
     }
-
-    // set port 
-    addr.sin_port = htons(port);
-
-    // create socket
-    // PF_INET 		-> IP layer 3 protocol
-    // SOCK_DGRAM	-> support datagrams
-    // IPPROTO_UDP	-> UDP
-    socket_status = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
-
-    if (socket_status == -1){
-
-        std::cout<<"Error in socket creation "<< std::endl;
-
+    addr.sin_port=htons(port);
+    socket_status = socket(PF_INET,SOCK_DGRAM,IPPROTO_UDP);
+    if (socket_status==-1){
+        std::cout<<"error in socket creation "<< std::endl;
     }
 }
 
-void UDPfarewell(int markerID, cv::Vec3d data, cv::Vec3d rot){
-
+void UDPfarewell(int markerID,cv::Vec3d data,cv::Vec3d rot){
     time_t t = std::time(0);
     double now = static_cast<double> (t);
     //std::cout<<"stamps:"<<now<< std::endl;
     
-    //OpenCV vector of 8 doubles containing ArUco data
-    cv::Vec<double, 8> send_data{
-    	now, 
-    	double(markerID), 
-    	data[0], 
-    	data[1],
-    	data[2], 
-    	rot[0], 
-    	rot[1], 
-    	rot[2]
-    }; 
+    cv::Vec<double,8> send_data{now,double(markerID),data[0],data[1],data[2],rot[0],rot[1],rot[2]}; 
     
-    // Transmit message
-    send_status = sendto(
-    	socket_status,
-    	&send_data,
-    	sizeof(send_data),
-    	0,
-    	(struct sockaddr *)&addr, 
-    	sizeof(addr)
-    );
-
-    if (send_status == -1){
-
+    send_status= sendto(socket_status,&send_data,sizeof(send_data),0,(struct sockaddr *)&addr, sizeof(addr));
+    if (send_status==-1){
         std::cout<< "error sending data"<<"\n error code: "<< send_status << endl;
-
     }
 }
-
-
-
-cv::Mat makeCombined(std::vector<cv::Mat>& vecMat, int windowHeight, int nRows) {
+ cv::Mat makeCombined(std::vector<cv::Mat>& vecMat, int windowHeight, int nRows) {
             int N = vecMat.size();
             nRows  = nRows > N ? N : nRows; 
             int edgeThickness = 10;
@@ -251,20 +152,23 @@ cv::Mat makeCombined(std::vector<cv::Mat>& vecMat, int windowHeight, int nRows) 
                     }
             }
             return combinedImage;
-}
-
-/**  Releases the cameras and exits **/
-
-void cleanup_and_exit(dc1394camera_t *camera) {
+    }
+/*-----------------------------------------------------------------------
+ *  Releases the cameras and exits
+ *-----------------------------------------------------------------------*/
+void cleanup_and_exit(dc1394camera_t *camera)
+{
     dc1394_video_set_transmission(camera, DC1394_OFF);
     dc1394_capture_stop(camera);
     dc1394_camera_free(camera);
     exit(1);
 }
 
-/**  Convert in-image timestamp to seconds **/
-
-inline double imageTimeStampToSeconds(unsigned int uiRawTimestamp) {
+/*-----------------------------------------------------------------------
+ *  Convert in-image timestamp to seconds
+ *-----------------------------------------------------------------------*/
+inline double imageTimeStampToSeconds(unsigned int uiRawTimestamp)
+{
    // 32 bits in total
    // [7 bits seconds] - [13 bits cycle count] - [12 bits cycle offset]
    // max values [127] - [7999] - [3071]
@@ -298,8 +202,7 @@ dc1394error_t setLuminosity( dc1394camera_t *camera, int lum )
     printf("Set Auto exposure pixel count (after) %x\n", ulValue);                
 }
 
-/** Set 12-to-10 bit compounding **/
-
+// set 12-to-10 bit compounding
 dc1394error_t setFrameFormat( dc1394camera_t *camera )
 {
     // set byte alignment to little endian
@@ -320,6 +223,8 @@ dc1394error_t setFrameFormat( dc1394camera_t *camera )
     dc1394_get_control_register( camera, 0x12F8, &ulValue );
     printf("Frame info (after) 0x%x\n",ulValue);
 }
+
+
 
 // set 12-to-10 bit compounding
 dc1394error_t setCompounding( dc1394camera_t *camera, int on )
@@ -346,8 +251,9 @@ dc1394error_t setCompounding( dc1394camera_t *camera, int on )
         
 }
 
-/** set HDR **/
 
+
+// seth HDR
 dc1394error_t setHDR( dc1394camera_t *camera, int on )
 {
     // Create a variable to hold the register values
@@ -401,8 +307,9 @@ dc1394error_t setHDR( dc1394camera_t *camera, int on )
     */
 }
 
-/** Set auto exposure ang gain region **/
 
+
+// seth auto exposure ang gain region
 dc1394error_t setAutoRegion( dc1394camera_t *camera )
 {
     // Create a variable to hold the register values
@@ -436,23 +343,24 @@ dc1394error_t setAutoRegion( dc1394camera_t *camera )
 }
 
 dc1394error_t initializeCamera(dc1394camera_t *camera){
+     dc1394error_t err;
      
-    dc1394error_t err;
-     
-    /** Reset camera **/
+     /*-----------------------------------------------------------------------
+     *  reset camera
+     *-----------------------------------------------------------------------*/
     err=dc1394_camera_reset(camera);
     DC1394_ERR_CLN_RTN(err,cleanup_and_exit(camera),"Could reset camera");
     usleep(1e5);
+     
     
-    /** Setup capture **/
-
-    // DC1394_OPERATION_MODE_1394B exploit
-    err=dc1394_video_set_operation_mode(camera, DC1394_OPERATION_MODE_LEGACY );  
+    /*-----------------------------------------------------------------------
+     *  setup capture
+     *-----------------------------------------------------------------------*/
+    err=dc1394_video_set_operation_mode(camera, DC1394_OPERATION_MODE_LEGACY ); // DC1394_OPERATION_MODE_1394B exploit 
     DC1394_ERR_CLN_RTN(err,cleanup_and_exit(camera),"Could not set 1394A mode"); 
     usleep(1e5);
     
-    //DC1394_ISO_SPEED_800  exploit
-    err=dc1394_video_set_iso_speed(camera, DC1394_ISO_SPEED_400 ); 
+    err=dc1394_video_set_iso_speed(camera, DC1394_ISO_SPEED_400 );//DC1394_ISO_SPEED_800  exploit 
     DC1394_ERR_CLN_RTN(err,cleanup_and_exit(camera),"Could not set iso speed");
     usleep(1e5);
     
@@ -496,27 +404,24 @@ dc1394error_t initializeCamera(dc1394camera_t *camera){
     // setLuminosity( camera, 55 );
     // setAutoRegion( camera );
    
-    /**  Camera start sending **/
+    /*-----------------------------------------------------------------------
+     *  have the camera start sending us data
+     *-----------------------------------------------------------------------*/
     err=dc1394_video_set_transmission(camera, DC1394_ON);
     DC1394_ERR_CLN_RTN(err,cleanup_and_exit(camera),"Could not start camera iso transmission\n");
     
 }
-
-/** Read camera parameters using calibration **/
-
+// reading camera parameters using calibration
 static bool readCameraParameters(std::string filename, cv::Mat &camMatrix, cv::Mat &distCoeffs) {
-
     cv::FileStorage fs(filename, cv::FileStorage::READ);
     if(!fs.isOpened())
         return false;
     fs["camera_matrix"] >> camMatrix;
     fs["distortion_coefficients"] >> distCoeffs;
     return true;
-
 }
 
-/** Reading detector parameters using calibration **/
-
+// reading detector parameters using calibration 
 static bool readDetectorParameters(std::string filename, cv::Ptr<cv::aruco::DetectorParameters> &params) {
     cv::FileStorage fs(filename, cv::FileStorage::READ);
     if(!fs.isOpened())
@@ -543,19 +448,17 @@ static bool readDetectorParameters(std::string filename, cv::Ptr<cv::aruco::Dete
     fs["errorCorrectionRate"] >> params->errorCorrectionRate;
     return true;
 }
-
 void readArucoFiles(int total_camera){
     camMatrix.resize(total_camera);
     distCoeffs.resize(total_camera);
-
-    // reading all files for aruco
+    // reading all files for aruco//////////
+   
     bool read = readDetectorParameters("detector_params.yml", detectorParams);
     if(!read) {
        	std::cerr << "Invalid detector parameters file" << std::endl;
         play =false;
     	 //return 0;
     }
-
     for (int i=0;i<total_camera;i++){
         char filename[50];
         sprintf(filename,"../new_attempt/calibration_files/camera_%d_checker.yml",i);
@@ -568,7 +471,6 @@ void readArucoFiles(int total_camera){
     }
 
 }
-
 void getEulerAngles(cv::Mat &rotCamerMatrix,cv::Vec3d &eulerAngles){
 
     cv::Mat cameraMatrix,rotMatrix,transVect,rotMatrixX,rotMatrixY,rotMatrixZ;
@@ -577,33 +479,32 @@ void getEulerAngles(cv::Mat &rotCamerMatrix,cv::Vec3d &eulerAngles){
                           _r[3],_r[4],_r[5],0,
                           _r[6],_r[7],_r[8],0};
 
-    cv::decomposeProjectionMatrix( 
-    	cv::Mat(3,4,CV_64FC1,projMatrix),
-        cameraMatrix,
-        rotMatrix,
-        transVect,
-        rotMatrixX,
-        rotMatrixY,
-        rotMatrixZ,
-        eulerAngles
-    );
+    cv::decomposeProjectionMatrix( cv::Mat(3,4,CV_64FC1,projMatrix),
+                               cameraMatrix,
+                               rotMatrix,
+                               transVect,
+                               rotMatrixX,
+                               rotMatrixY,
+                               rotMatrixZ,
+                               eulerAngles);
 }
 
+
+
+
 void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
-    
-    if(markerID<50) { // fixed markers
-        
+    if(markerID<50){ // fixed markers
         cv::Mat rotMatrix;
 		cv::Rodrigues(rvec,rotMatrix);
         transpose(rotMatrix,f_rotMat);
         f_tvec=-1*tvec;
         f_markerID=markerID;
+        //
+        
     }
-
     else{
         
         if (markerID>50){  // only moving markers
-           
             cv::Matx33d rotMattoe0( 0.0,-1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0);// if all x pointing in same direction
             cv::Vec3d reading=(rotMattoe0*(f_rotMat*(tvec+f_tvec)))+transtoe0[f_markerID];
             std::cerr << "using fixed marker ID:" << f_markerID << std::endl;
@@ -627,23 +528,16 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
     }
 }
 
-void arucoPipeline(cv::Mat img,int camera_number) {
-    
+ void arucoPipeline(cv::Mat img,int camera_number) {
     f_markerID=0; // reset for each frame
     std::vector<int> markerIds;
     std::vector< std::vector<cv::Point2f> > markerCorners,rejectedCandidates;
     std::vector< cv::Vec3d >  rvecs, tvecs;
-    
     // fixed and moving markers have different dicitionary hence the search algorithm is changed 
-    cv::Ptr<cv::aruco::Dictionary> dictionary=cv::aruco::getPredefinedDictionary(cv::aruco::DICT_6X6_250);
-
+    cv::Ptr<cv::aruco::Dictionary> dictionary=cv::aruco::getPredefinedDictionary(cv::aruco::DICT_6X6_250); 
     cv::aruco::detectMarkers(img,dictionary,markerCorners,markerIds,detectorParams,rejectedCandidates);
-
     cv::aruco::drawDetectedMarkers(img,markerCorners,markerIds);
-
-    // rejected candidates
-    cv::aruco::drawDetectedMarkers(img,rejectedCandidates , cv::noArray(), cv::Scalar(100, 0, 255)); 
-
+    cv::aruco::drawDetectedMarkers(img,rejectedCandidates , cv::noArray(), cv::Scalar(100, 0, 255)); // rejected candidates
     /*if (markerIds.size()>0){
         bool found_fixedM=0;
         for(unsigned int i = 0; i < markerIds.size(); i++){ 
@@ -694,74 +588,56 @@ void arucoPipeline(cv::Mat img,int camera_number) {
     
     // if markers have same dicitionnay 
     if (markerIds.size()>0) {
-
-		//sending on fixed marker first
-		bool found_fixedM=0;
-
-		for(unsigned int i = 0; i < markerIds.size(); i++){ 
+      //sending on fixed marker first
+      bool found_fixedM=0;
+      for(unsigned int i = 0; i < markerIds.size(); i++){ 
                 
-            std::vector< std::vector< cv::Point2f > > single_markerCorner;
-            std::vector<cv::Vec3d> single_rvec, single_tvec;
-            single_markerCorner.resize(1);
-            single_markerCorner[0] = markerCorners[i];
-
-            //std::cout << "processed markercorner size"<< single_markerCorner.size()<<std::endl;
+                std::vector< std::vector<cv::Point2f> > single_markerCorner;
+                std::vector<cv::Vec3d> single_rvec,single_tvec;
+                single_markerCorner.resize(1);
+                single_markerCorner[0]=markerCorners[i];
+                //std::cout << "processed markercorner size"<< single_markerCorner.size()<<std::endl;
                 
-            if (markerIds[i]<50){
-
-                    cv::aruco::estimatePoseSingleMarkers(single_markerCorner, 
-                    	markerLength_fixed, 
-                    	camMatrix[camera_number], 
-                    	distCoeffs[camera_number], 
-                    	single_rvec, 
-                    	single_tvec
-                    );
-
-                    //std::cout<<"fixed markers:"<<markerIds[i]<<std::endl;
-
-                    cv::aruco::drawAxis(
-                    	img, 
-                    	camMatrix[camera_number], 
-                    	distCoeffs[camera_number], 
-                    	single_rvec[0], 
-                    	single_tvec[0],
-    		            markerLength_fixed*0.5f
-    		        );
-
-                    makeSense(single_tvec[0],single_rvec[0],markerIds[i]);
-
-                    found_fixedM=1;
-
-            }
+                
+                if (markerIds[i]<50){
+                        cv::aruco::estimatePoseSingleMarkers(single_markerCorner, markerLength_fixed, camMatrix[camera_number], distCoeffs[camera_number], single_rvec, single_tvec);
+                        //std::cout<<"fixed markers:"<<markerIds[i]<<std::endl;
+                        cv::aruco::drawAxis(img, camMatrix[camera_number], distCoeffs[camera_number], single_rvec[0], single_tvec[0],
+        		                  markerLength_fixed*0.5f);
+                        makeSense(single_tvec[0],single_rvec[0],markerIds[i]);
+                        found_fixedM=1;
+                }
       }
+      //sending moving markers
+      if(found_fixedM==1){
+      for(unsigned int i = 0; i < markerIds.size(); i++){
+                std::vector< std::vector<cv::Point2f> > single_markerCorner;
+                std::vector<cv::Vec3d> single_rvec,single_tvec;
+                single_markerCorner.resize(1);
+                single_markerCorner[0]=markerCorners[i];
+                if(markerIds[i]>50){
+                        cv::aruco::estimatePoseSingleMarkers( single_markerCorner, markerLength_moving, camMatrix[camera_number], distCoeffs[camera_number],  single_rvec,single_tvec);//verify
+                        //std::cout<<"moving markers:"<<markerIds[i]<<std::endl;
+                        //std::cout<<"moving markers:"<<single_rvec.size()<<std::endl;
+                        cv::aruco::drawAxis(img, camMatrix[camera_number], distCoeffs[camera_number], single_rvec[0], single_tvec[0],
+        		                  markerLength_moving*0.5f);
+                        makeSense(single_tvec[0],single_rvec[0],markerIds[i]);
+                }
 
-    /** Send moving markers **/
-	if(found_fixedM==1){
-      	for(unsigned int i = 0; i < markerIds.size(); i++){
-            std::vector< std::vector<cv::Point2f> > single_markerCorner;
-            std::vector<cv::Vec3d> single_rvec,single_tvec;
-            single_markerCorner.resize(1);
-            single_markerCorner[0]=markerCorners[i];
-            
-            if(markerIds[i]>50){
-                    cv::aruco::estimatePoseSingleMarkers( single_markerCorner, markerLength_moving, camMatrix[camera_number], distCoeffs[camera_number],  single_rvec,single_tvec);//verify
-                    //std::cout<<"moving markers:"<<markerIds[i]<<std::endl;
-                    //std::cout<<"moving markers:"<<single_rvec.size()<<std::endl;
-                    cv::aruco::drawAxis(img, camMatrix[camera_number], distCoeffs[camera_number], single_rvec[0], single_tvec[0],
-    		                  markerLength_moving*0.5f);
-                    makeSense(single_tvec[0],single_rvec[0],markerIds[i]);
-            }
-      	}
-	}
+      }
+      }
                 //rvecs[i]=single_rvec[0];
                 //tvecs[i]=single_tvec[0];
                 //makeSense(single_tvec[0],single_rvec[0],markerIds[i]);
+    
+    
+
+
 
     }
-}
+ }
 
 dc1394error_t cameraCaptureSingle(dc1394camera_t* camera ,int camera_no){
-
     dc1394error_t err;
     dc1394video_frame_t* frame=NULL;
     dc1394video_frame_t frame_buffer;
@@ -771,29 +647,33 @@ dc1394error_t cameraCaptureSingle(dc1394camera_t* camera ,int camera_no){
     cv::Mat dispImage = cv::Mat( 480, 640, CV_8UC3 );
     cv::Mat finalImage = cv::Mat( 480, 640, CV_8UC3 );
     
-    /** Capture one frame **/
+    /*-----------------------------------------------------------------------
+    *  capture one frame
+    *-----------------------------------------------------------------------*/
     err=dc1394_capture_dequeue(camera, DC1394_CAPTURE_POLICY_WAIT, &frame);
     DC1394_ERR_CLN_RTN(err,cleanup_and_exit(camera),"Could not capture a frame\n");
     
-    /** Check if frame is corrupt **/      
+    /*-----------------------------------------------------------------------
+    *  check if frame is corrupt
+    *-----------------------------------------------------------------------*/      
     if( dc1394_capture_is_frame_corrupt( camera, frame) )
         printf("\n[DEBUG] frame is corrupt!\n"); 
      
     memcpy( &frame_buffer, frame, sizeof(dc1394video_frame_t) );
-    
-    /* strictly little endian... */
-
+     /* strictly little endian... */
     pStamp[ 0 ]  = frame_buffer.image[3];
     pStamp[ 1 ]  = frame_buffer.image[2];
     pStamp[ 2 ]  = frame_buffer.image[1];
     pStamp[ 3 ]  = frame_buffer.image[0];
     
-    /** Copy pointer to opencv **/         
-    
+    /*-----------------------------------------------------------------------
+    *  copy pointer to opencv
+    *-----------------------------------------------------------------------*/          
     BImage.data = frame_buffer.image;
     
-    /** Convert to color image **/
-
+    /*-----------------------------------------------------------------------
+    *  convert to color image
+    *-----------------------------------------------------------------------*/
     cvtColor( BImage, dispImage, CV_BayerRG2RGB );
     
     finalImage=dispImage.clone(); // So Deep copy 
@@ -808,69 +688,54 @@ dc1394error_t cameraCaptureSingle(dc1394camera_t* camera ,int camera_no){
     
     dc1394_capture_enqueue(camera,frame);
 }
-
-//** Handle keys **//
-
 void keyPress(std::vector<dc1394camera_t*> cameras,dc1394camera_list_t * list ){
-
     int key;
     dc1394error_t err;
     key = cv::waitKey(10);
-    
-    // esc
-    if( key == 27 ){
-
-        play = false;
-
+      
+    /*-----------------------------------------------------------------------
+    *  Handle keys
+    *-----------------------------------------------------------------------*/
+    if( key == 27 ) // esc
+    {
+        play = false;            
+    }  
+    else if( key == 104 ) // h
+    { 
+      // toggle HDR
+      hd = !hd;
+      printf("\nHDR is %i\n", hd );
+      for(int ii=0;ii<(int)list->num;ii++){
+        setHDR( cameras[ii], hd );
+      }
+      
     }
-
-    // h
-    else if( key == 104 ){
-		
-		// toggle HDR
-		hd = !hd;
-		printf("\nHDR is %i\n", hd );
-		for(int ii=0;ii<(int)list->num;ii++){
-
-			setHDR( cameras[ii], hd );
-
-		}
-    }
-
     else if(key == 's') {
-
-    	// jason edits for shutter control and gamma control
+        // jason edits for shutter control and gamma control
         uint32_t shutter_write=0x82000017;
         uint32_t gamma_write  =0x82000001;
-
         for(int ii=0;ii<(int)list->num;ii++){
-        	
-        	err=dc1394_set_control_register( cameras[ii], 0x818, gamma_write );
+            err=dc1394_set_control_register( cameras[ii], 0x818, gamma_write );
             //DC1394_ERR_CLN_RTN(err,cleanup_and_exit(cameras[ii]),"cannot Get gamma register\n");
             printf("gamma control register (Jason edits) is set \n");
     
             err=dc1394_set_control_register( cameras[ii], 0x81C, shutter_write );
             //DC1394_ERR_CLN_RTN(err,cleanup_and_exit(cameras[ii]),"cannot Get shutter_j register\n");
             printf("shutter control register (Jason edits) is set\n");
-
         }
     }
-
-    // c
-    else if( key == 99 )
+    else if( key == 99 ) // c
     { 
-       	// toggle HDR
-       	comp = !comp;
+       // toggle HDR
+       comp = !comp;
         printf("\nCompounding is %i\n", comp );
         for(int ii=0;ii<(int)list->num;ii++){
         setCompounding( cameras[ii], comp );
         }
         
     }
-
-    // up arrow
-    else if( key == 82 ){
-
+    else if( key == 82 ) // up arrow
+    {
         ecount = ecount + 1e3;
         if( 65e3 < ecount )
             ecount = 65e3;
@@ -880,116 +745,64 @@ void keyPress(std::vector<dc1394camera_t*> cameras,dc1394camera_list_t * list ){
         }        
         
     }
-
-    // down arrow
-    else if( key == 84 )
+    else if( key == 84  ) // down arrow
     {
         ecount = ecount - 1e3;
-
-        if( ecount < 1e3 ) ecount = 1e3;
-
+        if( ecount < 1e3 )
+            ecount = 1e3;
         printf("\nLuminosity is %i\n", ecount ); 
-
         for(int ii=0;ii<(int)list->num;ii++){
-
             setLuminosity( cameras[ii], ecount );
-
         }        
+        
     }
-
 }
 
-/** Camera Cleanup **/
-
 dc1394error_t cameraCleanup(dc1394camera_t* camera){
-
     dc1394error_t err;
-
-    // stop data transmission
+    /*-----------------------------------------------------------------------
+    *  stop data transmission
+    *-----------------------------------------------------------------------*/
     err=dc1394_video_set_transmission(camera,DC1394_OFF);
-    DC1394_ERR_CLN_RTN(err,cleanup_and_exit(camera),"Could not stop the camera?\n");   
+    DC1394_ERR_CLN_RTN(err,cleanup_and_exit(camera),"Could not stop the camera?\n");
+
     
-    // close camera
+    
+    /*-----------------------------------------------------------------------
+    *  close camera
+    *-----------------------------------------------------------------------*/
     dc1394_video_set_transmission(camera,DC1394_OFF);
     dc1394_capture_stop(camera);
     dc1394_camera_free(camera);
     
 }
 
-int main(int argc, char *argv[]){
-
-    /** Add cameras according to the USE_CAM defines above **/
-
-	auto it = cameraID.end();
-
-	#if USE_CAM_1 == 1
-		it = cameraID.insert(it, 49712223537630471);
-	#endif	
-	#if USE_CAM_2 == 1
-		it = cameraID.insert(it, 49712223537053658);
-	#endif
-	#if USE_CAM_3 == 1
-		it = cameraID.insert(it, 49712223537053659);
-	#endif
-	#if USE_CAM_4 == 1
-		it = cameraID.insert(it, 49712223537053660);
-	#endif
-	#if USE_CAM_5 == 1
-		it = cameraID.insert(it, 49712223537630465);
-	#endif
-	#if USE_CAM_6 == 1
-		it = cameraID.insert(it, 49712223537630451);
-	#endif
-	#if USE_CAM_7 == 1
-		it = cameraID.insert(it, 49712223537630448);
-	#endif
-	#if USE_CAM_8 == 1
-		it = cameraID.insert(it, 49712223537630468);
-	#endif
-
-	/** Optionally print which cameras are used **/
-
-	print_cams(cameraID);
-
-	/** **/
-
+int main(int argc, char *argv[])
+{
     UDPset();
-
-    /** **/
-
     FILE* imagefile;
     std::vector<dc1394camera_t*> cameras;
     unsigned int width, height;
-    
-    /** dc1394featureset_t features; **/
-
+    //dc1394featureset_t features;
     dc1394_t* d;
     dc1394camera_list_t * list;
     dc1394error_t err;
-   
-   	/** Query number of devices  **/
-   	d = dc1394_new ();
-	if (!d)
-	    return 1;
-	err=dc1394_camera_enumerate (d, &list);
-	DC1394_ERR_RTN(err,"Failed to enumerate cameras");
+   // qureying number of devices 
+   d = dc1394_new ();
+    if (!d)
+        return 1;
+    err=dc1394_camera_enumerate (d, &list);
+    DC1394_ERR_RTN(err,"Failed to enumerate cameras");
 
     // no cameras in the list
     if (list->num == 0) {
-
         dc1394_log_error("No cameras found");
         return 1;
-
     }
-
     cameras.resize(list->num);
     frames.resize(list->num);
-
     for( int i =0;i<(int)list->num;i++){
-
-    	// camera increment
-        int j=0; 
-
+        int j=0; //camera increment
         while (j<16){
             if ( cameraID.size()==(int)list->num){
                 if (cameraID[i]==list->ids[j].guid){
@@ -1003,50 +816,39 @@ int main(int argc, char *argv[]){
                 std::cout<<"Not enough GUID's to verify camera order"<<std::endl;
                 return 1;
             }
-    	}
-
+        } 
 		cameras[i] = dc1394_camera_new (d, list->ids[j].guid);
- 		if (!cameras[i]) {
-    		dc1394_log_error("Failed to initialize camera with guid %llx", list->ids[j].guid);
-    		return 1;
- 		}
+     		if (!cameras[i]) {
+        		dc1394_log_error("Failed to initialize camera with guid %llx", list->ids[j].guid);
+        		return 1;
+     		}
 		initializeCamera(cameras[i]);
         std::cout<< "Initialised "<<i+1<<" cameras"<< std::endl;
                 
     }
-
-    /** Read Aruco Files **/
-
     readArucoFiles(list->num);
-
-    /**  **/
     
     while(play){
-
             //sent_data[0]=0;sent_data[1]=0;
-
-    		//reinitialize sending data 
-            sent_data.assign(sent_data.size(),0); 
+            sent_data.assign(sent_data.size(),0); // reinitialize sending data 
         
-            for(int i =0; i < (int)list->num; i++){
-
-                cameraCaptureSingle(cameras[i],i);
-
+            for( int i =0;i<(int)list->num;i++){
+                    
+                    cameraCaptureSingle(cameras[i],i);
+                    
+                    
             }
-
             cv::Mat combImg=makeCombined(frames,700,2);
             cv::imshow("TruckLabImgs",combImg);
             keyPress(cameras,list);
     }
 
-    /** Cleanup **/
+     // cleanup
     for( int i =0;i<(int)list->num;i++){
             cameraCleanup(cameras[i]);
     }
-
     dc1394_free (d);
     dc1394_camera_free_list (list);
     return 0;
-
 }
 
