@@ -70,7 +70,7 @@ void readArucoFiles(int total_camera){
     for (int i = 0; i < total_camera; i++){
 
         char filename[50];
-        sprintf(filename,"../new_attempt/calibration_files/camera_%d_checker.yml",i);
+        sprintf(filename,"calibration_files/camera_%d_checker.yml",i);
         bool readOk = readCameraParameters(filename, camMatrix[i], distCoeffs[i]);
 
         if(!readOk) {
