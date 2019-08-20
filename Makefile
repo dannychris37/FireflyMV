@@ -17,5 +17,5 @@ fireflymvstereologger:
 fireflymv_multiple:
 	g++ -std=c++11 -o grab_FireflyMV_multiple grab_FireflyMV_multiple.c -ldc1394 -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_aruco -lopencv_videoio -lopencv_calib3d $(LIBS)
 
-fireflymv_some:
-	g++ -std=c++11 -o grab_FireflyMV_some grab_FireflyMV_some.c -ldc1394 -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_aruco -lopencv_videoio -lopencv_calib3d $(LIBS) 
+fireflymv:
+	g++ -std=c++11 -o grab_FireflyMV grab_FireflyMV.c -ldc1394 -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_aruco -lopencv_videoio -lopencv_calib3d $(LIBS) 
