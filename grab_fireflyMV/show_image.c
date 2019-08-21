@@ -4,11 +4,22 @@
 
 cv::Mat makeCombined(std::vector<cv::Mat>& vecMat, int windowHeight, int nRows) {
 
+    // no of frames
     int N = vecMat.size();
-    nRows  = nRows > N ? N : nRows; 
+
+    // if rows exceed no of frames
+    nRows  = nRows > N ? N : nRows;
+
+    // thickness of black edge ?
     int edgeThickness = 10;
+
+    // make rows even
     int imagesPerRow = ceil(double(N) / nRows);
+
+
     int resizeHeight = floor(((floor(double(windowHeight - edgeThickness) / nRows)) ) - edgeThickness);
+
+
     int maxRowLength = 0;
 
     std::vector<int> resizeWidth;

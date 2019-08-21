@@ -4,14 +4,14 @@ using namespace std;
 
 /** Defines for setting which cameras to use **/
 
-#define USE_CAM_1 0
+#define USE_CAM_0 0
+#define USE_CAM_1 1
 #define USE_CAM_2 0
-#define USE_CAM_3 1
-#define USE_CAM_4 1
+#define USE_CAM_3 0
+#define USE_CAM_4 0
 #define USE_CAM_5 0
 #define USE_CAM_6 0
 #define USE_CAM_7 0
-#define USE_CAM_8 0
 
 /** Struct and methods for printing which cameras are used **/
 
@@ -21,14 +21,14 @@ struct cam_entry {
 };
 
 struct cam_entry cams[] = {
-	"CAM1", 49712223537630471,
-	"CAM2", 49712223537053658,
-	"CAM3", 49712223537053659,
-	"CAM4", 49712223537053660,
+	"CAM0", 49712223537630471,
+	"CAM1", 49712223537053658,
+	"CAM2", 49712223537053659,
+	"CAM3", 49712223537053660,
+	"CAM4", 49712223537630451,
 	"CAM5", 49712223537630465,
-	"CAM6", 49712223537630451,
+	"CAM6", 49712223537630468,
 	"CAM7", 49712223537630448,
-	"CAM8", 49712223537630468,
 	"NO_CAM", 0
 };
 
@@ -59,29 +59,29 @@ void addUsedCams(){
 
 	auto it = cameraID.end();
 
-	#if USE_CAM_1 == 1
-		it = cameraID.insert(it, 49712223537630471);
+	#if USE_CAM_7 == 1
+		it = cameraID.insert(it, cams[7].cam_id);
 	#endif	
-	#if USE_CAM_2 == 1
-		it = cameraID.insert(it, 49712223537053658);
+	#if USE_CAM_6 == 1
+		it = cameraID.insert(it, cams[6].cam_id);
 	#endif
-	#if USE_CAM_3 == 1
-		it = cameraID.insert(it, 49712223537053659);
+	#if USE_CAM_0 == 1
+		it = cameraID.insert(it, cams[0].cam_id);
 	#endif
 	#if USE_CAM_4 == 1
-		it = cameraID.insert(it, 49712223537053660);
+		it = cameraID.insert(it, cams[4].cam_id);
+	#endif
+	#if USE_CAM_3 == 1
+		it = cameraID.insert(it, cams[3].cam_id);
+	#endif
+	#if USE_CAM_2 == 1
+		it = cameraID.insert(it, cams[2].cam_id);
+	#endif
+	#if USE_CAM_1 == 1
+		it = cameraID.insert(it, cams[1].cam_id);
 	#endif
 	#if USE_CAM_5 == 1
-		it = cameraID.insert(it, 49712223537630465);
-	#endif
-	#if USE_CAM_6 == 1
-		it = cameraID.insert(it, 49712223537630451);
-	#endif
-	#if USE_CAM_7 == 1
-		it = cameraID.insert(it, 49712223537630448);
-	#endif
-	#if USE_CAM_8 == 1
-		it = cameraID.insert(it, 49712223537630468);
+		it = cameraID.insert(it, cams[5].cam_id);
 	#endif
 
 	/** Optionally print which cameras are used **/

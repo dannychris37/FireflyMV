@@ -410,7 +410,7 @@ void keyPress(std::vector<dc1394camera_t*> cameras,dc1394camera_list_t * list ){
 
         printf("\nLuminosity is %i\n", ecount ); 
 
-        for(int ii=0;ii<(int)list->num;ii++){
+        for(int ii=0; ii<(int)list -> num; ii++){
 
             setLuminosity( cameras[ii], ecount );
 

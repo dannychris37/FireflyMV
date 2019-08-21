@@ -1,0 +1,1192 @@
+The following cameras are used: CAM4 CAM3 
+Set to little endianess
+Frame info (before) 0x80000000
+Frame info (after) 0x80000001
+Compound register (before) 0x2
+Compound register (after) 0x2
+HDR control register (before) 0x11
+HDR control register (after) 0x11
+Shutter control register (before) 0x164
+Shutter control register (after) 0x164
+Get Auto exposure pixel count (before) 9000
+Set Auto exposure pixel count (after) abe0
+Initialised 1 cameras
+Set to little endianess
+Frame info (before) 0x80000000
+Frame info (after) 0x80000001
+Compound register (before) 0x2
+Compound register (after) 0x2
+HDR control register (before) 0x11
+HDR control register (after) 0x11
+Shutter control register (before) 0x164
+Shutter control register (after) 0x164
+Get Auto exposure pixel count (before) 9000
+Set Auto exposure pixel count (after) abe0
+Initialised 2 cameras
+using fixed marker ID:2
+origin to truck :79	[0.360253, 0.205548, -0.12398]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.354304, 0.213771, -0.0865976]
+rotation angle(deg):[-174.687, -4.05297, 94.5666]
+using fixed marker ID:2
+origin to truck :79	[0.354554, 0.215578, -0.0943164]
+rotation angle(deg):[-179.044, -7.76341, 95.5626]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355585, 0.205146, -0.129157]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.358865, 0.199085, -0.130603]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]
+using fixed marker ID:2
+origin to truck :79	[0.3592, 0.199167, -0.133718]
+rotation angle(deg):[176.142, -0.771962, 95.3657]
+using fixed marker ID:2
+origin to truck :79	[0.355338, 0.204938, -0.126039]
+rotation angle(deg):[169.906, -13.0841, 97.0768]

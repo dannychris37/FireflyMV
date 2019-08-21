@@ -1,6 +1,8 @@
 #ifndef HEADER_SEEN
 #define HEADER_SEEN
 
+#define BILLION  1000000000L;
+
 #include <stdint.h>
 #include <string.h>
 #include <dc1394/dc1394.h>
@@ -15,6 +17,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <cstdio>
 
 /** UDP libs **/
 

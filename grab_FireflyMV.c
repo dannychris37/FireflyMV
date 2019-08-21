@@ -75,7 +75,7 @@ int main(int argc, char *argv[]){
     	}
 
     	// initialize camera structure
-		cameras[i] = dc1394_camera_new (d, list->ids[j].guid);
+		cameras[i] = dc1394_camera_new (d, list -> ids[j].guid);
 
  		if (!cameras[i]) {
     		
@@ -95,24 +95,37 @@ int main(int argc, char *argv[]){
     readArucoFiles(list->num);
 
     /** Runtime loop **/
+
+    timespec start, stop;
+    double delta_nsec;
     
     while(play){
 
-    		// reinitialize sending data
-    		// assigns 0's to sent_data vector
-            sent_data.assign(sent_data.size(), 0); 
-        
-        	// capture frames from each camera
-            for(int i = 0; i < (int)list -> num; i++){
+    	clock_gettime(CLOCK_REALTIME, &start);
 
-                cameraCaptureSingle(cameras[i], i);
+		// reinitialize sending data
+		// assigns 0's to sent_data vector
+        sent_data.assign(sent_data.size(), 0); 
+    
+    	// capture frames from each camera
+        for(int i = 0; i < (int)list -> num; i++){
 
-            }
+            cameraCaptureSingle(cameras[i], i);
 
-            // show captured frames
-            cv::Mat combImg = makeCombined(frames, 700, 2);
-            cv::imshow("TruckLabImgs", combImg);
-            keyPress(cameras, list);
+        }
+
+        // show captured frames
+        cv::Mat combImg = makeCombined(frames, 800, 2);
+        cv::imshow("TruckLabImgs", combImg);
+        keyPress(cameras, list);
+
+        clock_gettime(CLOCK_REALTIME, &stop);
+
+        delta_nsec = ( stop.tv_sec - start.tv_sec )
+             + (double)( stop.tv_nsec - start.tv_nsec )
+               / (double)BILLION;
+
+        std::cout << "execution time: " << delta_nsec << "\n\n\n";
     }
 
     /** Cleanup **/
