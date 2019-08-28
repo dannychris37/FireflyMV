@@ -5,13 +5,18 @@ using namespace std;
 /** Defines for setting which cameras to use **/
 
 #define USE_CAM_0 0
-#define USE_CAM_1 1
-#define USE_CAM_2 0
-#define USE_CAM_3 0
+#define USE_CAM_1 0
+#define USE_CAM_2 1
+#define USE_CAM_3 1
 #define USE_CAM_4 0
 #define USE_CAM_5 0
 #define USE_CAM_6 0
 #define USE_CAM_7 0
+
+/** Whether to show frame info for given camera **/
+
+#define SHOW_FRAME_INFO 0
+#define FRAME_INFO_CAM 1
 
 /** Struct and methods for printing which cameras are used **/
 

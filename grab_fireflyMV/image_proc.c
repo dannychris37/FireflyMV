@@ -329,6 +329,19 @@ dc1394error_t cameraCaptureSingle(
     	cleanup_and_exit(camera),
     	"Could not capture a frame\n"
     );
+
+    if(camera_no == FRAME_INFO_CAM && SHOW_FRAME_INFO){
+        std::cout << "Frame received from camera " << camera_no + 1 << std::endl;
+        std::cout << "Image size: " << frame -> size[0] << "x" << frame -> size[1] << std::endl;
+        std::cout << "Color coding: " << frame -> color_coding << std::endl;
+        std::cout << "Data depth: " << frame -> data_depth << std::endl;
+        std::cout << "Video mode: " << frame -> video_mode << std::endl;
+        std::cout << "Image bytes: " << frame -> image_bytes << "B" << std::endl;
+        std::cout << "Padding bytes: " << frame -> padding_bytes << "B" << std::endl;
+        std::cout << "Allocated image bytes: " << frame -> allocated_image_bytes << "B" << std::endl;
+        std::cout << "Packet size: " << frame -> packet_size << "B" << std::endl;
+        std::cout << "Packets per frame: " << frame -> packets_per_frame << std::endl;
+    }
     
     /** Check if frame is corrupt **/
 
