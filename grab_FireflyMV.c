@@ -101,12 +101,13 @@ int main(int argc, char *argv[]){
     
     while(play){
 
-    	clock_gettime(CLOCK_REALTIME, &start);
+		// assigns 0's to sent_data vector (vector of 2 bools inside image_proc.c)
+		// 1st value is for marker id 51, 2nd is for marker id 52 (markers used on trucks)
+		// used to skip marker if seen again on another camera
+        sent_data.assign(sent_data.size(), 0);
 
-		// reinitialize sending data
-		// assigns 0's to sent_data vector
-        sent_data.assign(sent_data.size(), 0); 
-    
+        
+
     	// capture frames from each camera
         for(int i = 0; i < (int)list -> num; i++){
 
@@ -114,18 +115,21 @@ int main(int argc, char *argv[]){
 
         }
 
+        clock_gettime(CLOCK_MONOTONIC, &start);
+
         // show captured frames
         cv::Mat combImg = makeCombined(frames, 800, 2);
         cv::imshow("TruckLabImgs", combImg);
         keyPress(cameras, list);
 
-        clock_gettime(CLOCK_REALTIME, &stop);
+        clock_gettime(CLOCK_MONOTONIC, &stop);
 
         delta_nsec = ( stop.tv_sec - start.tv_sec )
              + (double)( stop.tv_nsec - start.tv_nsec )
                / (double)BILLION;
 
-        std::cout << "execution time: " << delta_nsec << "\n\n\n";
+    	std::cout << "execution time: " << delta_nsec << "\n\n\n";
+        
     }
 
     /** Cleanup **/

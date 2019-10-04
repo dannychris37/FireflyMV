@@ -319,6 +319,18 @@ dc1394error_t cameraCaptureSingle(
     
     /** Capture one frame **/
 
+    /** From libc1394 code
+     * Captures a video frame. The returned struct contains the image buffer, among others. 
+     * This image buffer SHALL NOT be freed, as it represents an area
+     * in the memory that belongs to the system.
+
+        dc1394error_t dc1394_capture_dequeue(
+            dc1394camera_t * camera, 
+            dc1394capture_policy_t policy, 
+            dc1394video_frame_t **frame
+        );
+
+     */
     err = dc1394_capture_dequeue(
     	camera, 
     	DC1394_CAPTURE_POLICY_WAIT, 
@@ -330,16 +342,41 @@ dc1394error_t cameraCaptureSingle(
     	"Could not capture a frame\n"
     );
 
+    /* See libc1394 code for what is inside a the dc1394video_frame_t data structure */
     if(camera_no == FRAME_INFO_CAM && SHOW_FRAME_INFO){
+        
         std::cout << "Frame received from camera " << camera_no + 1 << std::endl;
+        
+        /* the number of bytes used for the image (image data only, no padding) */
         std::cout << "Image size: " << frame -> size[0] << "x" << frame -> size[1] << std::endl;
+        
+        /* the color coding used. This field is valid for all video modes. */
         std::cout << "Color coding: " << frame -> color_coding << std::endl;
+        
+        /* the number of bits per pixel. The number of grayscale levels is 2^(this_number).
+        This is independent from the colour coding */
         std::cout << "Data depth: " << frame -> data_depth << std::endl;
+        
+        /* the video mode used for capturing this frame */
         std::cout << "Video mode: " << frame -> video_mode << std::endl;
+        
+        /* the number of bytes used for the image (image data only, no padding) */
         std::cout << "Image bytes: " << frame -> image_bytes << "B" << std::endl;
+        
+        /* the number of extra bytes, i.e. total_bytes-image_bytes.  */
         std::cout << "Padding bytes: " << frame -> padding_bytes << "B" << std::endl;
+
+        /* the total size of the frame buffer in bytes. May include packet-
+        multiple padding and intentional padding (vendor specific) */
+        std::cout << "Total bytes: " << frame -> total_bytes << "B" << std::endl;
+        
+        /* amount of memory allocated in for the *image field. */
         std::cout << "Allocated image bytes: " << frame -> allocated_image_bytes << "B" << std::endl;
+        
+        /* the size of a packet in bytes. (IIDC data) */
         std::cout << "Packet size: " << frame -> packet_size << "B" << std::endl;
+        
+        /* the number of packets per frame. (IIDC data) */
         std::cout << "Packets per frame: " << frame -> packets_per_frame << std::endl;
     }
     
