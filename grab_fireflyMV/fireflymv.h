@@ -2,6 +2,7 @@
 #define HEADER_SEEN
 
 #define BILLION  1000000000L;
+#define MILLION  1000000L;
 
 #include <stdint.h>
 #include <string.h>
@@ -44,5 +45,18 @@
 std::vector<long int> cameraID;
 
 cv::Ptr<cv::aruco::DetectorParameters> detectorParams= cv::aruco::DetectorParameters::create();
+// time measuring flags
+#define MEAS_WHILE 		1
+#define MEAS_WAIT 		1
+#define MEAS_PROC		1
+#define MEAS_SHOW		1
+
+// time emasuring vars
+timespec start_while, stop_while;
+timespec start_wait, stop_wait;
+timespec start_proc, stop_proc;
+timespec start_show;
+
+double delta_while, delta_wait, delta_proc, delta_show;
 
 #endif

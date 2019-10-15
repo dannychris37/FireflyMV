@@ -151,7 +151,6 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
             	(rotMattoe0 * (f_rotMat * (tvec + f_tvec))) + 
             	transtoe0[f_markerID];
 
-            std::cout << "---------------------------------------------------" << std::endl;
             std::cout << "using fixed marker ID:" << f_markerID << std::endl;
             std::cout << "origin to truck :" << markerID << "\t" << reading << std::endl;
             
@@ -176,8 +175,6 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
                 std::cout << "skipped:" << markerID << std::endl;
 
             }
-
-            std::cout << "---------------------------------------------------" << std::endl;
         }
     }
 }
@@ -331,11 +328,39 @@ dc1394error_t cameraCaptureSingle(
         );
 
      */
+
     err = dc1394_capture_dequeue(
     	camera, 
     	DC1394_CAPTURE_POLICY_WAIT, 
     	&frame
     );
+
+    if(MEAS_WAIT){
+
+        clock_gettime(CLOCK_MONOTONIC, &stop_wait);
+
+        std::cout << "---------------------------------------------------" << std::endl;
+        std::cout << "On camera no. " << camera_no << std::endl;
+
+        delta_wait = ( stop_wait.tv_sec - start_wait.tv_sec )
+                 + (double)( stop_wait.tv_nsec - start_wait.tv_nsec )
+                   / (double)MILLION;
+
+        std::cout << "frame waiting time: " << delta_wait << "\n";
+
+    } else{
+
+        std::cout << "---------------------------------------------------" << std::endl;
+        std::cout << "On camera no. " << camera_no << std::endl;
+
+    }
+
+    if(MEAS_PROC){
+
+        clock_gettime(CLOCK_MONOTONIC, &start_proc);
+
+    }
+
     DC1394_ERR_CLN_RTN(
     	err, 
     	cleanup_and_exit(camera),

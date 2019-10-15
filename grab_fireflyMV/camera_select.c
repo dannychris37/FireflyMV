@@ -5,11 +5,11 @@ using namespace std;
 /** Defines for setting which cameras to use **/
 
 #define USE_CAM_0 0
-#define USE_CAM_1 1
-#define USE_CAM_2 0
-#define USE_CAM_3 1
+#define USE_CAM_1 0
+#define USE_CAM_2 1
+#define USE_CAM_3 0
 #define USE_CAM_4 0
-#define USE_CAM_5 0
+#define USE_CAM_5 1
 #define USE_CAM_6 0
 #define USE_CAM_7 0
 

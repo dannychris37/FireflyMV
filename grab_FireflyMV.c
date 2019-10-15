@@ -6,7 +6,6 @@
 
 using namespace std;
 
-
 int main(int argc, char *argv[]){
 
     /** Add cameras that are to be used to cameraID vector **/
@@ -96,39 +95,90 @@ int main(int argc, char *argv[]){
 
     /** Runtime loop **/
 
-    timespec start, stop;
-    double delta_nsec;
     
     while(play){
+
+    	// if measure while flag is set
+    	// start_while and other timespec vars are defined in firefly.h
+    	if(MEAS_WHILE){
+
+    		clock_gettime(CLOCK_MONOTONIC, &start_while);
+
+    	}
 
 		// assigns 0's to sent_data vector (vector of 2 bools inside image_proc.c)
 		// 1st value is for marker id 51, 2nd is for marker id 52 (markers used on trucks)
 		// used to skip marker if seen again on another camera
         sent_data.assign(sent_data.size(), 0);
 
-        
-
     	// capture frames from each camera
         for(int i = 0; i < (int)list -> num; i++){
 
+
+        	if(MEAS_WAIT){
+
+            	clock_gettime(CLOCK_MONOTONIC, &start_wait);
+
+			}
+
             cameraCaptureSingle(cameras[i], i);
+
+            if(MEAS_PROC){
+
+            	clock_gettime(CLOCK_MONOTONIC, &stop_proc);
+
+		        delta_proc = ( stop_proc.tv_sec - start_proc.tv_sec )
+		             + (double)( stop_proc.tv_nsec - start_proc.tv_nsec )
+		               / (double)MILLION;
+
+		    	std::cout << "frame processing time: " << delta_proc << "\n";
+
+			}
 
         }
 
-        clock_gettime(CLOCK_MONOTONIC, &start);
+	    if(MEAS_SHOW){
+
+	    	 clock_gettime(CLOCK_MONOTONIC, &start_show);
+
+	    }
 
         // show captured frames
         cv::Mat combImg = makeCombined(frames, 800, 2);
         cv::imshow("TruckLabImgs", combImg);
         keyPress(cameras, list);
 
-        clock_gettime(CLOCK_MONOTONIC, &stop);
+        if(MEAS_WHILE || MEAS_SHOW){
 
-        delta_nsec = ( stop.tv_sec - start.tv_sec )
-             + (double)( stop.tv_nsec - start.tv_nsec )
-               / (double)BILLION;
+        	clock_gettime(CLOCK_MONOTONIC, &stop_while);
 
-    	std::cout << "execution time: " << delta_nsec << "\n\n\n";
+        }
+
+        std::cout << "---------------------------------------------------" << std::endl;
+
+        if(MEAS_SHOW){
+
+	        delta_show = ( stop_while.tv_sec - start_show.tv_sec )
+	             + (double)( stop_while.tv_nsec - start_show.tv_nsec )
+	               / (double)MILLION;
+
+	    	std::cout << "frame show time: " << delta_show << "\n";
+
+		}
+
+
+        if(MEAS_WHILE){
+
+	        delta_while = ( stop_while.tv_sec - start_while.tv_sec )
+	             + (double)( stop_while.tv_nsec - start_while.tv_nsec )
+	               / (double)MILLION;
+
+	    	std::cout << "while loop time: " << delta_while << "\n";
+
+		}
+
+		std::cout << "---------------------------------------------------\n";
+		std::cout << "---------------------------------------------------\n\n\n";
         
     }
 
