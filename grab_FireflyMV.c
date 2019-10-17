@@ -95,8 +95,11 @@ int main(int argc, char *argv[]){
 
     /** Runtime loop **/
 
-    
+    std::thread t[(int)list -> num];
+
     while(play){
+
+    	std::cout << "---------------------------------------------------" << std::endl;
 
     	// if measure while flag is set
     	// start_while and other timespec vars are defined in firefly.h
@@ -114,26 +117,15 @@ int main(int argc, char *argv[]){
     	// capture frames from each camera
         for(int i = 0; i < (int)list -> num; i++){
 
+        	// waiting for and processing frame times are measured inside cameraCaptureSingle
+            t[i] = std::thread(cameraCaptureSingle, cameras[i], i);
 
-        	if(MEAS_WAIT){
+        }
 
-            	clock_gettime(CLOCK_MONOTONIC, &start_wait);
+        for(int i = 0; i < (int)list -> num; i++){
 
-			}
-
-            cameraCaptureSingle(cameras[i], i);
-
-            if(MEAS_PROC){
-
-            	clock_gettime(CLOCK_MONOTONIC, &stop_proc);
-
-		        delta_proc = ( stop_proc.tv_sec - start_proc.tv_sec )
-		             + (double)( stop_proc.tv_nsec - start_proc.tv_nsec )
-		               / (double)MILLION;
-
-		    	std::cout << "frame processing time: " << delta_proc << "\n";
-
-			}
+        	// waiting for and processing frame times are measured inside cameraCaptureSingle
+            t[i].join();
 
         }
 
@@ -154,15 +146,13 @@ int main(int argc, char *argv[]){
 
         }
 
-        std::cout << "---------------------------------------------------" << std::endl;
-
         if(MEAS_SHOW){
 
 	        delta_show = ( stop_while.tv_sec - start_show.tv_sec )
 	             + (double)( stop_while.tv_nsec - start_show.tv_nsec )
 	               / (double)MILLION;
 
-	    	std::cout << "frame show time: " << delta_show << "\n";
+	    	std::cout << "Frame show time: " << delta_show << "\n";
 
 		}
 
@@ -173,11 +163,10 @@ int main(int argc, char *argv[]){
 	             + (double)( stop_while.tv_nsec - start_while.tv_nsec )
 	               / (double)MILLION;
 
-	    	std::cout << "while loop time: " << delta_while << "\n";
+	    	std::cout << "While loop time: " << delta_while << "\n";
 
 		}
 
-		std::cout << "---------------------------------------------------\n";
 		std::cout << "---------------------------------------------------\n\n\n";
         
     }

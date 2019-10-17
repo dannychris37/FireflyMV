@@ -19,6 +19,7 @@
 #include <vector>
 #include <algorithm>
 #include <cstdio>
+#include <thread>
 
 /** UDP libs **/
 
@@ -53,8 +54,8 @@ cv::Ptr<cv::aruco::DetectorParameters> detectorParams= cv::aruco::DetectorParame
 
 // time emasuring vars
 timespec start_while, stop_while;
-timespec start_wait, stop_wait;
-timespec start_proc, stop_proc;
+timespec start_wait[8], stop_wait[8];
+timespec start_proc[8], stop_proc[8];
 timespec start_show;
 
 double delta_while, delta_wait, delta_proc, delta_show;

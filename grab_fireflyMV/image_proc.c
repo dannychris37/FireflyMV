@@ -303,6 +303,12 @@ dc1394error_t cameraCaptureSingle(
 	int camera_no
 ) {
 
+    if(MEAS_WAIT){
+
+        clock_gettime(CLOCK_MONOTONIC, &start_wait[camera_no]);
+
+    }
+
     dc1394error_t err;
     dc1394video_frame_t* frame = NULL;
     dc1394video_frame_t frame_buffer;
@@ -337,27 +343,19 @@ dc1394error_t cameraCaptureSingle(
 
     if(MEAS_WAIT){
 
-        clock_gettime(CLOCK_MONOTONIC, &stop_wait);
+        clock_gettime(CLOCK_MONOTONIC, &stop_wait[camera_no]);
 
-        std::cout << "---------------------------------------------------" << std::endl;
-        std::cout << "On camera no. " << camera_no << std::endl;
-
-        delta_wait = ( stop_wait.tv_sec - start_wait.tv_sec )
-                 + (double)( stop_wait.tv_nsec - start_wait.tv_nsec )
+        delta_wait = ( stop_wait[camera_no].tv_sec - start_wait[camera_no].tv_sec )
+                 + (double)( stop_wait[camera_no].tv_nsec - start_wait[camera_no].tv_nsec )
                    / (double)MILLION;
 
-        std::cout << "frame waiting time: " << delta_wait << "\n";
-
-    } else{
-
-        std::cout << "---------------------------------------------------" << std::endl;
-        std::cout << "On camera no. " << camera_no << std::endl;
+        std::cout << "Cam " << camera_no << " frame waiting time: " << delta_wait << "\n";
 
     }
 
     if(MEAS_PROC){
 
-        clock_gettime(CLOCK_MONOTONIC, &start_proc);
+        clock_gettime(CLOCK_MONOTONIC, &start_proc[camera_no]);
 
     }
 
@@ -453,4 +451,17 @@ dc1394error_t cameraCaptureSingle(
     // releases DMA buffer so that memory can be reused
     // this has to follow a dma_capture function
     dc1394_capture_enqueue(camera, frame);
+
+    if(MEAS_PROC){
+
+        clock_gettime(CLOCK_MONOTONIC, &stop_proc[camera_no]);
+
+        delta_proc = ( stop_proc[camera_no].tv_sec - start_proc[camera_no].tv_sec )
+             + (double)( stop_proc[camera_no].tv_nsec - start_proc[camera_no].tv_nsec )
+               / (double)MILLION;
+
+        std::cout << "Cam " << camera_no << " frame processing time: " << delta_proc << "\n";
+
+    }
+
 }

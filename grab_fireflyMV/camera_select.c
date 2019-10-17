@@ -4,14 +4,14 @@ using namespace std;
 
 /** Defines for setting which cameras to use **/
 
-#define USE_CAM_0 0
-#define USE_CAM_1 0
+#define USE_CAM_0 1
+#define USE_CAM_1 1
 #define USE_CAM_2 1
-#define USE_CAM_3 0
-#define USE_CAM_4 0
+#define USE_CAM_3 1
+#define USE_CAM_4 1
 #define USE_CAM_5 1
-#define USE_CAM_6 0
-#define USE_CAM_7 0
+#define USE_CAM_6 1
+#define USE_CAM_7 1
 
 /** Whether to show frame info for given camera **/
 
