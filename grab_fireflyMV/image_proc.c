@@ -151,16 +151,39 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
             	(rotMattoe0 * (f_rotMat * (tvec + f_tvec))) + 
             	transtoe0[f_markerID];
 
-            std::cout << "using fixed marker ID:" << f_markerID << std::endl;
-            std::cout << "origin to truck :" << markerID << "\t" << reading << std::endl;
-            
             cv::Mat rotationMatrix;
             cv::Rodrigues(rvec, rotationMatrix);
             cv::Vec3d angle_rot;
 
             
             getEulerAngles(rotationMatrix, angle_rot);
-            std::cout << "rotation angle(deg):" << "\t" << angle_rot << std::endl;
+
+            if(NICE_PRINT){
+
+                //std::cout << "Cam " << camera_no << " thread has reached pose printing\n";
+        
+                // lock and wait until main allows to print poses or previous thread is done printing
+
+                //std::cout << "Thread reached pose printing\n";
+
+                std::unique_lock<std::mutex> lck(mtx);
+                cnd_var.wait(lck, []{return can_print_poses;});
+
+                std::cout << "using fixed marker ID: " << f_markerID << std::endl;
+                std::cout << "origin to truck: " << markerID << "\t" << reading << std::endl;
+                std::cout << "rotation angle(deg): " << "\t" << angle_rot << std::endl;
+
+                cnd_var.notify_one();
+
+                //std::cout << "Cam " << camera_no << " is done pose printing\n";
+
+            } else {
+
+                std::cout << "using fixed marker ID: " << f_markerID << std::endl;
+                std::cout << "origin to truck: " << markerID << "\t" << reading << std::endl;
+                std::cout << "rotation angle(deg): " << "\t" << angle_rot << std::endl;
+
+            }
             
             if (sent_data[markerID-51] == 0){
 
@@ -345,11 +368,31 @@ dc1394error_t cameraCaptureSingle(
 
         clock_gettime(CLOCK_MONOTONIC, &stop_wait[camera_no]);
 
-        delta_wait = ( stop_wait[camera_no].tv_sec - start_wait[camera_no].tv_sec )
+        delta_wait[camera_no] = ( stop_wait[camera_no].tv_sec - start_wait[camera_no].tv_sec )
                  + (double)( stop_wait[camera_no].tv_nsec - start_wait[camera_no].tv_nsec )
                    / (double)MILLION;
 
-        std::cout << "Cam " << camera_no << " frame waiting time: " << delta_wait << "\n";
+        if(NICE_PRINT){
+        
+            // wait until main allows for printing or previous thread notified
+            std::unique_lock<std::mutex> lck(mtx);
+            cnd_var.wait(lck, []{return can_print_wait_times;});
+
+            std::cout << "Cam " << camera_no << " frame waiting time: " << delta_wait[camera_no] << "\n";
+
+            // increment counter
+            print_wait_cnt++;
+
+            // notify next thread or main
+            cnd_var.notify_one();
+
+            std::cout << "Cam " << camera_no << " thread is done wait time printing\n";
+
+        } else {
+
+            std::cout << "Cam " << camera_no << " frame waiting time: " << delta_wait[camera_no] << "\n";
+
+        }
 
     }
 
@@ -434,6 +477,20 @@ dc1394error_t cameraCaptureSingle(
     	detection pipeline that detects and extracts poses of
     	static and moving markers **/
     arucoPipeline(finalImage, camera_no);
+
+    if(NICE_PRINT){
+
+        std::cout << "Cam " << camera_no << " thread has reached pose count\n";
+        std::unique_lock<std::mutex> lck(mtx_proc);
+        cnd_var.wait(lck);
+
+        proc_cnt++;
+
+        cnd_var.notify_one();
+
+        std::cout << "Cam " << camera_no << " thread is done pose printing\n";
+
+    }
     
     cv::Mat undistImg;
 
@@ -456,11 +513,30 @@ dc1394error_t cameraCaptureSingle(
 
         clock_gettime(CLOCK_MONOTONIC, &stop_proc[camera_no]);
 
-        delta_proc = ( stop_proc[camera_no].tv_sec - start_proc[camera_no].tv_sec )
+        delta_proc[camera_no] = ( stop_proc[camera_no].tv_sec - start_proc[camera_no].tv_sec )
              + (double)( stop_proc[camera_no].tv_nsec - start_proc[camera_no].tv_nsec )
                / (double)MILLION;
 
-        std::cout << "Cam " << camera_no << " frame processing time: " << delta_proc << "\n";
+        if(NICE_PRINT){
+
+            std::cout << "Cam " << camera_no << " thread has reached processing time printing\n";
+
+            // wait until main allows for printing
+            std::unique_lock<std::mutex> lck(mtx);
+            cnd_var.wait(lck, []{return can_print_proc_times;});
+
+            std::cout << "Cam " << camera_no << " frame processing time: " << delta_proc[camera_no] << "\n";
+
+            // increment counter
+            print_proc_cnt++;
+
+            //lck.unlock();
+            cnd_var.notify_one();
+
+        } else {
+
+            std::cout << "Cam " << camera_no << " frame processing time: " << delta_proc[camera_no] << "\n";
+        }
 
     }
 

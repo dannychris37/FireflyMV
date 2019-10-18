@@ -16,19 +16,8 @@ int main(int argc, char *argv[]){
 
     FILE* imagefile;
     unsigned int width, height;
-    
+
     /** Camera initialization  **/
-
-    std::vector<dc1394camera_t*> cameras;
-
-    // context in which the library can be used
-    dc1394_t* d;
-
-    // list of cameras to be located by dc1394_camera_enumerate
-    dc1394camera_list_t * list;
-
-    // enum with error macros to be used for error reporting
-    dc1394error_t err;
 
     // initialize context
    	d = dc1394_new ();
@@ -118,9 +107,61 @@ int main(int argc, char *argv[]){
         for(int i = 0; i < (int)list -> num; i++){
 
         	// waiting for and processing frame times are measured inside cameraCaptureSingle
+        	
             t[i] = std::thread(cameraCaptureSingle, cameras[i], i);
 
         }
+
+        if(NICE_PRINT){
+
+        	/** COORDINATE WAIT TIME PRINTING **/
+
+	        std::cout << "--- WAITING FOR FRAMES ---\n";
+
+	        // enable wait time printing and notify any waiting thread
+	        can_print_wait_times = true;
+	        cnd_var.notify_one();
+
+	        // wait until frames arrive and waiting times are printed
+	        std::unique_lock<std::mutex> lck_wait(mtx_wait);
+	        cnd_var.wait(lck, []{return print_wait_cnt == (int)list -> num;});
+	        std::cout << "print_wait_cnt " << print_wait_cnt << std::endl;
+
+			/** COORDINATE POSE PRINTING **/        
+
+	        std::cout << "--- PROCESSING FRAMES ---\n";
+
+	        // enable pose printing
+	        can_print_poses = true;
+	        cnd_var.notify_one();
+
+	        // wait until frames are processed
+	        lck.lock();
+	        cnd_var.wait(lck, []{return proc_cnt == (int)list -> num;});
+	        std::cout << "proc_cnt " << proc_cnt << std::endl;
+
+	        /** COORDINATE PROC TIME PRINTING **/
+
+	        std::cout << "--- PROCESSING DONE ---\n";
+
+	        // enable proc time printing
+	        can_print_proc_times = true;
+	        cnd_var.notify_one();
+
+	        // wait until processing times are printed
+	        lck.lock();
+	        cnd_var.wait(lck, []{return print_proc_cnt == (int)list -> num;});
+	        std::cout << "print_proc_cnt " << print_proc_cnt << std::endl;
+
+	        // reset for next loop
+	        print_wait_cnt = 0;
+	        proc_cnt = 0;
+	        print_proc_cnt = 0;
+	        can_print_wait_times = false;
+	        can_print_poses = false; 
+	        can_print_proc_times = false;
+
+        }        
 
         for(int i = 0; i < (int)list -> num; i++){
 
