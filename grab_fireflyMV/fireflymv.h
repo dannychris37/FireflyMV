@@ -73,13 +73,14 @@ timespec start_while, stop_while;
 timespec start_wait[8], stop_wait[8];
 timespec start_proc[8], stop_proc[8];
 timespec start_show;
+timespec stop_wait7;
 
-double delta_while, delta_wait[8], delta_proc[8], delta_show;
+double delta_while, delta_wait[8], delta_proc[8], delta_show, delta_wait7;
 
 // thread mutex for printing
-std::mutex mtx_wait, mtx_pose, mtx_pose_cnt, mtx_proc;	
-std::condition_variable cnd_var_wait, cnd_var_pose, cnd_var_proc; // condition variable for print critical sections
-int print_wait_cnt = 0, print_proc_cnt = 0, proc_cnt = 0;
+std::mutex mtx_wait, mtx_pose_print, mtx_pose_cnt, mtx_proc;	
+std::condition_variable cnd_var_wait, cnd_var_pose_print, cnd_var_pose_cnt, cnd_var_proc; // condition variable for print critical sections
+int print_wait_cnt = 0, print_proc_cnt = 0, pose_cnt = 0;
 bool can_print_wait_times = false, can_print_poses = false, can_print_proc_times = false;
 
 

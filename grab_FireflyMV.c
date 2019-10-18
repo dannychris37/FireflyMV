@@ -120,12 +120,12 @@ int main(int argc, char *argv[]){
 
 	        // enable wait time printing and notify any waiting thread
 	        can_print_wait_times = true;
-	        cnd_var.notify_one();
+	        cnd_var_wait.notify_one();
 
 	        // wait until frames arrive and waiting times are printed
 	        std::unique_lock<std::mutex> lck_wait(mtx_wait);
-	        cnd_var.wait(lck, []{return print_wait_cnt == (int)list -> num;});
-	        std::cout << "print_wait_cnt " << print_wait_cnt << std::endl;
+	        cnd_var_wait.wait(lck_wait, []{return print_wait_cnt == (int)list -> num;});
+	        //std::cout << "print_wait_cnt " << print_wait_cnt << std::endl;
 
 			/** COORDINATE POSE PRINTING **/        
 
@@ -133,12 +133,13 @@ int main(int argc, char *argv[]){
 
 	        // enable pose printing
 	        can_print_poses = true;
-	        cnd_var.notify_one();
+	        cnd_var_pose_print.notify_one();
+	        cnd_var_pose_cnt.notify_one();
 
 	        // wait until frames are processed
-	        lck.lock();
-	        cnd_var.wait(lck, []{return proc_cnt == (int)list -> num;});
-	        std::cout << "proc_cnt " << proc_cnt << std::endl;
+	        std::unique_lock<std::mutex> lck_pose_cnt(mtx_pose_cnt);
+	        cnd_var_pose_cnt.wait(lck_pose_cnt, []{return pose_cnt == (int)list -> num;});
+	        //std::cout << "pose_cnt " << pose_cnt << std::endl;
 
 	        /** COORDINATE PROC TIME PRINTING **/
 
@@ -146,16 +147,16 @@ int main(int argc, char *argv[]){
 
 	        // enable proc time printing
 	        can_print_proc_times = true;
-	        cnd_var.notify_one();
+	        cnd_var_proc.notify_one();
 
 	        // wait until processing times are printed
-	        lck.lock();
-	        cnd_var.wait(lck, []{return print_proc_cnt == (int)list -> num;});
-	        std::cout << "print_proc_cnt " << print_proc_cnt << std::endl;
+	        std::unique_lock<std::mutex> lck_proc(mtx_proc);
+	        cnd_var_proc.wait(lck_proc, []{return print_proc_cnt == (int)list -> num;});
+	        //std::cout << "print_proc_cnt " << print_proc_cnt << std::endl;
 
 	        // reset for next loop
 	        print_wait_cnt = 0;
-	        proc_cnt = 0;
+	        pose_cnt = 0;
 	        print_proc_cnt = 0;
 	        can_print_wait_times = false;
 	        can_print_poses = false; 

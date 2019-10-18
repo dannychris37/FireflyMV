@@ -160,22 +160,16 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
 
             if(NICE_PRINT){
 
-                //std::cout << "Cam " << camera_no << " thread has reached pose printing\n";
-        
-                // lock and wait until main allows to print poses or previous thread is done printing
-
-                //std::cout << "Thread reached pose printing\n";
-
-                std::unique_lock<std::mutex> lck(mtx);
-                cnd_var.wait(lck, []{return can_print_poses;});
+                std::unique_lock<std::mutex> lck_pose_print(mtx_pose_print);
+                cnd_var_pose_print.wait(lck_pose_print, []{return can_print_poses;});
 
                 std::cout << "using fixed marker ID: " << f_markerID << std::endl;
                 std::cout << "origin to truck: " << markerID << "\t" << reading << std::endl;
                 std::cout << "rotation angle(deg): " << "\t" << angle_rot << std::endl;
 
-                cnd_var.notify_one();
+                cnd_var_pose_print.notify_one();
 
-                //std::cout << "Cam " << camera_no << " is done pose printing\n";
+                // std::cout << "Cam using ID " << f_markerID << " is done pose printing\n";
 
             } else {
 
@@ -364,6 +358,16 @@ dc1394error_t cameraCaptureSingle(
     	&frame
     );
 
+    /*if(camera_no == 7){
+        clock_gettime(CLOCK_MONOTONIC, &stop_wait7);
+
+        delta_wait7 = ( stop_wait7.tv_sec - start_wait[camera_no].tv_sec )
+                 + (double)( stop_wait7.tv_nsec - start_wait[camera_no].tv_nsec )
+                   / (double)MILLION;
+
+        std::cout << "Cam " << camera_no << " frame waiting time (seven): " << delta_wait7 << "\n";
+    }*/
+
     if(MEAS_WAIT){
 
         clock_gettime(CLOCK_MONOTONIC, &stop_wait[camera_no]);
@@ -375,8 +379,8 @@ dc1394error_t cameraCaptureSingle(
         if(NICE_PRINT){
         
             // wait until main allows for printing or previous thread notified
-            std::unique_lock<std::mutex> lck(mtx);
-            cnd_var.wait(lck, []{return can_print_wait_times;});
+            std::unique_lock<std::mutex> lck_wait(mtx_wait);
+            cnd_var_wait.wait(lck_wait, []{return can_print_wait_times;});
 
             std::cout << "Cam " << camera_no << " frame waiting time: " << delta_wait[camera_no] << "\n";
 
@@ -384,9 +388,9 @@ dc1394error_t cameraCaptureSingle(
             print_wait_cnt++;
 
             // notify next thread or main
-            cnd_var.notify_one();
+            cnd_var_wait.notify_one();
 
-            std::cout << "Cam " << camera_no << " thread is done wait time printing\n";
+            //std::cout << "Cam " << camera_no << " thread is done wait time printing\n";
 
         } else {
 
@@ -480,15 +484,15 @@ dc1394error_t cameraCaptureSingle(
 
     if(NICE_PRINT){
 
-        std::cout << "Cam " << camera_no << " thread has reached pose count\n";
-        std::unique_lock<std::mutex> lck(mtx_proc);
-        cnd_var.wait(lck);
+        //std::cout << "Cam " << camera_no << " thread has reached pose count\n";
+        std::unique_lock<std::mutex> lck_pose_cnt(mtx_pose_cnt);
+        cnd_var_pose_cnt.wait(lck_pose_cnt, []{return can_print_poses;});
 
-        proc_cnt++;
+        pose_cnt++;
 
-        cnd_var.notify_one();
+        cnd_var_pose_cnt.notify_one();
 
-        std::cout << "Cam " << camera_no << " thread is done pose printing\n";
+        //std::cout << "Cam " << camera_no << " incremented pose estimation count\n";
 
     }
     
@@ -519,11 +523,11 @@ dc1394error_t cameraCaptureSingle(
 
         if(NICE_PRINT){
 
-            std::cout << "Cam " << camera_no << " thread has reached processing time printing\n";
+            //std::cout << "Cam " << camera_no << " thread has reached processing time printing\n";
 
             // wait until main allows for printing
-            std::unique_lock<std::mutex> lck(mtx);
-            cnd_var.wait(lck, []{return can_print_proc_times;});
+            std::unique_lock<std::mutex> lck_proc(mtx_proc);
+            cnd_var_proc.wait(lck_proc, []{return can_print_proc_times;});
 
             std::cout << "Cam " << camera_no << " frame processing time: " << delta_proc[camera_no] << "\n";
 
@@ -531,7 +535,7 @@ dc1394error_t cameraCaptureSingle(
             print_proc_cnt++;
 
             //lck.unlock();
-            cnd_var.notify_one();
+            cnd_var_proc.notify_one();
 
         } else {
 
