@@ -3,8 +3,7 @@
 TIME=60
 FILE=./grab_FireflyMV
 
-timeout $TIME $FILE | \
-awk '/waiting/{
+timeout $TIME $FILE | grep processing | awk '{
 	if( $1 == "Cam" && 
 		($2 == "0"  || 
 		$2 == "1" || 
@@ -15,9 +14,9 @@ awk '/waiting/{
 		$2 == "6" ||
 		$2 == "7") && 
 		$3 == "frame" && 
-		$4 == "waiting" && 
+		$4 == "processing" && 
 		$5 == "time:" && 
 		$6 != "Cam" && 
 		$6 > 0) 
-		{print};
+		{print $6};
 }'
