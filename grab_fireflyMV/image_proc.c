@@ -303,6 +303,12 @@ dc1394error_t cameraCaptureSingle(
 	int camera_no
 ) {
 
+    if(MEAS_WAIT){
+
+        clock_gettime(CLOCK_MONOTONIC, &start_wait);
+
+    }
+
     dc1394error_t err;
     dc1394video_frame_t* frame = NULL;
     dc1394video_frame_t frame_buffer;
@@ -453,4 +459,17 @@ dc1394error_t cameraCaptureSingle(
     // releases DMA buffer so that memory can be reused
     // this has to follow a dma_capture function
     dc1394_capture_enqueue(camera, frame);
+
+    if(MEAS_PROC){
+
+        clock_gettime(CLOCK_MONOTONIC, &stop_proc);
+
+        delta_proc = ( stop_proc.tv_sec - start_proc.tv_sec )
+             + (double)( stop_proc.tv_nsec - start_proc.tv_nsec )
+               / (double)MILLION;
+
+        std::cout << "frame processing time: " << delta_proc << "\n";
+
+    }
+
 }

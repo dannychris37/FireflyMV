@@ -114,26 +114,7 @@ int main(int argc, char *argv[]){
     	// capture frames from each camera
         for(int i = 0; i < (int)list -> num; i++){
 
-
-        	if(MEAS_WAIT){
-
-            	clock_gettime(CLOCK_MONOTONIC, &start_wait);
-
-			}
-
             cameraCaptureSingle(cameras[i], i);
-
-            if(MEAS_PROC){
-
-            	clock_gettime(CLOCK_MONOTONIC, &stop_proc);
-
-		        delta_proc = ( stop_proc.tv_sec - start_proc.tv_sec )
-		             + (double)( stop_proc.tv_nsec - start_proc.tv_nsec )
-		               / (double)MILLION;
-
-		    	std::cout << "frame processing time: " << delta_proc << "\n";
-
-			}
 
         }
 
