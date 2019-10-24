@@ -46,10 +46,10 @@ std::vector<long int> cameraID;
 
 cv::Ptr<cv::aruco::DetectorParameters> detectorParams= cv::aruco::DetectorParameters::create();
 // time measuring flags
-#define MEAS_WHILE 		1
-#define MEAS_WAIT 		1
-#define MEAS_PROC		1
-#define MEAS_SHOW		1
+#define MEAS_WHILE 		0
+#define MEAS_WAIT 		0
+#define MEAS_PROC		0
+#define MEAS_SHOW		0
 
 // time emasuring vars
 timespec start_while, stop_while;
