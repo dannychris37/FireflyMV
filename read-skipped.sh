@@ -1,17 +1,18 @@
 #!/bin/bash
 
-TIME=600
-FILE=./grab_FireflyMV
+TIME=3600
+EXEC=./grab_FireflyMV
+FILE=readings/8cams-skipped-sequential2.txt
 RERUN=0
 
 if [ $RERUN -eq 1 ]
 then
-	timeout $TIME $FILE | grep "camera\|skipped" > readings/8cams-skipped-sequential.txt
+	timeout $TIME $EXEC | grep "camera\|skipped" > $FILE
 fi
 
-cat readings/8cams-skipped-sequential.txt | sed $'s|^\(On camera no. 0\)|\f\\1|' | 
+cat $FILE | sed $'s|^\(On camera no. 0\)|\f\\1|' | 
 awk 'BEGIN {cnt=0; RS="\f"; FS="\n"} /skipped:79/ {
-	if($1=="On camera no. 0" || 
+	if($1!="On camera no. 0" || 
 		$2!="On camera no. 1" || 
 	$3!="On camera no. 2" || 
 	$4!="On camera no. 3" || 
