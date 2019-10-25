@@ -66,7 +66,10 @@ cv::Ptr<cv::aruco::DetectorParameters> detectorParams= cv::aruco::DetectorParame
 #define MEAS_WAIT 		1
 #define MEAS_PROC		1
 #define MEAS_SHOW		1
-#define NICE_PRINT		1
+
+// this should be left on for nice printing and probably also for correct execution
+// the markerProcessed vector mai have to be accessed within mutex locked code
+#define USE_MUTEX		1 
 
 // time emasuring vars
 timespec start_while, stop_while;

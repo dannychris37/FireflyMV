@@ -25,10 +25,7 @@ std::vector<cv::Vec3d> transtoe0 {{0.19,0.055,0.0},     //0 fixed marker in dM
                                   {0.19,0.4113,0.0}     //8 fixed marker
 };
 
-std::vector<bool> sent_data{    
-    0,  // markerID 51 
-    0   // markerID 52  
-};
+bool markerProcessed[100] = {0};
 
 // only for fixed markers
 const float markerLength_fixed      = 0.0203;
@@ -158,7 +155,7 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
             
             getEulerAngles(rotationMatrix, angle_rot);
 
-            if(NICE_PRINT){
+            if(USE_MUTEX){
 
                 std::unique_lock<std::mutex> lck_pose_print(mtx_pose_print);
                 cnd_var_pose_print.wait(lck_pose_print, []{return can_print_poses;});
@@ -166,6 +163,20 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
                 std::cout << "using fixed marker ID: " << f_markerID << std::endl;
                 std::cout << "origin to truck: " << markerID << "\t" << reading << std::endl;
                 std::cout << "rotation angle(deg): " << "\t" << angle_rot << std::endl;
+
+                if (markerProcessed[markerID] == 0){
+
+                    // angles in degreee and x,y,z 
+                    UDPfarewell(markerID, reading, angle_rot);
+                    markerProcessed[markerID] = 1;
+
+                }
+                
+                else{
+
+                    std::cout << "skipped:" << markerID << std::endl;
+
+                }
 
                 cnd_var_pose_print.notify_one();
 
@@ -177,19 +188,19 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
                 std::cout << "origin to truck: " << markerID << "\t" << reading << std::endl;
                 std::cout << "rotation angle(deg): " << "\t" << angle_rot << std::endl;
 
-            }
-            
-            if (sent_data[markerID-51] == 0){
+                if (markerProcessed[markerID] == 0){
 
-            	// angles in degreee and x,y,z 
+                // angles in degreee and x,y,z 
                 UDPfarewell(markerID, reading, angle_rot);
-                sent_data[markerID-51] = 1;
+                markerProcessed[markerID] = 1;
 
-            }
-            
-            else{
+                }
+                
+                else{
 
-                std::cout << "skipped:" << markerID << std::endl;
+                    std::cout << "skipped:" << markerID << std::endl;
+
+                }
 
             }
         }
@@ -376,7 +387,7 @@ dc1394error_t cameraCaptureSingle(
                  + (double)( stop_wait[camera_no].tv_nsec - start_wait[camera_no].tv_nsec )
                    / (double)MILLION;
 
-        if(NICE_PRINT){
+        if(USE_MUTEX){
         
             // wait until main allows for printing or previous thread notified
             std::unique_lock<std::mutex> lck_wait(mtx_wait);
@@ -482,7 +493,7 @@ dc1394error_t cameraCaptureSingle(
     	static and moving markers **/
     arucoPipeline(finalImage, camera_no);
 
-    if(NICE_PRINT){
+    if(USE_MUTEX){
 
         //std::cout << "Cam " << camera_no << " thread has reached pose count\n";
         std::unique_lock<std::mutex> lck_pose_cnt(mtx_pose_cnt);
@@ -521,7 +532,7 @@ dc1394error_t cameraCaptureSingle(
              + (double)( stop_proc[camera_no].tv_nsec - start_proc[camera_no].tv_nsec )
                / (double)MILLION;
 
-        if(NICE_PRINT){
+        if(USE_MUTEX){
 
             //std::cout << "Cam " << camera_no << " thread has reached processing time printing\n";
 

@@ -98,10 +98,10 @@ int main(int argc, char *argv[]){
 
     	}
 
-		// assigns 0's to sent_data vector (vector of 2 bools inside image_proc.c)
-		// 1st value is for marker id 51, 2nd is for marker id 52 (markers used on trucks)
-		// used to skip marker if seen again on another camera
-        sent_data.assign(sent_data.size(), 0);
+		// resets processed flags vector
+        for(int i=0; i < 100; i++){
+            markerProcessed[i] = false;
+        }
 
     	// capture frames from each camera
         for(int i = 0; i < (int)list -> num; i++){
@@ -112,7 +112,7 @@ int main(int argc, char *argv[]){
 
         }
 
-        if(NICE_PRINT){
+        if(USE_MUTEX){
 
         	/** COORDINATE WAIT TIME PRINTING **/
 
