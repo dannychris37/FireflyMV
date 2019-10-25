@@ -98,10 +98,10 @@ int main(int argc, char *argv[]){
 
     	}
 
-		// assigns 0's to sent_data vector (vector of 2 bools inside image_proc.c)
-		// 1st value is for marker id 51, 2nd is for marker id 52 (markers used on trucks)
-		// used to skip marker if seen again on another camera
-        sent_data.assign(sent_data.size(), 0);
+		// resets processed flag vector
+        for(int i=0; i < 100; i++){
+            markerProcessed[i] = false;
+        }
 
     	// capture frames from each camera
         for(int i = 0; i < (int)list -> num; i++){
@@ -112,57 +112,54 @@ int main(int argc, char *argv[]){
 
         }
 
-        if(NICE_PRINT){
+    	/** COORDINATE WAIT TIME PRINTING **/
 
-        	/** COORDINATE WAIT TIME PRINTING **/
+        std::cout << "--- WAITING FOR FRAMES ---\n\n";
 
-	        std::cout << "--- WAITING FOR FRAMES ---\n";
+        // enable wait time printing and notify any waiting thread
+        can_print_wait_times = true;
+        cnd_var_wait.notify_one();
 
-	        // enable wait time printing and notify any waiting thread
-	        can_print_wait_times = true;
-	        cnd_var_wait.notify_one();
+        // wait until frames arrive and waiting times are printed
+        std::unique_lock<std::mutex> lck_wait(mtx_wait);
+        cnd_var_wait.wait(lck_wait, []{return print_wait_cnt == (int)list -> num;});
+        //std::cout << "print_wait_cnt " << print_wait_cnt << std::endl;
 
-	        // wait until frames arrive and waiting times are printed
-	        std::unique_lock<std::mutex> lck_wait(mtx_wait);
-	        cnd_var_wait.wait(lck_wait, []{return print_wait_cnt == (int)list -> num;});
-	        //std::cout << "print_wait_cnt " << print_wait_cnt << std::endl;
+		/** COORDINATE POSE PRINTING **/        
 
-			/** COORDINATE POSE PRINTING **/        
+        std::cout << "--- PROCESSING FRAMES ---\n\n";
 
-	        std::cout << "--- PROCESSING FRAMES ---\n";
+        // enable pose printing
+        can_print_poses = true;
+        cnd_var_pose_print.notify_one();
+        cnd_var_pose_cnt.notify_one();
 
-	        // enable pose printing
-	        can_print_poses = true;
-	        cnd_var_pose_print.notify_one();
-	        cnd_var_pose_cnt.notify_one();
+        // wait until frames are processed
+        std::unique_lock<std::mutex> lck_pose_cnt(mtx_pose_cnt);
+        cnd_var_pose_cnt.wait(lck_pose_cnt, []{return pose_cnt == (int)list -> num;});
+        //std::cout << "pose_cnt " << pose_cnt << std::endl;
 
-	        // wait until frames are processed
-	        std::unique_lock<std::mutex> lck_pose_cnt(mtx_pose_cnt);
-	        cnd_var_pose_cnt.wait(lck_pose_cnt, []{return pose_cnt == (int)list -> num;});
-	        //std::cout << "pose_cnt " << pose_cnt << std::endl;
+        /** COORDINATE PROC TIME PRINTING **/
 
-	        /** COORDINATE PROC TIME PRINTING **/
+        std::cout << "--- PROCESSING DONE ---\n\n";
 
-	        std::cout << "--- PROCESSING DONE ---\n";
+        // enable proc time printing
+        can_print_proc_times = true;
+        cnd_var_proc.notify_one();
 
-	        // enable proc time printing
-	        can_print_proc_times = true;
-	        cnd_var_proc.notify_one();
+        // wait until processing times are printed
+        std::unique_lock<std::mutex> lck_proc(mtx_proc);
+        cnd_var_proc.wait(lck_proc, []{return print_proc_cnt == (int)list -> num;});
+        //std::cout << "print_proc_cnt " << print_proc_cnt << std::endl;
 
-	        // wait until processing times are printed
-	        std::unique_lock<std::mutex> lck_proc(mtx_proc);
-	        cnd_var_proc.wait(lck_proc, []{return print_proc_cnt == (int)list -> num;});
-	        //std::cout << "print_proc_cnt " << print_proc_cnt << std::endl;
-
-	        // reset for next loop
-	        print_wait_cnt = 0;
-	        pose_cnt = 0;
-	        print_proc_cnt = 0;
-	        can_print_wait_times = false;
-	        can_print_poses = false; 
-	        can_print_proc_times = false;
-
-        }        
+        // reset for next loop
+        print_wait_cnt = 0;
+        pose_cnt = 0;
+        print_proc_cnt = 0;
+        can_print_wait_times = false;
+        can_print_poses = false; 
+        can_print_proc_times = false;
+      
 
         for(int i = 0; i < (int)list -> num; i++){
 
@@ -170,6 +167,16 @@ int main(int argc, char *argv[]){
             t[i].join();
 
         }
+
+        // send marker data
+        std::cout << std::endl;
+        for(int i=0; i < 100; i++){
+            if(markerProcessed[i]){
+                std::cout << "Sending data for marker " << i << std::endl;
+                UDPfarewell(dataToSend[i].markerID, dataToSend[i].coords, dataToSend[i].angle);
+            }
+        }
+        std::cout << std::endl;
 
 	    if(MEAS_SHOW){
 

@@ -46,6 +46,15 @@
 #include "opencv2/aruco/dictionary.hpp"
 #include "opencv2/videoio/videoio.hpp"
 
+// structs used to store coordinates and angles of moving markers
+typedef struct  {
+	int markerID;
+	cv::Vec3d coords;
+	cv::Vec3d angle;
+} markerData;
+
+markerData dataToSend[100];
+
 // vector of camera IDs
 std::vector<long int> cameraID;
 
@@ -66,7 +75,6 @@ cv::Ptr<cv::aruco::DetectorParameters> detectorParams= cv::aruco::DetectorParame
 #define MEAS_WAIT 		1
 #define MEAS_PROC		1
 #define MEAS_SHOW		1
-#define NICE_PRINT		1
 
 // time emasuring vars
 timespec start_while, stop_while;
