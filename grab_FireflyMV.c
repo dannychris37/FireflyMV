@@ -88,7 +88,7 @@ int main(int argc, char *argv[]){
 
     while(play){
 
-    	std::cout << "---------------------------------------------------" << std::endl;
+    	std::cout << "---------------------------------------------------\n\n";
 
     	// if measure while flag is set
     	// start_while and other timespec vars are defined in firefly.h
@@ -127,7 +127,7 @@ int main(int argc, char *argv[]){
 
 		/** COORDINATE POSE PRINTING **/        
 
-        std::cout << "--- PROCESSING FRAMES ---\n\n";
+        std::cout << "\n--- PROCESSING FRAMES ---\n\n";
 
         // enable pose printing
         can_print_poses = true;
@@ -141,7 +141,7 @@ int main(int argc, char *argv[]){
 
         /** COORDINATE PROC TIME PRINTING **/
 
-        std::cout << "--- PROCESSING DONE ---\n\n";
+        std::cout << "\n--- PROCESSING DONE ---\n\n";
 
         // enable proc time printing
         can_print_proc_times = true;

@@ -3,7 +3,7 @@
 /** UDP SEND **/
 
 int port = 3000;
-const char *ip_send = "169.254.19.64"; //"192.168.7.50";
+const char *ip_send = "192.168.0.3"; //"192.168.7.50";
 int socket_status, send_status;
 struct sockaddr_in addr;
 
