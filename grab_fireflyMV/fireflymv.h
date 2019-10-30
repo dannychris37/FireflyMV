@@ -19,6 +19,7 @@
 #include <vector>
 #include <algorithm>
 #include <cstdio>
+#include <cmath>
 
 //thread libs
 #include <thread>
@@ -48,12 +49,19 @@
 
 // structs used to store coordinates and angles of moving markers
 typedef struct  {
-	int markerID;
+	bool valuesStored;
 	cv::Vec3d coords;
-	cv::Vec3d angle;
+	cv::Vec3d angles;
 } markerData;
 
-markerData dataToSend[100];
+markerData dataToSend[100][8];
+bool markerFound[100] = {false};
+
+// vars for average and diff
+cv::Vec3d avgCoords;
+cv::Vec3d avgAngles;
+int avg_cnt;
+cv::Vec2d diffs[8][8] = {0,0};
 
 // vector of camera IDs
 std::vector<long int> cameraID;
@@ -91,5 +99,8 @@ std::condition_variable cnd_var_wait, cnd_var_pose_print, cnd_var_pose_cnt, cnd_
 int print_wait_cnt = 0, print_proc_cnt = 0, pose_cnt = 0;
 bool can_print_wait_times = false, can_print_poses = false, can_print_proc_times = false;
 
+//clear screen counter and printing flag
+int cnt = 0;
+bool print = false;
 
 #endif

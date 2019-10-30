@@ -88,7 +88,8 @@ int main(int argc, char *argv[]){
 
     while(play){
 
-    	std::cout << "---------------------------------------------------\n\n";
+    	if(print)
+        	std::cout << "---------------------------------------------------\n\n";
 
     	// if measure while flag is set
     	// start_while and other timespec vars are defined in firefly.h
@@ -98,10 +99,15 @@ int main(int argc, char *argv[]){
 
     	}
 
-		// resets processed flag vector
-        for(int i=0; i < 100; i++){
-            markerProcessed[i] = false;
-        }
+    	// reset valuesStored and markerFound flags
+    	for(int i = 0; i < 100; i++){
+
+    		markerFound[i] = false;
+
+    		for(int j = 0; j < 8; j++){
+    			dataToSend[i][j].valuesStored = false;
+    		}
+    	}
 
     	// capture frames from each camera
         for(int i = 0; i < (int)list -> num; i++){
@@ -114,7 +120,8 @@ int main(int argc, char *argv[]){
 
     	/** COORDINATE WAIT TIME PRINTING **/
 
-        std::cout << "--- WAITING FOR FRAMES ---\n\n";
+        if(print)
+        	std::cout << "--- WAITING FOR FRAMES ---\n\n";
 
         // enable wait time printing and notify any waiting thread
         can_print_wait_times = true;
@@ -127,7 +134,8 @@ int main(int argc, char *argv[]){
 
 		/** COORDINATE POSE PRINTING **/        
 
-        std::cout << "\n--- PROCESSING FRAMES ---\n\n";
+        if(print)
+        	std::cout << "\n--- PROCESSING FRAMES ---\n\n";
 
         // enable pose printing
         can_print_poses = true;
@@ -141,7 +149,8 @@ int main(int argc, char *argv[]){
 
         /** COORDINATE PROC TIME PRINTING **/
 
-        std::cout << "\n--- PROCESSING DONE ---\n\n";
+        if(print)
+        	std::cout << "\n--- PROCESSING DONE ---\n\n";
 
         // enable proc time printing
         can_print_proc_times = true;
@@ -169,14 +178,75 @@ int main(int argc, char *argv[]){
         }
 
         // send marker data
-        std::cout << std::endl;
         for(int i=0; i < 100; i++){
-            if(markerProcessed[i]){
-                std::cout << "Sending data for marker " << i << std::endl;
-                UDPfarewell(dataToSend[i].markerID, dataToSend[i].coords, dataToSend[i].angle);
-            }
-        }
-        std::cout << std::endl;
+
+        	if(markerFound[i]){
+
+        		// Marker with id i has been found by at least one camera, start averaging
+				for(int k = 0; k < 3; k++){
+        			avgCoords[k] = 0;
+        			avgAngles[k] = 0;
+        		}
+	        	avg_cnt = 0;
+
+	            for(int j = 0; j < 8; j++){
+
+	            	if(dataToSend[i][j].valuesStored){
+
+	            		// For averaging
+	            		for(int k = 0; k < 3; k++){
+	            			avgCoords[k] += dataToSend[i][j].coords[k];
+	            			avgAngles[k] += dataToSend[i][j].angles[k];
+	            		}
+			        	avg_cnt++;
+
+			        	// For diffs
+			        	for(int di = j+1; di < 8; di++){
+			        		if(dataToSend[i][di].valuesStored){
+			        			diffs[j][di][0] = abs(dataToSend[i][di].coords[0] - dataToSend[i][j].coords[0]) * 1000;
+			        			diffs[di][j][0] = diffs[j][di][0];
+			        			diffs[j][di][1] = abs(dataToSend[i][di].coords[1] - dataToSend[i][j].coords[1]) * 1000;
+			        			diffs[di][j][1] = diffs[j][di][1];
+			        		}
+			        	}
+            		}
+
+            	} // for j
+
+            	for(int k = 0; k < 3; k++){
+            		avgCoords[k] /= avg_cnt;
+            		avgAngles[k] /= avg_cnt;
+            	}
+
+                if(print) {
+            	    cout << fixed;
+					cout << setprecision(2);
+                    cout << "\nDiffs for marker " << i << " (in cm): " << endl;
+                    for(int j=0; j<8;j++){
+                    	if(j==0)
+                    		cout<< "\t  CAM"<<j<<"  ";
+                    	else
+                    		cout<< "\t    CAM"<<j<<"  ";
+                    }
+                    cout<<endl;
+                    for(int j=0; j<8;j++){
+                    	cout<< "CAM"<<j<<"| ";
+                    	for(int di=0; di<8;di++){
+                    		cout<<"["<<diffs[j][di][0]<<","<<diffs[j][di][1]<<"]\t";
+                    	}
+                    	cout<<"|"<<endl;
+                    }
+                    cout << fixed;
+					cout << setprecision(6);
+                    cout << "\nSending data for marker " << i << endl;
+                	cout << "Coordinates:\t" << avgCoords << endl;
+                    cout << "Angle:\t\t" << avgAngles << endl;
+                }
+                UDPfarewell(i, avgCoords, avgAngles);
+
+	        } // if found 
+
+        } // for i
 
 	    if(MEAS_SHOW){
 
@@ -201,7 +271,8 @@ int main(int argc, char *argv[]){
 	             + (double)( stop_while.tv_nsec - start_show.tv_nsec )
 	               / (double)MILLION;
 
-	    	std::cout << "Frame show time: " << delta_show << "\n";
+	    	if(print)
+	    		std::cout << "Frame show time: " << delta_show << "\n";
 
 		}
 
@@ -212,11 +283,27 @@ int main(int argc, char *argv[]){
 	             + (double)( stop_while.tv_nsec - start_while.tv_nsec )
 	               / (double)MILLION;
 
-	    	std::cout << "While loop time: " << delta_while << "\n";
+	        if(print){
+	        	std::cout << "While loop time: " << delta_while << "\n";
+	    		std::cout << "---------------------------------------------------\n";
+	        }
+	    	
 
 		}
 
-		std::cout << "---------------------------------------------------\n\n\n";
+		cnt++;
+
+		if(cnt == 20) {
+
+			std::system("clear");
+			print = true;
+			cnt = 0;
+
+		} else {
+
+			print = false;
+
+		}
         
     }
 

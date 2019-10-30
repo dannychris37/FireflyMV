@@ -8,9 +8,9 @@ std::vector<cv::Mat> frames;
 std::vector<cv::Mat> camMatrix, distCoeffs;
 
 // fixed marker rvec->rotmat,tvec (global declaration)
-cv::Matx33d f_rotMat;
-cv::Vec3d f_tvec;
-int f_markerID;
+cv::Matx33d f_rotMat[8];
+cv::Vec3d f_tvec[8];
+int f_markerID[8];
 
 /** Translations to e0 (ground) coordinate system **/
 
@@ -24,9 +24,6 @@ std::vector<cv::Vec3d> transtoe0 {{0.19,0.055,0.0},     //0 fixed marker in dM
                                   {0.6544,0.41,0.0},    //7 fixed marker 
                                   {0.19,0.4113,0.0}     //8 fixed marker
 };
-
-// array to check whether a marker has been processed or not by another camera thread
-bool markerProcessed[100] = {false};
 
 // only for fixed markers
 const float markerLength_fixed      = 0.0203;
@@ -114,7 +111,7 @@ void getEulerAngles(
     );
 }
 
-void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
+void makeSense(cv::Vec3d tvec, cv::Vec3d rvec, int markerID, int camera_no){
     
     /** Fixed marker IDs **/
     if(markerID < 50) {
@@ -126,9 +123,9 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
 		cv::Rodrigues(rvec, rotMatrix);
 
 		// transpose rotation matrix
-        transpose(rotMatrix, f_rotMat);
-        f_tvec = -1 * tvec;
-        f_markerID = markerID;
+        transpose(rotMatrix, f_rotMat[camera_no]);
+        f_tvec[camera_no] = -1 * tvec;
+        f_markerID[camera_no] = markerID;
 
     }
 
@@ -144,16 +141,20 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
             	0.0, 0.0, 1.0
             );
 
-            // 
+            // find out absolute coordinates of moving markers
             cv::Vec3d reading = 
-            	(rotMattoe0 * (f_rotMat * (tvec + f_tvec))) + 
-            	transtoe0[f_markerID];
+            	(rotMattoe0 * (// multiply with rotation matrix few lines above (3 x 3)
+                    f_rotMat[camera_no] * // (3 x 3)
+                        (tvec + f_tvec[camera_no])
+                    )
+                ) + 
+                // add to fixed marker absolute position
+            	transtoe0[f_markerID[camera_no]];
 
             cv::Mat rotationMatrix;
             cv::Rodrigues(rvec, rotationMatrix);
             cv::Vec3d angle_rot;
 
-            
             getEulerAngles(rotationMatrix, angle_rot);
 
             
@@ -161,31 +162,16 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
             std::unique_lock<std::mutex> lck_pose_print(mtx_pose_print);
             cnd_var_pose_print.wait(lck_pose_print, []{return can_print_poses;});
 
-            std::cout << "Using fixed marker ID: " << f_markerID << std::endl;
-            std::cout << "Origin to truck: " << markerID << "\t" << reading << std::endl;
-            std::cout << "Rotation angle(deg): " << "\t" << angle_rot << std::endl << std::endl;
+            dataToSend[markerID][camera_no].coords = reading;
+            dataToSend[markerID][camera_no].angles = angle_rot;
+            dataToSend[markerID][camera_no].valuesStored = true;
+            markerFound[markerID] = true;
 
-            if (markerProcessed[markerID]){
-
-                //average coordinates and angles
-                dataToSend[markerID].coords[0] = (dataToSend[markerID].coords[0] + reading[0]) / 2;
-                dataToSend[markerID].coords[1] = (dataToSend[markerID].coords[1] + reading[1]) / 2;
-                dataToSend[markerID].coords[2] = (dataToSend[markerID].coords[2] + reading[2]) / 2;
-                dataToSend[markerID].angle[0] = (dataToSend[markerID].angle[0] + angle_rot[0]) / 2;
-                dataToSend[markerID].angle[1] = (dataToSend[markerID].angle[1] + angle_rot[1]) / 2;
-                dataToSend[markerID].angle[2] = (dataToSend[markerID].angle[2] + angle_rot[2]) / 2;
-                std::cout << "Marker " << markerID << " already found by another camera. New values are:"<< std::endl;
-                std::cout << "Coordinates:\t" << dataToSend[markerID].coords << std::endl;
-                std::cout << "Angle:\t\t" << dataToSend[markerID].angle << std::endl << std::endl;
-
-            }
-            
-            else{
-
-                dataToSend[markerID].markerID = markerID;
-                dataToSend[markerID].coords = reading;
-                dataToSend[markerID].angle = angle_rot;
-                markerProcessed[markerID] = true;
+            if(print){
+                std::cout << "Marker " << markerID << " found by camera "<< camera_no << std::endl;
+                std::cout << "Using fixed marker ID: " << f_markerID[camera_no] << std::endl;
+                std::cout << "Coordinates:\t" << dataToSend[markerID][camera_no].coords << std::endl;
+                std::cout << "Angle:\t\t" << dataToSend[markerID][camera_no].angles << std::endl << std::endl;
             }
 
             cnd_var_pose_print.notify_one();
@@ -194,10 +180,10 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
     }
 }
 
-void arucoPipeline(cv::Mat img,int camera_number) {
+void arucoPipeline(cv::Mat img, int camera_no) {
     
     // reset for each frame
-    f_markerID = 0; 
+    f_markerID[camera_no] = 0; 
     std::vector<int> markerIds;
     std::vector< std::vector<cv::Point2f> > markerCorners,rejectedCandidates;
     std::vector< cv::Vec3d >  rvecs, tvecs;
@@ -216,10 +202,10 @@ void arucoPipeline(cv::Mat img,int camera_number) {
 	);
 
     // ArUco module function that draws detected markers on input image
-    cv::aruco::drawDetectedMarkers(img,markerCorners,markerIds);
+    cv::aruco::drawDetectedMarkers(img, markerCorners, markerIds);
 
     // rejected candidates
-    cv::aruco::drawDetectedMarkers(img,rejectedCandidates , cv::noArray(), cv::Scalar(100, 0, 255)); 
+    // cv::aruco::drawDetectedMarkers(img,rejectedCandidates , cv::noArray(), cv::Scalar(100, 0, 255)); 
     
     // if markers have same dictionary 
     if (markerIds.size() > 0) {
@@ -240,12 +226,13 @@ void arucoPipeline(cv::Mat img,int camera_number) {
             if (markerIds[i] < 50){
 
             		// estimate pose
-                    cv::aruco::estimatePoseSingleMarkers(single_markerCorner, 
-                    	markerLength_fixed, 
-                    	camMatrix[camera_number], 
-                    	distCoeffs[camera_number], 
-                    	single_rvec, 
-                    	single_tvec
+                    cv::aruco::estimatePoseSingleMarkers(
+                        single_markerCorner,       // marker corners
+                    	markerLength_fixed,        // size of marker
+                    	camMatrix[camera_no],      // camera calibration parameter (known a priori)
+                    	distCoeffs[camera_no],     // camera calibration parameter (known a priori)
+                    	single_rvec,               // rotation vector of fixed marker
+                    	single_tvec                // translation vector of fixed marker
                     );
 
                     //std::cout<<"fixed markers:"<<markerIds[i]<<std::endl;
@@ -253,14 +240,14 @@ void arucoPipeline(cv::Mat img,int camera_number) {
                     // draws X, Y, Z axes
                     cv::aruco::drawAxis(
                     	img, 
-                    	camMatrix[camera_number], 
-                    	distCoeffs[camera_number], 
+                    	camMatrix[camera_no], 
+                    	distCoeffs[camera_no], 
                     	single_rvec[0], 
                     	single_tvec[0],
     		            markerLength_fixed*0.5f
     		        );
 
-                    makeSense(single_tvec[0],single_rvec[0],markerIds[i]);
+                    makeSense(single_tvec[0], single_rvec[0], markerIds[i], camera_no);
 
                     found_fixedM = 1;
 
@@ -280,11 +267,13 @@ void arucoPipeline(cv::Mat img,int camera_number) {
             /** Moving marker ID **/
             if(markerIds[i] > 50){
 
-                    cv::aruco::estimatePoseSingleMarkers( single_markerCorner, 
-                    	markerLength_moving, 
-                    	camMatrix[camera_number], 
-                    	distCoeffs[camera_number],  
-                    	single_rvec,single_tvec
+                    cv::aruco::estimatePoseSingleMarkers( 
+                        single_markerCorner,       // marker corners
+                    	markerLength_moving,       // size of marker
+                    	camMatrix[camera_no],      // camera calibration parameter (known a priori)
+                    	distCoeffs[camera_no],     // camera calibration parameter (known a priori)
+                    	single_rvec,               // rotation vector of moving marker
+                        single_tvec                // translation vector of moving marker
                     );
 
                     //verify
@@ -293,14 +282,14 @@ void arucoPipeline(cv::Mat img,int camera_number) {
 
                     cv::aruco::drawAxis(
                     	img, 
-                    	camMatrix[camera_number], 
-                    	distCoeffs[camera_number], 
+                    	camMatrix[camera_no], 
+                    	distCoeffs[camera_no], 
                     	single_rvec[0], 
                     	single_tvec[0],
                     	markerLength_moving*0.5f
                     );
 
-                    makeSense(single_tvec[0],single_rvec[0],markerIds[i]);
+                    makeSense(single_tvec[0], single_rvec[0], markerIds[i], camera_no);
 
             }
       	}
@@ -378,7 +367,8 @@ dc1394error_t cameraCaptureSingle(
         std::unique_lock<std::mutex> lck_wait(mtx_wait);
         cnd_var_wait.wait(lck_wait, []{return can_print_wait_times;});
 
-        std::cout << "Cam " << camera_no << " frame waiting time: " << delta_wait[camera_no] << "\n";
+        if(print)
+            std::cout << "Cam " << camera_no << " frame waiting time: " << delta_wait[camera_no] << "\n";
 
         // increment counter
         print_wait_cnt++;
@@ -413,7 +403,7 @@ dc1394error_t cameraCaptureSingle(
         /* the color coding used. This field is valid for all video modes. */
         std::cout << "Color coding: " << frame -> color_coding << std::endl;
         
-        /* the number of bits per pixel. The number of grayscale levels is 2^(this_number).
+        /* the number of bits per pixel. The number of grayscale levels is 2^(this_no).
         This is independent from the colour coding */
         std::cout << "Data depth: " << frame -> data_depth << std::endl;
         
@@ -518,7 +508,8 @@ dc1394error_t cameraCaptureSingle(
         std::unique_lock<std::mutex> lck_proc(mtx_proc);
         cnd_var_proc.wait(lck_proc, []{return can_print_proc_times;});
 
-        std::cout << "Cam " << camera_no << " frame processing time: " << delta_proc[camera_no] << "\n";
+        if(print)
+            std::cout << "Cam " << camera_no << " frame processing time: " << delta_proc[camera_no] << "\n";
 
         // increment counter
         print_proc_cnt++;

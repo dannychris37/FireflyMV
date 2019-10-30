@@ -1,0 +1,3043 @@
+The following cameras are used: CAM5 CAM1 CAM2 CAM3 CAM4 CAM0 CAM6 CAM7 
+Set to little endianess
+Frame info (before) 0x80000001
+Frame info (after) 0x80000001
+Compound register (before) 0x2
+Compound register (after) 0x2
+HDR control register (before) 0x11
+HDR control register (after) 0x11
+Shutter control register (before) 0x164
+Shutter control register (after) 0x164
+Get Auto exposure pixel count (before) 9000
+Set Auto exposure pixel count (after) abe0
+Initialised 1 cameras
+Set to little endianess
+Frame info (before) 0x80000000
+Frame info (after) 0x80000001
+Compound register (before) 0x2
+Compound register (after) 0x2
+HDR control register (before) 0x11
+HDR control register (after) 0x11
+Shutter control register (before) 0x164
+Shutter control register (after) 0x164
+Get Auto exposure pixel count (before) 9000
+Set Auto exposure pixel count (after) abe0
+Initialised 2 cameras
+Set to little endianess
+Frame info (before) 0x80000000
+Frame info (after) 0x80000001
+Compound register (before) 0x2
+Compound register (after) 0x2
+HDR control register (before) 0x11
+HDR control register (after) 0x11
+Shutter control register (before) 0x164
+Shutter control register (after) 0x164
+Get Auto exposure pixel count (before) 9000
+Set Auto exposure pixel count (after) abe0
+Initialised 3 cameras
+Set to little endianess
+Frame info (before) 0x80000000
+Frame info (after) 0x80000001
+Compound register (before) 0x2
+Compound register (after) 0x2
+HDR control register (before) 0x11
+HDR control register (after) 0x11
+Shutter control register (before) 0x164
+Shutter control register (after) 0x164
+Get Auto exposure pixel count (before) 9000
+Set Auto exposure pixel count (after) abe0
+Initialised 4 cameras
+Set to little endianess
+Frame info (before) 0x80000000
+Frame info (after) 0x80000001
+Compound register (before) 0x2
+Compound register (after) 0x2
+HDR control register (before) 0x11
+HDR control register (after) 0x11
+Shutter control register (before) 0x164
+Shutter control register (after) 0x164
+Get Auto exposure pixel count (before) 9000
+Set Auto exposure pixel count (after) abe0
+Initialised 5 cameras
+Set to little endianess
+Frame info (before) 0x80000000
+Frame info (after) 0x80000001
+Compound register (before) 0x2
+Compound register (after) 0x2
+HDR control register (before) 0x11
+HDR control register (after) 0x11
+Shutter control register (before) 0x164
+Shutter control register (after) 0x164
+Get Auto exposure pixel count (before) 9000
+Set Auto exposure pixel count (after) abe0
+Initialised 6 cameras
+Set to little endianess
+Frame info (before) 0x80000000
+Frame info (after) 0x80000001
+Compound register (before) 0x2
+Compound register (after) 0x2
+HDR control register (before) 0x11
+HDR control register (after) 0x11
+Shutter control register (before) 0x164
+Shutter control register (after) 0x164
+Get Auto exposure pixel count (before) 9000
+Set Auto exposure pixel count (after) abe0
+Initialised 7 cameras
+Set to little endianess
+Frame info (before) 0x80000000
+Frame info (after) 0x80000001
+Compound register (before) 0x2
+Compound register (after) 0x2
+HDR control register (before) 0x11
+HDR control register (after) 0x11
+Shutter control register (before) 0x164
+Shutter control register (after) 0x164
+Get Auto exposure pixel count (before) 9000
+Set Auto exposure pixel count (after) abe0
+Initialised 8 cameras
+[3;J[H[2J---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.131714
+Cam 3 frame waiting time: 0.121879
+Cam 2 frame waiting time: 0.120939
+Cam 1 frame waiting time: 0.170457
+Cam 4 frame waiting time: 0.120804
+Cam 5 frame waiting time: 0.122407
+Cam 7 frame waiting time: 0.077957
+Cam 6 frame waiting time: 0.095943
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.0552018]
+Angle:		[-140.591, -19.1256, 78.4356]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.0645791]
+Angle:		[-132.175, 27.3496, 103.396]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.0940582]
+Angle:		[-174.503, 2.02097, 91.6238]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 19.2973
+Cam 6 frame processing time: 22.0614
+Cam 2 frame processing time: 26.6902
+Cam 4 frame processing time: 30.4058
+Cam 7 frame processing time: 30.9173
+Cam 1 frame processing time: 33.613
+Cam 3 frame processing time: 34.6277
+Cam 5 frame processing time: 40.6991
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242404, 0.214446, -0.071280]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 29.952147
+While loop time: 71.352755
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 3 frame waiting time: 0.168559
+Cam 2 frame waiting time: 0.199483
+Cam 1 frame waiting time: 0.187637
+Cam 5 frame waiting time: 0.134556
+Cam 4 frame waiting time: 0.153586
+Cam 0 frame waiting time: 0.187404
+Cam 7 frame waiting time: 0.103127
+Cam 6 frame waiting time: 0.147829
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.251633, 0.197321, -0.071593]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 21.681302
+Cam 4 frame processing time: 23.393300
+Cam 7 frame processing time: 25.481680
+Cam 1 frame processing time: 32.373705
+Cam 3 frame processing time: 33.504321
+Cam 6 frame processing time: 33.277340
+Cam 5 frame processing time: 34.395804
+Cam 2 frame processing time: 37.999198
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242465, 0.217004, -0.081748]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 35.038671
+While loop time: 73.671468
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 5 frame waiting time: 0.159788
+Cam 2 frame waiting time: 0.155569
+Cam 1 frame waiting time: 0.170717
+Cam 3 frame waiting time: 0.197385
+Cam 6 frame waiting time: 0.159456
+Cam 4 frame waiting time: 0.269108
+Cam 7 frame waiting time: 0.121420
+Cam 0 frame waiting time: 0.178092
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: -975.244561
+Cam 2 frame processing time: -972.948149
+Cam 4 frame processing time: -972.344025
+Cam 6 frame processing time: -971.323397
+Cam 7 frame processing time: -968.225866
+Cam 3 frame processing time: -963.417503
+Cam 1 frame processing time: -961.196059
+Cam 5 frame processing time: -955.019639
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.243225, 0.215574, -0.076284]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 34.613916
+While loop time: -919.591215
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.134648
+Cam 1 frame waiting time: 0.125097
+Cam 3 frame waiting time: 0.131659
+Cam 2 frame waiting time: 0.119965
+Cam 5 frame waiting time: 0.140503
+Cam 7 frame waiting time: 0.121150
+Cam 6 frame waiting time: 0.096282
+Cam 4 frame waiting time: 0.133736
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.251355, 0.189091, -0.052185]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 22.229142
+Cam 0 frame processing time: 23.999980
+Cam 3 frame processing time: 29.692283
+Cam 6 frame processing time: 29.731477
+Cam 5 frame processing time: 30.194534
+Cam 7 frame processing time: 30.182447
+Cam 1 frame processing time: 31.342823
+Cam 2 frame processing time: 41.511370
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242372, 0.214261, -0.075278]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 33.208775
+While loop time: 75.466592
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 1 frame waiting time: 0.140918
+Cam 0 frame waiting time: 0.194206
+Cam 6 frame waiting time: 0.098722
+Cam 3 frame waiting time: 0.148847
+Cam 4 frame waiting time: 0.104673
+Cam 7 frame waiting time: 0.132921
+Cam 5 frame waiting time: 0.141249
+Cam 2 frame waiting time: 0.159266
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 24.970612
+Cam 7 frame processing time: 26.183608
+Cam 0 frame processing time: 29.837157
+Cam 6 frame processing time: 31.610758
+Cam 1 frame processing time: 34.383538
+Cam 3 frame processing time: 39.995165
+Cam 5 frame processing time: 40.619399
+Cam 2 frame processing time: 43.387639
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242404, 0.214446, -0.071280]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 34.271756
+While loop time: 78.776068
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 3 frame waiting time: 0.172639
+Cam 2 frame waiting time: 0.153593
+Cam 6 frame waiting time: 0.123641
+Cam 1 frame waiting time: 0.170198
+Cam 5 frame waiting time: 0.150215
+Cam 0 frame waiting time: 0.129511
+Cam 4 frame waiting time: 0.153481
+Cam 7 frame waiting time: 0.098986
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.251355, 0.189091, -0.052185]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 20.056009
+Cam 3 frame processing time: 29.890479
+Cam 2 frame processing time: 30.473678
+Cam 4 frame processing time: 31.083350
+Cam 6 frame processing time: 31.551668
+Cam 7 frame processing time: 31.645577
+Cam 5 frame processing time: 35.479056
+Cam 1 frame processing time: 36.845098
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242372, 0.214261, -0.075278]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 31.709251
+While loop time: 69.263612
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.136771
+Cam 2 frame waiting time: 0.220238
+Cam 4 frame waiting time: 0.162496
+Cam 5 frame waiting time: 0.148579
+Cam 3 frame waiting time: 0.207215
+Cam 7 frame waiting time: 0.101939
+Cam 1 frame waiting time: 0.243268
+Cam 6 frame waiting time: 0.105269
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.251355, 0.189091, -0.052185]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 19.048871
+Cam 4 frame processing time: 23.873479
+Cam 6 frame processing time: 25.391701
+Cam 7 frame processing time: 29.309011
+Cam 3 frame processing time: 32.339785
+Cam 1 frame processing time: 33.342749
+Cam 5 frame processing time: 34.872325
+Cam 2 frame processing time: 35.261038
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.241550, 0.213133, -0.070274]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 32.514395
+While loop time: 68.503123
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.198323
+Cam 2 frame waiting time: 0.198804
+Cam 1 frame waiting time: 0.201418
+Cam 4 frame waiting time: 0.167844
+Cam 6 frame waiting time: 0.109636
+Cam 5 frame waiting time: 0.137420
+Cam 3 frame waiting time: 0.193681
+Cam 7 frame waiting time: 0.131651
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.251633, 0.197321, -0.071593]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 23.224493
+Cam 4 frame processing time: 26.599944
+Cam 6 frame processing time: 26.855696
+Cam 7 frame processing time: 26.951854
+Cam 1 frame processing time: 32.439930
+Cam 2 frame processing time: 34.428976
+Cam 3 frame processing time: 35.463503
+Cam 5 frame processing time: 36.214466
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242465, 0.217004, -0.081748]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: -968.081137
+While loop time: -931.132017
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 3 frame waiting time: 0.153274
+Cam 0 frame waiting time: 0.212058
+Cam 1 frame waiting time: 0.205262
+Cam 2 frame waiting time: 0.184953
+Cam 7 frame waiting time: 0.119880
+Cam 4 frame waiting time: 0.149313
+Cam 5 frame waiting time: 0.122926
+Cam 6 frame waiting time: 0.121672
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.251355, 0.189091, -0.052185]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 22.245123
+Cam 4 frame processing time: 22.249780
+Cam 6 frame processing time: 26.593081
+Cam 7 frame processing time: 29.811486
+Cam 3 frame processing time: 33.902930
+Cam 1 frame processing time: 35.008931
+Cam 2 frame processing time: 36.144549
+Cam 5 frame processing time: 37.818138
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242372, 0.214261, -0.075278]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 30.918695
+While loop time: 69.774755
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.136550
+Cam 1 frame waiting time: 0.169852
+Cam 2 frame waiting time: 0.132748
+Cam 3 frame waiting time: 0.160694
+Cam 4 frame waiting time: 0.131120
+Cam 7 frame waiting time: 0.091972
+Cam 5 frame waiting time: 0.157698
+Cam 6 frame waiting time: 0.083533
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 19.887997
+Cam 6 frame processing time: 26.937724
+Cam 1 frame processing time: 28.407281
+Cam 3 frame processing time: 30.371074
+Cam 2 frame processing time: 31.142490
+Cam 5 frame processing time: 31.996847
+Cam 4 frame processing time: 32.120628
+Cam 7 frame processing time: 32.743789
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242404, 0.214446, -0.071280]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 35.013558
+While loop time: 68.532056
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.081889
+Cam 4 frame waiting time: 0.201497
+Cam 3 frame waiting time: 0.135678
+Cam 2 frame waiting time: 0.160817
+Cam 5 frame waiting time: 0.204706
+Cam 6 frame waiting time: 0.193143
+Cam 7 frame waiting time: 0.132589
+Cam 1 frame waiting time: 0.157974
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.251355, 0.189091, -0.052185]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 20.915156
+Cam 4 frame processing time: 24.970980
+Cam 7 frame processing time: 30.785157
+Cam 3 frame processing time: 31.148811
+Cam 6 frame processing time: 31.359868
+Cam 5 frame processing time: 36.629859
+Cam 1 frame processing time: 36.766656
+Cam 2 frame processing time: 42.049587
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.241550, 0.213133, -0.070274]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 36.897721
+While loop time: 79.782251
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 3 frame waiting time: 0.224505
+Cam 5 frame waiting time: 0.183824
+Cam 4 frame waiting time: 0.189749
+Cam 1 frame waiting time: 0.238975
+Cam 0 frame waiting time: 0.180955
+Cam 2 frame waiting time: 0.185629
+Cam 6 frame waiting time: 0.218698
+Cam 7 frame waiting time: 0.117078
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.206293, 0.195149, -0.093216]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.251355, 0.189091, -0.052185]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 3 frame processing time: 21.530581
+Cam 4 frame processing time: 24.425633
+Cam 6 frame processing time: 24.907181
+Cam 0 frame processing time: 25.079405
+Cam 7 frame processing time: 29.574724
+Cam 1 frame processing time: 30.279384
+Cam 2 frame processing time: 34.604927
+Cam 5 frame processing time: 39.049216
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.228824, 0.192120, -0.072700]
+Angle:		[-136.383103, 4.112002, 90.916063]
+[3;J[H[2JFrame show time: 35.532509
+While loop time: 75.268773
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.104367
+Cam 1 frame waiting time: 0.142240
+Cam 2 frame waiting time: 0.141040
+Cam 3 frame waiting time: 0.108609
+Cam 4 frame waiting time: 0.127703
+Cam 6 frame waiting time: 0.148114
+Cam 5 frame waiting time: 0.190674
+Cam 7 frame waiting time: 0.155041
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 18.874628
+Cam 2 frame processing time: 19.631639
+Cam 0 frame processing time: 20.636521
+Cam 6 frame processing time: 21.249802
+Cam 1 frame processing time: 26.033284
+Cam 3 frame processing time: 26.365248
+Cam 7 frame processing time: 29.903966
+Cam 5 frame processing time: 33.110780
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.228879, 0.192149, -0.067397]
+Angle:		[-136.383103, 4.112002, 90.916063]
+[3;J[H[2JFrame show time: 35.381336
+While loop time: 69.325537
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.213008
+Cam 4 frame waiting time: 0.216412
+Cam 1 frame waiting time: 0.248399
+Cam 2 frame waiting time: 0.261090
+Cam 3 frame waiting time: 0.259903
+Cam 5 frame waiting time: 0.190821
+Cam 6 frame waiting time: 0.129021
+Cam 7 frame waiting time: 0.073773
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 25.233145
+Cam 7 frame processing time: 25.200040
+Cam 6 frame processing time: 26.579498
+Cam 3 frame processing time: 27.394243
+Cam 0 frame processing time: 27.899063
+Cam 1 frame processing time: 32.596680
+Cam 5 frame processing time: 35.402100
+Cam 2 frame processing time: 37.164138
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.227647, 0.190457, -0.059890]
+Angle:		[-136.383103, 4.112002, 90.916063]
+[3;J[H[2JFrame show time: 31.708396
+While loop time: 69.611369
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 1 frame waiting time: 0.177856
+Cam 0 frame waiting time: 0.205705
+Cam 2 frame waiting time: 0.121488
+Cam 5 frame waiting time: 0.109991
+Cam 4 frame waiting time: 0.119385
+Cam 3 frame waiting time: 0.178140
+Cam 6 frame waiting time: 0.095878
+Cam 7 frame waiting time: 0.117179
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.251355, 0.189091, -0.052185]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 19.198759
+Cam 7 frame processing time: 23.428780
+Cam 4 frame processing time: 24.905134
+Cam 6 frame processing time: 25.703418
+Cam 2 frame processing time: 27.822121
+Cam 5 frame processing time: 31.762543
+Cam 3 frame processing time: 32.164300
+Cam 1 frame processing time: 33.267786
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.227599, 0.190180, -0.065889]
+Angle:		[-136.383103, 4.112002, 90.916063]
+[3;J[H[2JFrame show time: 32.056600
+While loop time: 66.019996
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 2 frame waiting time: 0.121152
+Cam 0 frame waiting time: 0.170165
+Cam 3 frame waiting time: 0.114088
+Cam 1 frame waiting time: 0.186193
+Cam 6 frame waiting time: 0.126063
+Cam 4 frame waiting time: 0.129382
+Cam 7 frame waiting time: 0.132419
+Cam 5 frame waiting time: 0.122222
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 3 frame processing time: 28.498788
+Cam 4 frame processing time: 25.139026
+Cam 2 frame processing time: 24.168089
+Cam 0 frame processing time: 28.865948
+Cam 6 frame processing time: 30.641372
+Cam 7 frame processing time: 32.560393
+Cam 5 frame processing time: 35.339443
+Cam 1 frame processing time: 36.862732
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.228879, 0.192149, -0.067397]
+Angle:		[-136.383103, 4.112002, 90.916063]
+[3;J[H[2JFrame show time: 30.985655
+While loop time: 68.526268
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.136590
+Cam 2 frame waiting time: 0.149653
+Cam 3 frame waiting time: 0.152148
+Cam 4 frame waiting time: 0.134358
+Cam 1 frame waiting time: 0.240225
+Cam 6 frame waiting time: 0.116006
+Cam 7 frame waiting time: 0.131427
+Cam 5 frame waiting time: 0.135942
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 26.108008
+Cam 2 frame processing time: 26.975500
+Cam 0 frame processing time: 28.070821
+Cam 6 frame processing time: 29.018827
+Cam 7 frame processing time: 30.631542
+Cam 5 frame processing time: 31.898984
+Cam 3 frame processing time: 33.721898
+Cam 1 frame processing time: 35.637803
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.227647, 0.190457, -0.059890]
+Angle:		[-136.383103, 4.112002, 90.916063]
+[3;J[H[2JFrame show time: 31.384467
+While loop time: 67.703622
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 4 frame waiting time: 0.137344
+Cam 3 frame waiting time: 0.116229
+Cam 1 frame waiting time: 0.219158
+Cam 2 frame waiting time: 0.201067
+Cam 6 frame waiting time: 0.157604
+Cam 7 frame waiting time: 0.150217
+Cam 5 frame waiting time: 0.114871
+Cam 0 frame waiting time: 0.183814
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.206293, 0.195149, -0.093216]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.251355, 0.189091, -0.052185]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 19.982256
+Cam 3 frame processing time: 28.843754
+Cam 0 frame processing time: 30.182682
+Cam 7 frame processing time: 32.714415
+Cam 6 frame processing time: 34.190323
+Cam 5 frame processing time: 38.862067
+Cam 2 frame processing time: 39.359957
+Cam 1 frame processing time: 39.576844
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.228824, 0.192120, -0.072700]
+Angle:		[-136.383103, 4.112002, 90.916063]
+[3;J[H[2JFrame show time: 30.791348
+While loop time: 70.969958
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 2 frame waiting time: 0.176190
+Cam 5 frame waiting time: 0.128081
+Cam 6 frame waiting time: 0.122483
+Cam 3 frame waiting time: 0.190397
+Cam 4 frame waiting time: 0.137094
+Cam 0 frame waiting time: 0.216620
+Cam 7 frame waiting time: 0.164681
+Cam 1 frame waiting time: 0.193299
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 21.183894
+Cam 3 frame processing time: 21.695141
+Cam 6 frame processing time: 21.896234
+Cam 7 frame processing time: 22.676834
+Cam 0 frame processing time: 30.549738
+Cam 5 frame processing time: 31.879467
+Cam 1 frame processing time: 33.285415
+Cam 2 frame processing time: 35.483849
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.227647, 0.190457, -0.059890]
+Angle:		[-136.383103, 4.112002, 90.916063]
+[3;J[H[2JFrame show time: 29.673156
+While loop time: 65.782918
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.164323
+Cam 1 frame waiting time: 0.171425
+Cam 2 frame waiting time: 0.164302
+Cam 3 frame waiting time: 0.167300
+Cam 5 frame waiting time: 0.138623
+Cam 7 frame waiting time: 0.126406
+Cam 6 frame waiting time: 0.123652
+Cam 4 frame waiting time: 0.157672
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 2 frame processing time: 23.946968
+Cam 6 frame processing time: 25.481635
+Cam 3 frame processing time: 26.034285
+Cam 0 frame processing time: 27.820297
+Cam 4 frame processing time: 28.785546
+Cam 7 frame processing time: 30.290150
+Cam 5 frame processing time: 32.844455
+Cam 1 frame processing time: 33.700332
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.227647, 0.190457, -0.059890]
+Angle:		[-136.383103, 4.112002, 90.916063]
+[3;J[H[2JFrame show time: 32.264003
+While loop time: 66.753983
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.090519
+Cam 3 frame waiting time: 0.215547
+Cam 2 frame waiting time: 0.168624
+Cam 1 frame waiting time: 0.198528
+Cam 6 frame waiting time: 0.133799
+Cam 4 frame waiting time: 0.152074
+Cam 7 frame waiting time: 0.130732
+Cam 5 frame waiting time: 0.149031
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 21.010238
+Cam 4 frame processing time: 21.837026
+Cam 5 frame processing time: 28.419039
+Cam 6 frame processing time: 23.015514
+Cam 3 frame processing time: 25.117193
+Cam 7 frame processing time: 32.066940
+Cam 2 frame processing time: 33.376797
+Cam 1 frame processing time: 36.857176
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.228879, 0.192149, -0.067397]
+Angle:		[-136.383103, 4.112002, 90.916063]
+[3;J[H[2JFrame show time: 34.451043
+While loop time: 71.999192
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 2 frame waiting time: 0.128452
+Cam 1 frame waiting time: 0.144016
+Cam 0 frame waiting time: 0.169125
+Cam 3 frame waiting time: 0.125496
+Cam 4 frame waiting time: 0.121805
+Cam 7 frame waiting time: 0.183925
+Cam 5 frame waiting time: 0.129034
+Cam 6 frame waiting time: 0.133600
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 6 frame processing time: 18.876995
+Cam 4 frame processing time: 20.896735
+Cam 0 frame processing time: 21.162253
+Cam 3 frame processing time: 26.594155
+Cam 5 frame processing time: 30.525336
+Cam 7 frame processing time: 31.462004
+Cam 2 frame processing time: 32.309913
+Cam 1 frame processing time: 36.155258
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.227647, 0.190457, -0.059890]
+Angle:		[-136.383103, 4.112002, 90.916063]
+[3;J[H[2JFrame show time: 35.538953
+While loop time: 72.425397
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 1 frame waiting time: 0.132437
+Cam 0 frame waiting time: 0.168838
+Cam 2 frame waiting time: 0.167850
+Cam 3 frame waiting time: 0.199146
+Cam 4 frame waiting time: 0.161024
+Cam 5 frame waiting time: 0.212061
+Cam 6 frame waiting time: 0.121623
+Cam 7 frame waiting time: 0.098237
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+
+--- PROCESSING DONE ---
+
+Cam 7 frame processing time: 23.647820
+Cam 1 frame processing time: 25.047240
+Cam 4 frame processing time: 25.863068
+Cam 3 frame processing time: 26.598690
+Cam 0 frame processing time: 29.616460
+Cam 6 frame processing time: 30.578840
+Cam 5 frame processing time: 31.698706
+Cam 2 frame processing time: 34.418806
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.228879, 0.192149, -0.067397]
+Angle:		[-136.383103, 4.112002, 90.916063]
+[3;J[H[2JFrame show time: 37.988435
+While loop time: 73.209144
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 5 frame waiting time: 0.165375
+Cam 3 frame waiting time: 0.243039
+Cam 4 frame waiting time: 0.187358
+Cam 6 frame waiting time: 0.165098
+Cam 0 frame waiting time: 0.261203
+Cam 7 frame waiting time: 0.105052
+Cam 1 frame waiting time: 0.231063
+Cam 2 frame waiting time: 0.235046
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.251355, 0.189091, -0.052185]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 25.596796
+Cam 7 frame processing time: 25.968476
+Cam 3 frame processing time: 26.604088
+Cam 5 frame processing time: 30.099805
+Cam 0 frame processing time: 32.519957
+Cam 6 frame processing time: 33.331982
+Cam 1 frame processing time: 37.419213
+Cam 2 frame processing time: 44.049000
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.241550, 0.213133, -0.070274]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 33.072381
+While loop time: 78.399715
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 4 frame waiting time: 0.135129
+Cam 2 frame waiting time: 0.176021
+Cam 1 frame waiting time: 0.177493
+Cam 0 frame waiting time: 0.199190
+Cam 7 frame waiting time: 0.105878
+Cam 3 frame waiting time: 0.173068
+Cam 5 frame waiting time: 0.173626
+Cam 6 frame waiting time: 0.123138
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 18.879439
+Cam 3 frame processing time: 30.374670
+Cam 0 frame processing time: 31.262762
+Cam 7 frame processing time: 32.025323
+Cam 6 frame processing time: 32.527560
+Cam 5 frame processing time: 35.130078
+Cam 1 frame processing time: 37.449364
+Cam 2 frame processing time: 38.381798
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242404, 0.214446, -0.071280]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 35.757576
+While loop time: 74.834117
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.178993
+Cam 4 frame waiting time: 0.138139
+Cam 3 frame waiting time: 0.210129
+Cam 2 frame waiting time: 0.178924
+Cam 6 frame waiting time: 0.104737
+Cam 7 frame waiting time: 0.111805
+Cam 1 frame waiting time: 0.234946
+Cam 5 frame waiting time: 0.111681
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: -976.597049
+Cam 2 frame processing time: -974.938566
+Cam 6 frame processing time: -974.675832
+Cam 3 frame processing time: -969.519911
+Cam 7 frame processing time: -969.051255
+Cam 4 frame processing time: -968.387287
+Cam 1 frame processing time: -964.412084
+Cam 5 frame processing time: -962.529521
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242404, 0.214446, -0.071280]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 34.275273
+While loop time: -927.231407
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.198679
+Cam 1 frame waiting time: 0.204308
+Cam 3 frame waiting time: 0.169249
+Cam 4 frame waiting time: 0.167007
+Cam 6 frame waiting time: 0.116714
+Cam 7 frame waiting time: 0.134176
+Cam 5 frame waiting time: 0.142980
+Cam 2 frame waiting time: 0.288861
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 18.707044
+Cam 4 frame processing time: 20.259882
+Cam 3 frame processing time: 23.887940
+Cam 7 frame processing time: 28.706423
+Cam 2 frame processing time: 29.202145
+Cam 6 frame processing time: 33.274273
+Cam 1 frame processing time: 33.871623
+Cam 5 frame processing time: 45.292172
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242404, 0.214446, -0.071280]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 36.789030
+While loop time: 82.944181
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.132940
+Cam 2 frame waiting time: 0.210820
+Cam 5 frame waiting time: 0.136298
+Cam 3 frame waiting time: 0.192178
+Cam 6 frame waiting time: 0.107113
+Cam 4 frame waiting time: 0.154988
+Cam 1 frame waiting time: 0.215661
+Cam 7 frame waiting time: 0.123018
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 21.139998
+Cam 4 frame processing time: 22.748522
+Cam 6 frame processing time: 24.865926
+Cam 5 frame processing time: 26.338354
+Cam 3 frame processing time: 28.810103
+Cam 7 frame processing time: 30.856191
+Cam 2 frame processing time: 34.147353
+Cam 1 frame processing time: 35.802062
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242404, 0.214446, -0.071280]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 33.359822
+While loop time: 69.970534
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 2 frame waiting time: 0.189478
+Cam 0 frame waiting time: 0.204782
+Cam 4 frame waiting time: 0.141838
+Cam 6 frame waiting time: 0.150070
+Cam 5 frame waiting time: 0.131013
+Cam 7 frame waiting time: 0.127660
+Cam 1 frame waiting time: 0.217513
+Cam 3 frame waiting time: 0.213543
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 23.358655
+Cam 1 frame processing time: 23.705052
+Cam 3 frame processing time: 24.028883
+Cam 7 frame processing time: 24.654134
+Cam 0 frame processing time: 30.087228
+Cam 6 frame processing time: 30.664502
+Cam 2 frame processing time: 33.703755
+Cam 5 frame processing time: 33.818642
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242404, 0.214446, -0.071280]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 32.755286
+While loop time: 67.291255
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 2 frame waiting time: 0.131657
+Cam 0 frame waiting time: 0.178259
+Cam 5 frame waiting time: 0.137638
+Cam 3 frame waiting time: 0.192531
+Cam 1 frame waiting time: 0.189870
+Cam 7 frame waiting time: 0.112680
+Cam 4 frame waiting time: 0.164495
+Cam 6 frame waiting time: 0.128682
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.251355, 0.189091, -0.052185]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 18.246767
+Cam 2 frame processing time: 22.903933
+Cam 3 frame processing time: 26.289441
+Cam 0 frame processing time: 27.725994
+Cam 5 frame processing time: 28.769642
+Cam 7 frame processing time: 29.414428
+Cam 6 frame processing time: 29.586529
+Cam 1 frame processing time: 34.049069
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.241550, 0.213133, -0.070274]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 31.778555
+While loop time: 66.580837
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.154147
+Cam 6 frame waiting time: 0.099455
+Cam 2 frame waiting time: 0.240435
+Cam 3 frame waiting time: 0.215481
+Cam 4 frame waiting time: 0.229213
+Cam 5 frame waiting time: 0.156729
+Cam 1 frame waiting time: 0.191572
+Cam 7 frame waiting time: 0.122557
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 21.243501
+Cam 0 frame processing time: 23.122579
+Cam 3 frame processing time: 24.558681
+Cam 6 frame processing time: 28.666437
+Cam 2 frame processing time: 32.540836
+Cam 7 frame processing time: 32.889742
+Cam 1 frame processing time: 38.121969
+Cam 5 frame processing time: 39.748364
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242404, 0.214446, -0.071280]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 33.808409
+While loop time: 74.441777
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.198782
+Cam 2 frame waiting time: 0.164339
+Cam 1 frame waiting time: 0.203907
+Cam 6 frame waiting time: 0.118212
+Cam 4 frame waiting time: 0.163484
+Cam 5 frame waiting time: 0.214675
+Cam 3 frame waiting time: 0.168936
+Cam 7 frame waiting time: 0.112843
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.206293, 0.195149, -0.093216]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.251355, 0.189091, -0.052185]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 17.479010
+Cam 4 frame processing time: 22.204334
+Cam 5 frame processing time: 25.640652
+Cam 3 frame processing time: 28.253972
+Cam 7 frame processing time: 29.082178
+Cam 6 frame processing time: 32.742284
+Cam 1 frame processing time: 35.567704
+Cam 2 frame processing time: 40.973065
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.243189, 0.215555, -0.079820]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 35.740426
+While loop time: 77.468148
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.215735
+Cam 1 frame waiting time: 0.216163
+Cam 2 frame waiting time: 0.178660
+Cam 5 frame waiting time: 0.126131
+Cam 4 frame waiting time: 0.138024
+Cam 6 frame waiting time: 0.118367
+Cam 3 frame waiting time: 0.190208
+Cam 7 frame waiting time: 0.107125
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 6 frame processing time: 21.705133
+Cam 4 frame processing time: 21.917658
+Cam 0 frame processing time: 23.065594
+Cam 7 frame processing time: 23.938348
+Cam 2 frame processing time: 27.572654
+Cam 1 frame processing time: 29.007096
+Cam 3 frame processing time: 30.275380
+Cam 5 frame processing time: 32.188183
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242404, 0.214446, -0.071280]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 32.968690
+While loop time: 65.885533
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.143277
+Cam 1 frame waiting time: 0.189959
+Cam 4 frame waiting time: 0.148787
+Cam 2 frame waiting time: 0.217946
+Cam 5 frame waiting time: 0.109082
+Cam 3 frame waiting time: 0.187833
+Cam 7 frame waiting time: 0.155820
+Cam 6 frame waiting time: 0.178693
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.206293, 0.195149, -0.093216]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.251355, 0.189091, -0.052185]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 18.156379
+Cam 0 frame processing time: 21.004202
+Cam 6 frame processing time: 21.181494
+Cam 3 frame processing time: -970.081888
+Cam 5 frame processing time: -966.959245
+Cam 2 frame processing time: -966.426050
+Cam 7 frame processing time: -966.369278
+Cam 1 frame processing time: -961.372268
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.243189, 0.215555, -0.079820]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 36.624939
+While loop time: -924.064941
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 1 frame waiting time: 0.097778
+Cam 0 frame waiting time: 0.197178
+Cam 3 frame waiting time: 0.145620
+Cam 2 frame waiting time: 0.184456
+Cam 6 frame waiting time: 0.121798
+Cam 5 frame waiting time: 0.187590
+Cam 4 frame waiting time: 0.140338
+Cam 7 frame waiting time: 0.189451
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 21.045165
+Cam 1 frame processing time: 23.423866
+Cam 6 frame processing time: 23.725002
+Cam 4 frame processing time: 26.030897
+Cam 7 frame processing time: 29.930166
+Cam 3 frame processing time: 32.254854
+Cam 2 frame processing time: 33.381655
+Cam 5 frame processing time: 41.488573
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.243225, 0.215574, -0.076284]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 35.011703
+While loop time: 77.320734
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 1 frame waiting time: 0.159205
+Cam 2 frame waiting time: 0.188749
+Cam 4 frame waiting time: 0.161864
+Cam 3 frame waiting time: 0.219928
+Cam 5 frame waiting time: 0.148506
+Cam 0 frame waiting time: 0.201027
+Cam 7 frame waiting time: 0.108963
+Cam 6 frame waiting time: 0.149422
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 22.445850
+Cam 1 frame processing time: 25.681302
+Cam 0 frame processing time: 29.435485
+Cam 6 frame processing time: 29.961583
+Cam 2 frame processing time: 31.369872
+Cam 7 frame processing time: 31.600922
+Cam 3 frame processing time: 32.667151
+Cam 5 frame processing time: 34.429370
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.243225, 0.215574, -0.076284]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 35.652075
+While loop time: 70.754177
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.170904
+Cam 4 frame waiting time: 0.141151
+Cam 2 frame waiting time: 0.197579
+Cam 5 frame waiting time: 0.112009
+Cam 6 frame waiting time: 0.148704
+Cam 3 frame waiting time: 0.185037
+Cam 1 frame waiting time: 0.217740
+Cam 7 frame waiting time: 0.112273
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 20.953191
+Cam 2 frame processing time: 26.430864
+Cam 5 frame processing time: 29.015258
+Cam 3 frame processing time: 30.104331
+Cam 0 frame processing time: 31.124267
+Cam 7 frame processing time: 30.990428
+Cam 6 frame processing time: 31.957183
+Cam 1 frame processing time: 35.982847
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.243225, 0.215574, -0.076284]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 37.393457
+While loop time: 74.505367
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 4 frame waiting time: 0.188134
+Cam 6 frame waiting time: 0.098241
+Cam 0 frame waiting time: 0.093155
+Cam 3 frame waiting time: 0.166753
+Cam 5 frame waiting time: 0.194633
+Cam 2 frame waiting time: 0.167644
+Cam 7 frame waiting time: 0.113723
+Cam 1 frame waiting time: 0.189738
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 19.357758
+Cam 4 frame processing time: 21.006584
+Cam 7 frame processing time: 23.520789
+Cam 1 frame processing time: 23.893105
+Cam 6 frame processing time: 25.480493
+Cam 3 frame processing time: 26.487315
+Cam 5 frame processing time: 32.085674
+Cam 2 frame processing time: 36.770648
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242404, 0.214446, -0.071280]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 37.456687
+While loop time: 75.014036
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.183128
+Cam 5 frame waiting time: 0.132180
+Cam 2 frame waiting time: 0.193892
+Cam 1 frame waiting time: 0.218716
+Cam 6 frame waiting time: 0.122972
+Cam 7 frame waiting time: 0.075362
+Cam 3 frame waiting time: 0.175789
+Cam 4 frame waiting time: 0.114010
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 21.476183
+Cam 3 frame processing time: 24.606903
+Cam 6 frame processing time: 24.885382
+Cam 2 frame processing time: 25.233262
+Cam 4 frame processing time: 26.864553
+Cam 7 frame processing time: 27.189583
+Cam 1 frame processing time: 28.073657
+Cam 5 frame processing time: 32.410995
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.243225, 0.215574, -0.076284]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 33.657024
+While loop time: 66.742417
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 1 frame waiting time: 0.199009
+Cam 4 frame waiting time: 0.198437
+Cam 5 frame waiting time: 0.170957
+Cam 6 frame waiting time: 0.141399
+Cam 3 frame waiting time: 0.222263
+Cam 0 frame waiting time: 0.247351
+Cam 2 frame waiting time: 0.219143
+Cam 7 frame waiting time: 0.071685
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 7 frame processing time: 17.592742
+Cam 0 frame processing time: 20.865219
+Cam 4 frame processing time: 21.061793
+Cam 6 frame processing time: 22.403027
+Cam 1 frame processing time: 25.848693
+Cam 3 frame processing time: 27.096120
+Cam 5 frame processing time: 30.688443
+Cam 2 frame processing time: 35.974646
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.243225, 0.215574, -0.076284]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 35.004050
+While loop time: 71.912634
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 5 frame waiting time: 0.166888
+Cam 4 frame waiting time: 0.161266
+Cam 1 frame waiting time: 0.239521
+Cam 2 frame waiting time: 0.218112
+Cam 3 frame waiting time: 0.224388
+Cam 6 frame waiting time: 0.082300
+Cam 0 frame waiting time: 0.234893
+Cam 7 frame waiting time: 0.112457
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 19.187690
+Cam 5 frame processing time: 25.146453
+Cam 0 frame processing time: 25.200919
+Cam 6 frame processing time: 25.745998
+Cam 7 frame processing time: 29.303323
+Cam 1 frame processing time: 32.699618
+Cam 3 frame processing time: 33.263474
+Cam 2 frame processing time: 41.284492
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242404, 0.214446, -0.071280]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 33.553078
+While loop time: 75.870874
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 3 frame waiting time: 0.181489
+Cam 2 frame waiting time: 0.209039
+Cam 4 frame waiting time: 0.163455
+Cam 5 frame waiting time: 0.132703
+Cam 6 frame waiting time: 0.098309
+Cam 1 frame waiting time: 0.212952
+Cam 7 frame waiting time: 0.134474
+Cam 0 frame waiting time: 0.242910
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.251633, 0.197321, -0.071593]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 6 frame processing time: 21.566290
+Cam 4 frame processing time: 23.882122
+Cam 1 frame processing time: 24.432267
+Cam 3 frame processing time: 24.658451
+Cam 7 frame processing time: 24.926113
+Cam 0 frame processing time: 29.211463
+Cam 5 frame processing time: 30.623229
+Cam 2 frame processing time: 41.812986
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.241643, 0.215876, -0.076743]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 33.559945
+While loop time: 75.983963
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.195455
+Cam 4 frame waiting time: 0.145256
+Cam 1 frame waiting time: 0.212247
+Cam 3 frame waiting time: 0.201582
+Cam 5 frame waiting time: 0.150818
+Cam 7 frame waiting time: 0.130755
+Cam 6 frame waiting time: 0.153648
+Cam 2 frame waiting time: 0.242533
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 19.625679
+Cam 6 frame processing time: 22.061605
+Cam 3 frame processing time: 24.980754
+Cam 1 frame processing time: 26.979018
+Cam 0 frame processing time: 28.908828
+Cam 7 frame processing time: 29.333211
+Cam 2 frame processing time: 28.512750
+Cam 5 frame processing time: 32.982774
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242404, 0.214446, -0.071280]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 32.033024
+While loop time: 65.800684
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 2 frame waiting time: 0.138532
+Cam 0 frame waiting time: 0.164757
+Cam 3 frame waiting time: 0.153248
+Cam 1 frame waiting time: 0.215705
+Cam 6 frame waiting time: 0.132678
+Cam 7 frame waiting time: 0.120823
+Cam 4 frame waiting time: 0.173174
+Cam 5 frame waiting time: 0.167796
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.206293, 0.195149, -0.093216]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 2 frame processing time: 21.193718
+Cam 4 frame processing time: 21.260425
+Cam 3 frame processing time: 28.028750
+Cam 0 frame processing time: 28.545524
+Cam 7 frame processing time: 28.773263
+Cam 6 frame processing time: 30.190979
+Cam 5 frame processing time: 32.775772
+Cam 1 frame processing time: 33.779853
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.244042, 0.216868, -0.080825]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 33.241483
+While loop time: 67.800937
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 2 frame waiting time: 0.159593
+Cam 0 frame waiting time: 0.210383
+Cam 1 frame waiting time: 0.198118
+Cam 3 frame waiting time: 0.221689
+Cam 6 frame waiting time: 0.093393
+Cam 7 frame waiting time: 0.082690
+Cam 5 frame waiting time: 0.185865
+Cam 4 frame waiting time: 0.202637
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.206293, 0.195149, -0.093216]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 2 frame processing time: 22.858688
+Cam 6 frame processing time: 23.225887
+Cam 0 frame processing time: 24.250971
+Cam 7 frame processing time: 24.990221
+Cam 3 frame processing time: 28.850005
+Cam 4 frame processing time: 28.826608
+Cam 5 frame processing time: 32.656268
+Cam 1 frame processing time: 34.752816
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.244042, 0.216868, -0.080825]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 33.661765
+While loop time: 69.212204
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.141558
+Cam 4 frame waiting time: 0.155632
+Cam 3 frame waiting time: 0.170611
+Cam 1 frame waiting time: 0.218615
+Cam 6 frame waiting time: 0.122807
+Cam 2 frame waiting time: 0.197369
+Cam 7 frame waiting time: 0.125410
+Cam 5 frame waiting time: 0.146155
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.206293, 0.195149, -0.093216]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.251355, 0.189091, -0.052185]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 19.857963
+Cam 0 frame processing time: 20.062504
+Cam 6 frame processing time: 21.576800
+Cam 3 frame processing time: 29.092865
+Cam 5 frame processing time: 29.719699
+Cam 7 frame processing time: 31.870892
+Cam 2 frame processing time: 32.873430
+Cam 1 frame processing time: 34.674424
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.243189, 0.215555, -0.079820]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 31.352442
+While loop time: 67.028197
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 4 frame waiting time: 0.167850
+Cam 2 frame waiting time: 0.153210
+Cam 1 frame waiting time: 0.216239
+Cam 3 frame waiting time: 0.195505
+Cam 6 frame waiting time: 0.157851
+Cam 5 frame waiting time: 0.144840
+Cam 0 frame waiting time: 0.103813
+Cam 7 frame waiting time: 0.538984
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.250474, 0.186005, -0.041422]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 19.390046
+Cam 6 frame processing time: 22.893166
+Cam 0 frame processing time: 23.255959
+Cam 7 frame processing time: 28.502321
+Cam 3 frame processing time: 29.495645
+Cam 1 frame processing time: 34.016403
+Cam 2 frame processing time: 47.586389
+Cam 5 frame processing time: 48.291478
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.241257, 0.212104, -0.066687]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 37.716011
+While loop time: 86.893242
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 2 frame waiting time: 0.118681
+Cam 1 frame waiting time: 0.215079
+Cam 0 frame waiting time: 0.242171
+Cam 3 frame waiting time: 0.179410
+Cam 4 frame waiting time: 0.115457
+Cam 5 frame waiting time: 0.171125
+Cam 7 frame waiting time: 0.106873
+Cam 6 frame waiting time: 0.095669
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 7 frame processing time: 20.621282
+Cam 6 frame processing time: 20.867808
+Cam 0 frame processing time: 22.199078
+Cam 4 frame processing time: 22.240522
+Cam 2 frame processing time: 23.131821
+Cam 1 frame processing time: 25.698865
+Cam 3 frame processing time: 25.737430
+Cam 5 frame processing time: 33.895233
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.243225, 0.215574, -0.076284]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 31.329068
+While loop time: 66.173589
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 2 frame waiting time: 0.180296
+Cam 1 frame waiting time: 0.179191
+Cam 4 frame waiting time: 0.149580
+Cam 3 frame waiting time: 0.281025
+Cam 5 frame waiting time: 0.162494
+Cam 0 frame waiting time: 0.264581
+Cam 6 frame waiting time: 0.154050
+Cam 7 frame waiting time: 0.115188
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.201378, 0.187884, -0.064579]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 6 frame processing time: 18.531564
+Cam 4 frame processing time: 18.858245
+Cam 0 frame processing time: 22.618830
+Cam 1 frame processing time: 25.936957
+Cam 3 frame processing time: 29.324803
+Cam 5 frame processing time: 29.445665
+Cam 7 frame processing time: 32.274434
+Cam 2 frame processing time: 43.803588
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.242404, 0.214446, -0.071280]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 34.454689
+While loop time: 78.963087
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 1 frame waiting time: 0.335157
+Cam 4 frame waiting time: 0.241154
+Cam 0 frame waiting time: 0.177290
+Cam 2 frame waiting time: 0.312195
+Cam 3 frame waiting time: 0.285850
+Cam 6 frame waiting time: 0.127468
+Cam 7 frame waiting time: 0.064873
+Cam 5 frame waiting time: 0.167648
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.203842, 0.191268, -0.079592]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 4 frame processing time: 19.479587
+Cam 7 frame processing time: 20.766555
+Cam 6 frame processing time: 21.124196
+Cam 0 frame processing time: 23.153117
+Cam 1 frame processing time: 26.455869
+Cam 3 frame processing time: 28.269382
+Cam 2 frame processing time: 29.470444
+Cam 5 frame processing time: 32.562244
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.243225, 0.215574, -0.076284]
+Angle:		[-149.089612, 3.414992, 91.151966]
+[3;J[H[2JFrame show time: 33.045374
+While loop time: 66.801852
+---------------------------------------------------
+---------------------------------------------------
+
+--- WAITING FOR FRAMES ---
+
+Cam 0 frame waiting time: 0.156679
+Cam 2 frame waiting time: 0.153652
+Cam 1 frame waiting time: 0.182588
+Cam 3 frame waiting time: 0.170917
+Cam 4 frame waiting time: 0.181385
+Cam 7 frame waiting time: 0.108642
+Cam 6 frame waiting time: 0.102451
+Cam 5 frame waiting time: 0.142185
+
+--- PROCESSING FRAMES ---
+
+Marker 52 found by camera 3
+Using fixed marker ID: 3
+Coordinates:	[0.206293, 0.195149, -0.093216]
+Angle:		[-132.174994, 27.349608, 103.396484]
+
+Marker 52 found by camera 1
+Using fixed marker ID: 8
+Coordinates:	[0.253916, 0.193031, -0.055202]
+Angle:		[-140.591212, -19.125603, 78.435642]
+
+Marker 52 found by camera 5
+Using fixed marker ID: 0
+Coordinates:	[0.271918, 0.262424, -0.094058]
+Angle:		[-174.502628, 2.020972, 91.623771]
+
+
+--- PROCESSING DONE ---
+
+Cam 0 frame processing time: 19.277753
+Cam 6 frame processing time: 23.313678
+Cam 3 frame processing time: 23.736666
+Cam 1 frame processing time: 28.096952
+Cam 4 frame processing time: 29.956854
+Cam 5 frame processing time: 30.043532
+Cam 7 frame processing time: 31.236654
+Cam 2 frame processing time: 33.667391
+
+Diffs for marker 52 (in cm): 
+	  CAM0  	    CAM1  	    CAM2  	    CAM3  	    CAM4  	    CAM5  	    CAM6  	    CAM7  
+CAM0| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM1| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[0.00,0.00]	|
+CAM2| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM3| [0.00,0.00]	[47.79,6.05]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	|
+CAM4| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM5| [0.00,0.00]	[18.00,69.39]	[0.00,0.00]	[68.08,71.16]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM6| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+CAM7| [0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	[0.00,0.00]	|
+
+Sending data for marker 52
+Coordinates:	[0.244042, 0.216868, -0.080825]
+Angle:		[-149.089612, 3.414992, 91.151966]
