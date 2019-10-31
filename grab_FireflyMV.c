@@ -239,8 +239,8 @@ int main(int argc, char *argv[]){
                     cout << fixed;
 					cout << setprecision(6);
                     cout << "\nSending data for marker " << i << endl;
-                	cout << "Coordinates:\t" << avgCoords << endl;
-                    cout << "Angle:\t\t" << avgAngles << endl;
+                	cout << "Coordinates to send:\t" << avgCoords << endl;
+                    cout << "Angles to send:\t\t" << avgAngles << endl;
                 }
                 UDPfarewell(i, avgCoords, avgAngles);
 
@@ -291,7 +291,7 @@ int main(int argc, char *argv[]){
 
 		}
 
-		cnt++;
+		/*cnt++;
 
 		if(cnt == 20) {
 
@@ -303,7 +303,7 @@ int main(int argc, char *argv[]){
 
 			print = false;
 
-		}
+		}*/
         
     }
 

@@ -101,6 +101,6 @@ bool can_print_wait_times = false, can_print_poses = false, can_print_proc_times
 
 //clear screen counter and printing flag
 int cnt = 0;
-bool print = false;
+bool print = true;
 
 #endif
