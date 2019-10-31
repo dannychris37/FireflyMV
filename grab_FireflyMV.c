@@ -187,7 +187,7 @@ int main(int argc, char *argv[]){
         			avgCoords[k] = 0;
         			avgAngles[k] = 0;
         		}
-	        	avg_cnt = 0;
+	        	cameraCount = 0;
 
 	            for(int j = 0; j < 8; j++){
 
@@ -198,7 +198,7 @@ int main(int argc, char *argv[]){
 	            			avgCoords[k] += dataToSend[i][j].coords[k];
 	            			avgAngles[k] += dataToSend[i][j].angles[k];
 	            		}
-			        	avg_cnt++;
+			        	cameraCount++;
 
 			        	// For diffs
 			        	for(int di = j+1; di < 8; di++){
@@ -214,8 +214,33 @@ int main(int argc, char *argv[]){
             	} // for j
 
             	for(int k = 0; k < 3; k++){
-            		avgCoords[k] /= avg_cnt;
-            		avgAngles[k] /= avg_cnt;
+            		avgCoords[k] /= cameraCount;
+            		avgAngles[k] /= cameraCount;
+            	}
+
+            	//avg done, now checking camera state has changed
+            	if(cameraCount != prevState && cameraCount >= 2){
+            		prevState = cameraCount;
+            		stepCount = 1;
+            		inTransition = true;
+            		// first keep close to start
+            		sentCoords = (startCoords * (TRANS_STEPS - stepCount) + avgCoords * stepCount) / TRANS_STEPS;
+            	} else if (inTransition){
+            		if(stepCount == TRANS_STEPS){
+            			sentCoords = avgCoords;
+            			inTransition = false;
+            		} else {
+            			// transition from start to average bit by bit
+	            		stepCount++;
+	            		if(print) 
+            				cout<<"\nTransition step "<<stepCount<<endl;
+	            		sentCoords = (startCoords * (TRANS_STEPS - stepCount) + avgCoords * stepCount) / TRANS_STEPS;
+	            	}
+            	} else {
+            		// store in case transition is needed next iteration
+            		startCoords = avgCoords;
+            		// no transition needed
+            		sentCoords = avgCoords;
             	}
 
                 if(print) {
@@ -239,10 +264,10 @@ int main(int argc, char *argv[]){
                     cout << fixed;
 					cout << setprecision(6);
                     cout << "\nSending data for marker " << i << endl;
-                	cout << "Coordinates:\t" << avgCoords << endl;
-                    cout << "Angle:\t\t" << avgAngles << endl;
+                	cout << "Coordinates to send:\t" << sentCoords << endl;
+                    cout << "Angles to send:\t\t" << avgAngles << endl;
                 }
-                UDPfarewell(i, avgCoords, avgAngles);
+                UDPfarewell(i, sentCoords, avgAngles);
 
 	        } // if found 
 
@@ -291,7 +316,7 @@ int main(int argc, char *argv[]){
 
 		}
 
-		cnt++;
+		/*cnt++;
 
 		if(cnt == 20) {
 
@@ -303,7 +328,7 @@ int main(int argc, char *argv[]){
 
 			print = false;
 
-		}
+		}*/
         
     }
 

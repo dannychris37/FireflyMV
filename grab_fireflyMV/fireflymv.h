@@ -60,8 +60,16 @@ bool markerFound[100] = {false};
 // vars for average and diff
 cv::Vec3d avgCoords;
 cv::Vec3d avgAngles;
-int avg_cnt;
+int cameraCount;
+int prevState = 1;
 cv::Vec2d diffs[8][8] = {0,0};
+
+// transition
+#define TRANS_STEPS		100
+int stepCount;
+cv::Vec3d sentCoords;
+cv::Vec3d startCoords;
+bool inTransition = false;
 
 // vector of camera IDs
 std::vector<long int> cameraID;
@@ -101,6 +109,6 @@ bool can_print_wait_times = false, can_print_poses = false, can_print_proc_times
 
 //clear screen counter and printing flag
 int cnt = 0;
-bool print = false;
+bool print = true;
 
 #endif
