@@ -50,6 +50,7 @@
 // structs used to store coordinates and angles of moving markers
 typedef struct  {
 	bool valuesStored;
+	int fixedMarker;
 	cv::Vec3d coords;
 	cv::Vec3d angles;
 } markerData;
@@ -61,15 +62,19 @@ bool markerFound[100] = {false};
 cv::Vec3d avgCoords;
 cv::Vec3d avgAngles;
 int cameraCount;
-int prevState = 1;
 cv::Vec2d diffs[8][8] = {0,0};
 
 // transition
-#define TRANS_STEPS		100
+#define TRANS_STEPS		10
+int prevState;
 int stepCount;
 cv::Vec3d sentCoords;
 cv::Vec3d startCoords;
 bool inTransition = false;
+bool firstLoop = true;
+
+//offset mitigation
+#define MAX_DEGREES		4
 
 // vector of camera IDs
 std::vector<long int> cameraID;
@@ -92,7 +97,7 @@ cv::Ptr<cv::aruco::DetectorParameters> detectorParams= cv::aruco::DetectorParame
 #define MEAS_PROC		1
 #define MEAS_SHOW		1
 
-// time emasuring vars
+// time measuring vars
 timespec start_while, stop_while;
 timespec start_wait[8], stop_wait[8];
 timespec start_proc[8], stop_proc[8];
@@ -108,7 +113,9 @@ int print_wait_cnt = 0, print_proc_cnt = 0, pose_cnt = 0;
 bool can_print_wait_times = false, can_print_poses = false, can_print_proc_times = false;
 
 //clear screen counter and printing flag
+#define REALTIME_MONITORING		false
+#define UPDATE_ITS				10
 int cnt = 0;
-bool print = true;
+bool print = false;
 
 #endif

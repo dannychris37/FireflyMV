@@ -164,15 +164,9 @@ void makeSense(cv::Vec3d tvec, cv::Vec3d rvec, int markerID, int camera_no){
 
             dataToSend[markerID][camera_no].coords = reading;
             dataToSend[markerID][camera_no].angles = angle_rot;
+            dataToSend[markerID][camera_no].fixedMarker = f_markerID[camera_no];
             dataToSend[markerID][camera_no].valuesStored = true;
             markerFound[markerID] = true;
-
-            if(print){
-                std::cout << "Marker " << markerID << " found by camera "<< camera_no << std::endl;
-                std::cout << "Using fixed marker ID: " << f_markerID[camera_no] << std::endl;
-                std::cout << "Coordinates:\t" << dataToSend[markerID][camera_no].coords << std::endl;
-                std::cout << "Angle:\t\t" << dataToSend[markerID][camera_no].angles << std::endl << std::endl;
-            }
 
             cnd_var_pose_print.notify_one();
 

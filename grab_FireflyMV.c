@@ -6,6 +6,19 @@
 
 using namespace std;
 
+// Computes the bearing in degrees from the point A(a1,a2) to
+// the point B(b1,b2). Note that A and B are given in terms of
+// screen coordinates.
+double bearing(double a1, double a2, double b1, double b2) {
+    static const double TWOPI = 6.2831853071795865;
+    static const double RAD2DEG = 57.2957795130823209;
+    // if (a1 = b1 and a2 = b2) throw an error 
+    double theta = atan2(b1 - a1, a2 - b2);
+    if (theta < 0.0)
+        theta += TWOPI;
+    return RAD2DEG * theta;
+}
+
 int main(int argc, char *argv[]){
 
     /** Add cameras that are to be used to cameraID vector **/
@@ -84,8 +97,13 @@ int main(int argc, char *argv[]){
 
     /** Runtime loop **/
 
-    std::thread t[(int)list -> num];
+    if(!REALTIME_MONITORING){
+    	print = true; //print constantly with rolling output
+    }
 
+    std::thread t[(int)list -> num];
+    double currentBearing;
+    double compBearing;
     while(play){
 
     	if(print)
@@ -149,9 +167,6 @@ int main(int argc, char *argv[]){
 
         /** COORDINATE PROC TIME PRINTING **/
 
-        if(print)
-        	std::cout << "\n--- PROCESSING DONE ---\n\n";
-
         // enable proc time printing
         can_print_proc_times = true;
         cnd_var_proc.notify_one();
@@ -193,6 +208,13 @@ int main(int argc, char *argv[]){
 
 	            	if(dataToSend[i][j].valuesStored){
 
+    		            if(print){
+			                std::cout << "\nMarker " << i << " found by camera "<< j << std::endl;
+			                std::cout << "Using fixed marker ID: " << dataToSend[i][j].fixedMarker << std::endl;
+			                std::cout << "Coordinates:\t" << dataToSend[i][j].coords << std::endl;
+			                std::cout << "Angle:\t\t" << dataToSend[i][j].angles << std::endl << std::endl;
+            			}
+
 	            		// For averaging
 	            		for(int k = 0; k < 3; k++){
 	            			avgCoords[k] += dataToSend[i][j].coords[k];
@@ -218,56 +240,87 @@ int main(int argc, char *argv[]){
             		avgAngles[k] /= cameraCount;
             	}
 
-            	//avg done, now checking camera state has changed
-            	if(cameraCount != prevState && cameraCount >= 2){
+            	//assign first recorded state
+            	if(firstLoop){
             		prevState = cameraCount;
-            		stepCount = 1;
-            		inTransition = true;
-            		// first keep close to start
-            		sentCoords = (startCoords * (TRANS_STEPS - stepCount) + avgCoords * stepCount) / TRANS_STEPS;
-            	} else if (inTransition){
-            		if(stepCount == TRANS_STEPS){
-            			sentCoords = avgCoords;
-            			inTransition = false;
-            		} else {
-            			// transition from start to average bit by bit
-	            		stepCount++;
-	            		if(print) 
-            				cout<<"\nTransition step "<<stepCount<<endl;
-	            		sentCoords = (startCoords * (TRANS_STEPS - stepCount) + avgCoords * stepCount) / TRANS_STEPS;
-	            	}
-            	} else {
-            		// store in case transition is needed next iteration
             		startCoords = avgCoords;
-            		// no transition needed
             		sentCoords = avgCoords;
-            	}
+            	} else{
+            		//avg done, now checking camera state has changed
+	            	if(cameraCount != prevState){
+	            		if(print) cout<<"\nChanged state to "<<cameraCount<<" cameras"<<endl;
+	            		if(inTransition){
+	            			if(print) cout<<"\nTransition break. Changing start coordinates from "<<startCoords<<" to "<<sentCoords<<endl;
+	            			startCoords = sentCoords;
+	            		}
+	            		prevState = cameraCount;
+	            		stepCount = 1;
+	            		inTransition = true;
+	            		// first keep close to start
+	            		sentCoords = (startCoords * (TRANS_STEPS - stepCount) + avgCoords * stepCount) / TRANS_STEPS;
+	            	} else if (inTransition){
+	            		if(stepCount == TRANS_STEPS){
+	            			sentCoords = avgCoords;
+	            			startCoords = avgCoords;
+	            			inTransition = false;
+	            		} else {
+	            			// transition from start to average bit by bit
+		            		stepCount++;
+		            		if(print) 
+	            				cout<<"\nTransition step "<<stepCount<<endl;
+		            		sentCoords = (startCoords * (TRANS_STEPS - stepCount) + avgCoords * stepCount) / TRANS_STEPS;
+		            	}
+	            	} else { // no state change and no transition occuring
 
-                if(print) {
-            	    cout << fixed;
-					cout << setprecision(2);
-                    cout << "\nDiffs for marker " << i << " (in cm): " << endl;
-                    for(int j=0; j<8;j++){
-                    	if(j==0)
-                    		cout<< "\t  CAM"<<j<<"  ";
-                    	else
-                    		cout<< "\t    CAM"<<j<<"  ";
-                    }
-                    cout<<endl;
-                    for(int j=0; j<8;j++){
-                    	cout<< "CAM"<<j<<"| ";
-                    	for(int di=0; di<8;di++){
-                    		cout<<"["<<diffs[j][di][0]<<","<<diffs[j][di][1]<<"]\t";
-                    	}
-                    	cout<<"|"<<endl;
-                    }
-                    cout << fixed;
-					cout << setprecision(6);
-                    cout << "\nSending data for marker " << i << endl;
-                	cout << "Coordinates to send:\t" << sentCoords << endl;
-                    cout << "Angles to send:\t\t" << avgAngles << endl;
-                }
-                UDPfarewell(i, sentCoords, avgAngles);
+	            		// even if seen by 1 camera marker can jump a bit, trying to mitigate that here
+	            		compBearing = bearing(sentCoords[0], sentCoords[1], avgCoords[0], avgCoords[1]);
+	            		if(abs(compBearing - currentBearing) < MAX_DEGREES){
+
+	            			cout<<"\nAngle diff: "<<abs(compBearing - currentBearing)<<endl;
+
+	            			currentBearing = compBearing;
+
+		            		// store in case transition is needed next iteration
+		            		startCoords = avgCoords;
+
+		            		// no transition needed
+		            		sentCoords = avgCoords;
+	            		} else{ //else do nothing, send same coords
+	            			if(print){
+	            				cout<<"\nAngle diff with last value is too large: "<<abs(compBearing - currentBearing)<<endl;
+		            			cout<<"Previously sent:\t "<<sentCoords<<endl;
+		            			cout<<"Current coords:\t\t "<<avgCoords<<endl;
+	            			}
+	            		}
+
+	            	}
+
+	                if(print) {
+	            	    cout << fixed;
+						cout << setprecision(2); 
+	                    cout << "\nDiffs for marker " << i << " (in cm): " << endl;
+	                    for(int j=0; j<8;j++){
+	                    	if(j==0)
+	                    		cout<< "\t  CAM"<<j<<"  ";
+	                    	else
+	                    		cout<< "\t    CAM"<<j<<"  ";
+	                    }
+	                    cout<<endl;
+	                    for(int j=0; j<8;j++){
+	                    	cout<< "CAM"<<j<<"| ";
+	                    	for(int di=0; di<8;di++){
+	                    		cout<<"["<<diffs[j][di][0]<<","<<diffs[j][di][1]<<"]\t";
+	                    	}
+	                    	cout<<"|"<<endl;
+	                    }
+	                    cout << fixed;
+						cout << setprecision(6);
+	                    cout << "\nSending data for marker " << i << endl;
+	                	cout << "Coordinates to send:\t" << sentCoords << endl;
+	                    cout << "Angles to send:\t\t" << avgAngles << endl;
+	                }
+	                UDPfarewell(i, sentCoords, avgAngles);
+            	} //if !first loop
 
 	        } // if found 
 
@@ -316,19 +369,25 @@ int main(int argc, char *argv[]){
 
 		}
 
-		/*cnt++;
+		if(REALTIME_MONITORING){ // print every UPDATE_ITS iterations with non-rolling output
+			
+			cnt++;
 
-		if(cnt == 20) {
+			if(cnt == UPDATE_ITS) {
 
-			std::system("clear");
-			print = true;
-			cnt = 0;
+				std::system("clear");
+				print = true;
+				cnt = 0;
 
-		} else {
+			} else {
 
-			print = false;
+				print = false;
 
-		}*/
+			}
+
+		}		
+
+		firstLoop = false;
         
     }
 
