@@ -151,8 +151,8 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
             	(rotMattoe0 * (f_rotMat * (tvec + f_tvec))) + 
             	transtoe0[f_markerID];
 
-            std::cout << "using fixed marker ID:" << f_markerID << std::endl;
-            std::cout << "origin to truck :" << markerID << "\t" << reading << std::endl;
+            cout << "using fixed marker ID:" << f_markerID << endl;
+            cout << "origin to truck :" << markerID << "\t" << reading << endl;
             
             cv::Mat rotationMatrix;
             cv::Rodrigues(rvec, rotationMatrix);
@@ -160,10 +160,11 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
 
             
             getEulerAngles(rotationMatrix, angle_rot);
-            std::cout << "rotation angle(deg):" << "\t" << angle_rot << std::endl;
+            cout << "rotation angle(deg):" << "\t" << angle_rot << endl;
             
             if (sent_data[markerID-51] == 0){
-
+                cout << "\nCoordinates to send:\t" << reading << endl;
+                cout << "Angles to send:\t\t" << angle_rot << endl;
             	// angles in degreee and x,y,z 
                 UDPfarewell(markerID, reading, angle_rot);
                 sent_data[markerID-51] = 1;
@@ -172,7 +173,7 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
             
             else{
 
-                std::cout << "skipped:" << markerID << std::endl;
+                cout << "skipped:" << markerID << endl;
 
             }
         }
