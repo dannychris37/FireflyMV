@@ -116,7 +116,7 @@ void getEulerAngles(
     );
 }
 
-void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
+void makeSense(cv::Vec3d tvec,cv::Vec3d rvec, int markerID, int camera_no){
     
     /** Fixed marker IDs **/
     if(markerID < 50) {
@@ -151,8 +151,8 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
             	(rotMattoe0 * (f_rotMat * (tvec + f_tvec))) + 
             	transtoe0[f_markerID];
 
-            cout << "using fixed marker ID:" << f_markerID << endl;
-            cout << "origin to truck :" << markerID << "\t" << reading << endl;
+            cout << "CAM: using fixed marker ID:" << f_markerID << endl;
+            cout << "CAM: origin to truck :" << markerID << "\t" << reading << endl;
             
             cv::Mat rotationMatrix;
             cv::Rodrigues(rvec, rotationMatrix);
@@ -160,11 +160,12 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
 
             
             getEulerAngles(rotationMatrix, angle_rot);
-            cout << "rotation angle(deg):" << "\t" << angle_rot << endl;
+            cout << "CAM: rotation angle(deg):" << "\t" << angle_rot << endl;
             
             if (sent_data[markerID-51] == 0){
-                cout << "\nCoordinates to send:\t" << reading << endl;
-                cout << "Angles to send:\t\t" << angle_rot << endl;
+                cout << "\nSEND: Cam "<<camera_no<<" first to find marker "<<markerID<<endl;
+                cout << "SEND: Coordinates to send:\t" << reading << endl;
+                cout << "SEND: Angles to send:\t\t" << angle_rot << endl;
             	// angles in degreee and x,y,z 
                 UDPfarewell(markerID, reading, angle_rot);
                 sent_data[markerID-51] = 1;
@@ -173,14 +174,14 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec,int markerID){
             
             else{
 
-                cout << "skipped:" << markerID << endl;
+                cout << "\nSKIP: Cam "<<camera_no<<" skipped: " << markerID << endl;
 
             }
         }
     }
 }
 
-void arucoPipeline(cv::Mat img,int camera_number) {
+void arucoPipeline(cv::Mat img, int camera_no) {
     
     // reset for each frame
     f_markerID = 0; 
@@ -228,8 +229,8 @@ void arucoPipeline(cv::Mat img,int camera_number) {
             		// estimate pose
                     cv::aruco::estimatePoseSingleMarkers(single_markerCorner, 
                     	markerLength_fixed, 
-                    	camMatrix[camera_number], 
-                    	distCoeffs[camera_number], 
+                    	camMatrix[camera_no], 
+                    	distCoeffs[camera_no], 
                     	single_rvec, 
                     	single_tvec
                     );
@@ -239,14 +240,14 @@ void arucoPipeline(cv::Mat img,int camera_number) {
                     // draws X, Y, Z axes
                     cv::aruco::drawAxis(
                     	img, 
-                    	camMatrix[camera_number], 
-                    	distCoeffs[camera_number], 
+                    	camMatrix[camera_no], 
+                    	distCoeffs[camera_no], 
                     	single_rvec[0], 
                     	single_tvec[0],
     		            markerLength_fixed*0.5f
     		        );
 
-                    makeSense(single_tvec[0],single_rvec[0],markerIds[i]);
+                    makeSense(single_tvec[0], single_rvec[0], markerIds[i], camera_no);
 
                     found_fixedM = 1;
 
@@ -268,8 +269,8 @@ void arucoPipeline(cv::Mat img,int camera_number) {
 
                     cv::aruco::estimatePoseSingleMarkers( single_markerCorner, 
                     	markerLength_moving, 
-                    	camMatrix[camera_number], 
-                    	distCoeffs[camera_number],  
+                    	camMatrix[camera_no], 
+                    	distCoeffs[camera_no],  
                     	single_rvec,single_tvec
                     );
 
@@ -279,14 +280,14 @@ void arucoPipeline(cv::Mat img,int camera_number) {
 
                     cv::aruco::drawAxis(
                     	img, 
-                    	camMatrix[camera_number], 
-                    	distCoeffs[camera_number], 
+                    	camMatrix[camera_no], 
+                    	distCoeffs[camera_no], 
                     	single_rvec[0], 
                     	single_tvec[0],
                     	markerLength_moving*0.5f
                     );
 
-                    makeSense(single_tvec[0],single_rvec[0],markerIds[i]);
+                    makeSense(single_tvec[0], single_rvec[0], markerIds[i], camera_no);
 
             }
       	}
