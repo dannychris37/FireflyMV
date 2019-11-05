@@ -172,7 +172,7 @@ void checkAngle(int i){
     if(angleDiff > 180) angleDiff = 360 - angleDiff;
     if(angleDiff < MAX_DEGREES){
 
-        cout<<"\nANGLE: Angle diff |"<<compBearing<<" - "<<currentBearing<<"| = "<<angleDiff<<endl;
+        if(print) cout<<"\nANGLE: Angle diff |"<<compBearing<<" - "<<currentBearing<<"| = "<<angleDiff<<endl;
 
         currentBearing = compBearing;
 
