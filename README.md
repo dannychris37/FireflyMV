@@ -5,7 +5,7 @@ AES Trucklab Firefly camera code
 
 Currently the main working branch. Makefile, code and file structure may differ signifficantly as it is the most developed branch.
 
-All code that is compiled can be found in `MV.c` and inside the `grab_FireFlyMV` dir.
+All code that is compiled can be found in `fireflyMV.c` and inside the `grab_FireFlyMV` dir.
 
 ## For all other branches:
 
