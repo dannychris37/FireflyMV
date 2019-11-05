@@ -1,35 +1,4 @@
-#include "fireflymv.h"
-
-// vector of all processed aruco frames
-std::vector<cv::Mat> frames;
-
-// camera matrix and distance coefficients used in 
-// readArucoFiles function
-std::vector<cv::Mat> camMatrix, distCoeffs;
-
-// fixed marker rvec->rotmat,tvec (global declaration)
-cv::Matx33d f_rotMat[8];
-cv::Vec3d f_tvec[8];
-int f_markerID[8];
-
-/** Translations to e0 (ground) coordinate system **/
-
-std::vector<cv::Vec3d> transtoe0 {{0.19,0.055,0.0},     //0 fixed marker in dM
-                                  {0.19,0.4113,0.0},    //1 fixed marker
-                                  {0.268,0.0549,0.0},   //2 fixed marker
-                                  {0.343,0.41,0.0},     //3 fixed marker
-                                  {0.5269,0.055,0.0},   //4 fixed marker 
-                                  {0.4865,0.4098,0.0},  //5 fixed marker
-                                  {0.6559,0.0549,0.0},  //6 fixed marker
-                                  {0.6544,0.41,0.0},    //7 fixed marker 
-                                  {0.19,0.4113,0.0}     //8 fixed marker
-};
-
-// only for fixed markers
-const float markerLength_fixed      = 0.0203;
-
-// only for moving markers
-const float markerLength_moving     = 0.013;//0.0097;
+#include "fireflyMV.h"
 
 /**  Convert in-image timestamp to seconds **/
 
@@ -513,4 +482,95 @@ dc1394error_t cameraCaptureSingle(
 
     }
 
+}
+
+void captureAndProcess(){
+
+    std::thread t[(int)list -> num];
+
+    if(print)
+    std::cout << "---------------------------------------------------\n\n";
+
+    // if measure while flag is set
+    // start_while and other timespec vars are defined in firefly.h
+    if(MEAS_WHILE){
+
+        clock_gettime(CLOCK_MONOTONIC, &start_while);
+
+    }
+
+    // reset valuesStored and markerFound flags
+    for(int i = 0; i < 100; i++){
+
+        markerFound[i] = false;
+
+        for(int j = 0; j < 8; j++){
+            dataToSend[i][j].valuesStored = false;
+        }
+    }
+
+    // capture frames from each camera
+    for(int i = 0; i < (int)list -> num; i++){
+
+        // waiting for and processing frame times are measured inside cameraCaptureSingle
+        
+        t[i] = std::thread(cameraCaptureSingle, cameras[i], i);
+
+    }
+
+    /** COORDINATE WAIT TIME PRINTING **/
+
+    if(print)
+        std::cout << "--- WAITING FOR FRAMES ---\n\n";
+
+    // enable wait time printing and notify any waiting thread
+    can_print_wait_times = true;
+    cnd_var_wait.notify_one();
+
+    // wait until frames arrive and waiting times are printed
+    std::unique_lock<std::mutex> lck_wait(mtx_wait);
+    cnd_var_wait.wait(lck_wait, []{return print_wait_cnt == (int)list -> num;});
+    //std::cout << "print_wait_cnt " << print_wait_cnt << std::endl;
+
+    /** COORDINATE POSE PRINTING **/        
+
+    if(print)
+        std::cout << "\n--- PROCESSING FRAMES ---\n\n";
+
+    // enable pose printing
+    can_print_poses = true;
+    cnd_var_pose_print.notify_one();
+    cnd_var_pose_cnt.notify_one();
+
+    // wait until frames are processed
+    std::unique_lock<std::mutex> lck_pose_cnt(mtx_pose_cnt);
+    cnd_var_pose_cnt.wait(lck_pose_cnt, []{return pose_cnt == (int)list -> num;});
+    //std::cout << "pose_cnt " << pose_cnt << std::endl;
+
+    /** COORDINATE PROC TIME PRINTING **/
+
+    // enable proc time printing
+    can_print_proc_times = true;
+    cnd_var_proc.notify_one();
+
+    // wait until processing times are printed
+    std::unique_lock<std::mutex> lck_proc(mtx_proc);
+    cnd_var_proc.wait(lck_proc, []{return print_proc_cnt == (int)list -> num;});
+    //std::cout << "print_proc_cnt " << print_proc_cnt << std::endl;
+
+    // reset for next loop
+    print_wait_cnt = 0;
+    pose_cnt = 0;
+    print_proc_cnt = 0;
+    can_print_wait_times = false;
+    can_print_poses = false; 
+    can_print_proc_times = false;
+  
+
+    for(int i = 0; i < (int)list -> num; i++){
+
+        // waiting for and processing frame times are measured inside cameraCaptureSingle
+        t[i].join();
+
+    }
 }

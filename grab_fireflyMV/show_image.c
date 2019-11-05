@@ -1,4 +1,5 @@
-#include "fireflymv.h"
+#include "fireflyMV.h"
+#include "camera_control.c"
 
 /** Show processed camera feed **/
 
@@ -79,4 +80,68 @@ cv::Mat makeCombined(std::vector<cv::Mat>& vecMat, int windowHeight, int nRows) 
 
     return combinedImage;
 
+}
+
+void showFrames(){
+
+    if(MEAS_SHOW){
+
+        clock_gettime(CLOCK_MONOTONIC, &start_show);
+
+    }
+
+    // show captured frames
+    cv::Mat combImg = makeCombined(frames, 800, 2);
+    cv::imshow("TruckLabImgs", combImg);
+    keyPress(cameras, list);
+
+    if(MEAS_WHILE || MEAS_SHOW){
+
+        clock_gettime(CLOCK_MONOTONIC, &stop_while);
+
+    }
+
+    if(MEAS_SHOW){
+
+        delta_show = ( stop_while.tv_sec - start_show.tv_sec )
+             + (double)( stop_while.tv_nsec - start_show.tv_nsec )
+               / (double)MILLION;
+
+        if(print)
+            std::cout << "Frame show time: " << delta_show << "\n";
+
+    }
+
+
+    if(MEAS_WHILE){
+
+        delta_while = ( stop_while.tv_sec - start_while.tv_sec )
+             + (double)( stop_while.tv_nsec - start_while.tv_nsec )
+               / (double)MILLION;
+
+        if(print){
+            std::cout << "While loop time: " << delta_while << "\n";
+            std::cout << "---------------------------------------------------\n";
+        }
+        
+
+    }
+
+    if(REALTIME_MONITORING){ // print every UPDATE_ITS iterations with non-rolling output
+        
+        cnt++;
+
+        if(cnt == UPDATE_ITS) {
+
+            std::system("clear");
+            print = true;
+            cnt = 0;
+
+        } else {
+
+            print = false;
+
+        }
+
+    }       
 }
