@@ -119,7 +119,8 @@ cv::Vec3d transStartCoords;
 bool inTransition = false;
 
 //offset mitigation
-#define MAX_DEGREES		120
+#define MAX_DEGREES		120  // in degress
+#define MAX_DIST      60   // in cm
 double compBearing;
 double currentBearing;
 

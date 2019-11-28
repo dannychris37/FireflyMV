@@ -34,7 +34,7 @@ int main(int argc, char *argv[]){
                     checkState();
 
                     // angle check mitigation
-                    checkAngle(i);
+                    checkAngleAndDist(i);
 
             	} // if/else detectingMotion
 

@@ -87,7 +87,7 @@ void detectFirstMotion(int i){
         }
         UDPfarewell(i, prevCoords, prevAngles);
 
-    } else{ 
+    } else{     
 
         // if first average already computed then check if second average is at a minimal distance
         // in which case the truck has moved away from initial location
@@ -165,22 +165,35 @@ void checkState(){
 
 }
 
-void checkAngle(int i){
+void checkAngleAndDist(int i){
     // mitigating large angle shifts
     compBearing = bearing(prevCoords[0], prevCoords[1], compCoords[0], compCoords[1]);
     float angleDiff = abs(compBearing - currentBearing);
     if(angleDiff > 180) angleDiff = 360 - angleDiff;
     if(angleDiff < MAX_DEGREES){
 
-        if(print) cout<<"\nANGLE: Angle diff |"<<compBearing<<" - "<<currentBearing<<"| = "<<angleDiff<<endl;
+        double distance = sqrt(
+            pow(prevCoords[0] - compCoords[0], 2) +
+            pow(prevCoords[1] - compCoords[1], 2)
+        );
 
-        currentBearing = compBearing;
+        if(print) cout<<"\nANGLE: Angle diff is below/equal set value |"<<compBearing<<" - "<<currentBearing<<"| = "<<angleDiff<<endl;
 
-        // store in case transition is needed next iteration
-        if(!inTransition) transStartCoords = compCoords;
+        if(distance <= MAX_DIST){
 
-        // no transition needed
-        prevCoords = compCoords;
+            if(print) cout<<"\nDIST: Distance is below/equal set value: "<<distance<<endl;
+            
+            currentBearing = compBearing;
+
+            // store in case transition is needed next iteration
+            if(!inTransition) transStartCoords = compCoords;
+
+            // no transition needed
+            prevCoords = compCoords;
+
+        }
+
+
 
     } else{ //else do nothing, send same coords
 
