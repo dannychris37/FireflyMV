@@ -234,7 +234,7 @@ void arucoPipeline(cv::Mat img,int camera_no) {
     cv::aruco::drawDetectedMarkers(img,markerCorners,markerIds);
 
     // rejected candidates
-    cv::aruco::drawDetectedMarkers(img,rejectedCandidates , cv::noArray(), cv::Scalar(100, 0, 255)); 
+    //cv::aruco::drawDetectedMarkers(img,rejectedCandidates , cv::noArray(), cv::Scalar(100, 0, 255)); 
     
     // if markers have same dictionary 
     if (markerIds.size() > 0) {
