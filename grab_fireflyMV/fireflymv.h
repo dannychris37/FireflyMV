@@ -41,10 +41,13 @@
 #include "opencv2/aruco/dictionary.hpp"
 #include "opencv2/videoio/videoio.hpp"
 
-// vector of camera IDs
-std::vector<long int> cameraID;
+using namespace std;
+using namespace cv;
 
-cv::Ptr<cv::aruco::DetectorParameters> detectorParams= cv::aruco::DetectorParameters::create();
+// vector of camera IDs
+vector<long int> cameraID;
+
+Ptr<aruco::DetectorParameters> detectorParams= aruco::DetectorParameters::create();
 // time measuring flags
 #define MEAS_WHILE 		0
 #define MEAS_WAIT 		0

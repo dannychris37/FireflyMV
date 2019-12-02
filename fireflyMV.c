@@ -19,7 +19,7 @@ int main(int argc, char *argv[]){
     
     /** Camera initialization  **/
 
-    std::vector<dc1394camera_t*> cameras;
+    vector<dc1394camera_t*> cameras;
 
     // context in which the library can be used
     dc1394_t* d;
@@ -68,7 +68,7 @@ int main(int argc, char *argv[]){
 
             	// no. of GUIDs provided is smaller than
             	// ammount of detected cameras
-                std::cout << "Not enough GUID's to verify camera order" << std::endl;
+                cout << "Not enough GUID's to verify camera order" << endl;
                 return 1;
             }
     	}
@@ -85,7 +85,7 @@ int main(int argc, char *argv[]){
 
  		// initialize physical cameras: operation mode, iso speed, image size etc.
 		initializeCamera(cameras[i]);
-        std::cout << "Initialised " << i+1 << " cameras" << std::endl;
+        cout << "Initialised " << i+1 << " cameras" << endl;
                 
     }
 
@@ -106,6 +106,8 @@ int main(int argc, char *argv[]){
 
     	}
 
+        cout << "\n--------------------- LOOP BEGIN ---------------------" << endl;
+
 		// assigns 0's to sent_data vector (vector of 2 bools inside image_proc.c)
 		// 1st value is for marker id 51, 2nd is for marker id 52 (markers used on trucks)
 		// used to skip marker if seen again on another camera
@@ -125,8 +127,8 @@ int main(int argc, char *argv[]){
 	    }
 
         // show captured frames
-        cv::Mat combImg = makeCombined(frames, 800, 2);
-        cv::imshow("TruckLabImgs", combImg);
+        Mat combImg = makeCombined(frames, 800, 2);
+        imshow("TruckLabImgs", combImg);
         keyPress(cameras, list);
 
         if(MEAS_WHILE || MEAS_SHOW){
@@ -135,15 +137,13 @@ int main(int argc, char *argv[]){
 
         }
 
-        std::cout << "---------------------------------------------------" << std::endl;
-
         if(MEAS_SHOW){
 
 	        delta_show = ( stop_while.tv_sec - start_show.tv_sec )
 	             + (double)( stop_while.tv_nsec - start_show.tv_nsec )
 	               / (double)MILLION;
 
-	    	std::cout << "frame show time: " << delta_show << "\n";
+	    	cout << "frame show time: " << delta_show << "\n";
 
 		}
 
@@ -154,12 +154,11 @@ int main(int argc, char *argv[]){
 	             + (double)( stop_while.tv_nsec - start_while.tv_nsec )
 	               / (double)MILLION;
 
-	    	std::cout << "while loop time: " << delta_while << "\n";
+	    	cout << "while loop time: " << delta_while << "\n";
 
 		}
 
-		std::cout << "---------------------------------------------------\n";
-		std::cout << "---------------------------------------------------\n\n\n";
+		cout << "---------------------- LOOP END ----------------------" << endl;
         
     }
 

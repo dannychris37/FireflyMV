@@ -2,7 +2,7 @@
 
 /** Show processed camera feed **/
 
-cv::Mat makeCombined(std::vector<cv::Mat>& vecMat, int windowHeight, int nRows) {
+Mat makeCombined(vector<Mat>& vecMat, int windowHeight, int nRows) {
 
     // no of frames
     int N = vecMat.size();
@@ -22,7 +22,7 @@ cv::Mat makeCombined(std::vector<cv::Mat>& vecMat, int windowHeight, int nRows) 
 
     int maxRowLength = 0;
 
-    std::vector<int> resizeWidth;
+    vector<int> resizeWidth;
 
     for (int i = 0; i < N;) {
 
@@ -46,7 +46,7 @@ cv::Mat makeCombined(std::vector<cv::Mat>& vecMat, int windowHeight, int nRows) 
     }
 
     int windowWidth = maxRowLength;
-    cv::Mat combinedImage(windowHeight, windowWidth, CV_8UC3, cv::Scalar(0, 0, 0));
+    Mat combinedImage(windowHeight, windowWidth, CV_8UC3, Scalar(0, 0, 0));
     
     for (int k = 0, i = 0; i < nRows; i++) {
 
@@ -57,13 +57,13 @@ cv::Mat makeCombined(std::vector<cv::Mat>& vecMat, int windowHeight, int nRows) 
 
                 int x = x_end;
 
-                cv::Rect roi(x, y, resizeWidth[k], resizeHeight);
-                cv::Size s = combinedImage(roi).size();
+                Rect roi(x, y, resizeWidth[k], resizeHeight);
+                Size s = combinedImage(roi).size();
                 
                 // change the number of channels to three
-                cv::Mat target_ROI(s,CV_8UC3);
+                Mat target_ROI(s,CV_8UC3);
                 vecMat[k].copyTo(target_ROI);
-                cv::resize(target_ROI, target_ROI, s);
+                resize(target_ROI, target_ROI, s);
                 
                 if (target_ROI.type() != combinedImage.type()) {
 

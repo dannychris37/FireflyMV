@@ -49,13 +49,13 @@ string name_for_id(long int id)
     return 0;
 }
 
-void print_cams(const std::vector<long int>& vec)
+void print_cams(const vector<long int>& vec)
 {
-	std::cout << "The following cameras are used: ";
+	cout << "The following cameras are used: ";
     for (auto x: vec) {
-         std::cout << name_for_id(x) << ' ';
+         cout << name_for_id(x) << ' ';
     }
-    std::cout << '\n';
+    cout << '\n';
 }
 
 void addUsedCams(){

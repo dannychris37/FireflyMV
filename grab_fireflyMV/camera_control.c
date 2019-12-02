@@ -263,9 +263,9 @@ dc1394error_t initializeCamera(dc1394camera_t *camera){
 
 /** Read camera parameters using calibration **/
 
-static bool readCameraParameters(std::string filename, cv::Mat &camMatrix, cv::Mat &distCoeffs) {
+static bool readCameraParameters(string filename, Mat &camMatrix, Mat &distCoeffs) {
 
-    cv::FileStorage fs(filename, cv::FileStorage::READ);
+    FileStorage fs(filename, FileStorage::READ);
     if(!fs.isOpened())
         return false;
     fs["camera_matrix"] >> camMatrix;
@@ -277,11 +277,11 @@ static bool readCameraParameters(std::string filename, cv::Mat &camMatrix, cv::M
 /** Functions for reading detector parameters using calibration **/
 
 static bool readDetectorParameters(
-	std::string filename, 
-	cv::Ptr<cv::aruco::DetectorParameters> &params
+	string filename, 
+	Ptr<aruco::DetectorParameters> &params
 	) {
 
-    cv::FileStorage fs(filename, cv::FileStorage::READ);
+    FileStorage fs(filename, FileStorage::READ);
 
     if(!fs.isOpened()) return false;
 
@@ -331,11 +331,11 @@ static bool readDetectorParameters(
 
 //** Handle keys **//
 
-void keyPress(std::vector<dc1394camera_t*> cameras,dc1394camera_list_t * list ){
+void keyPress(vector<dc1394camera_t*> cameras,dc1394camera_list_t * list ){
 
     int key;
     dc1394error_t err;
-    key = cv::waitKey(10);
+    key = waitKey(10);
     
     // esc
     if( key == 27 ){

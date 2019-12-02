@@ -18,7 +18,7 @@ void UDPset(){
 
     if (socket_status == 0){
 
-        std::cout << "Error in coverting string address to binary number" << std::endl;
+        cout << "Error in coverting string address to binary number" << endl;
         exit(1);
 
     }
@@ -34,19 +34,19 @@ void UDPset(){
 
     if (socket_status == -1){
 
-        std::cout<<"Error in socket creation "<< std::endl;
+        cout<<"Error in socket creation "<< endl;
 
     }
 }
 
-void UDPfarewell(int markerID, cv::Vec3d data, cv::Vec3d rot){
+void UDPfarewell(int markerID, Vec3d data, Vec3d rot){
 
-    time_t t = std::time(0);
+    time_t t = time(0);
     double now = static_cast<double> (t);
-    //std::cout<<"stamps:"<<now<< std::endl;
+    //cout<<"stamps:"<<now<< endl;
     
     //OpenCV vector of 8 doubles containing ArUco data
-    cv::Vec<double, 8> send_data{
+    Vec<double, 8> send_data{
     	now, 
     	double(markerID), 
     	data[0], 
@@ -69,7 +69,7 @@ void UDPfarewell(int markerID, cv::Vec3d data, cv::Vec3d rot){
 
     if (send_status == -1){
 
-        std::cout<< "error sending data"<<"\n error code: "<< send_status << endl;
+        cout<< "error sending data"<<"\n error code: "<< send_status << endl;
 
     }
 }

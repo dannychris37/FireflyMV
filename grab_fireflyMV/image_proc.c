@@ -1,20 +1,20 @@
 #include "fireflymv.h"
 
 // vector of all processed aruco frames
-std::vector<cv::Mat> frames;
+vector<Mat> frames;
 
 // camera matrix and distance coefficients used in 
 // readArucoFiles function
-std::vector<cv::Mat> camMatrix, distCoeffs;
+vector<Mat> camMatrix, distCoeffs;
 
 // fixed marker rvec->rotmat,tvec (global declaration)
-cv::Matx33d f_rotMat;
-cv::Vec3d f_tvec;
+Matx33d f_rotMat;
+Vec3d f_tvec;
 int f_markerID;
 
 /** Translations to e0 (ground) coordinate system **/
 
-std::vector<cv::Vec3d> transtoe0 {{0.19,0.055,0.0},     //0 fixed marker in dM
+vector<Vec3d> transtoe0 {{0.19,0.055,0.0},     //0 fixed marker in dM
                                   {0.19,0.4113,0.0},    //1 fixed marker
                                   {0.268,0.0549,0.0},   //2 fixed marker
                                   {0.343,0.41,0.0},     //3 fixed marker
@@ -25,7 +25,7 @@ std::vector<cv::Vec3d> transtoe0 {{0.19,0.055,0.0},     //0 fixed marker in dM
                                   {0.19,0.4113,0.0}     //8 fixed marker
 };
 
-std::vector<bool> sent_data{    
+vector<bool> sent_data{    
     0,  // markerID 51 
     0   // markerID 52  
 };
@@ -61,7 +61,7 @@ void readArucoFiles(int total_camera){
 
     if(!read) {
 
-       	std::cerr << "Invalid detector parameters file" << std::endl;
+       	cerr << "Invalid detector parameters file" << endl;
         play = false;
     	 //return 0;
 
@@ -75,7 +75,7 @@ void readArucoFiles(int total_camera){
 
         if(!readOk) {
 
-            std::cerr << "Invalid camera file for camera number: "<< i + 1 << std::endl;
+            cerr << "Invalid camera file for camera number: "<< i + 1 << endl;
             play =false;
             //return 0;
 
@@ -84,11 +84,11 @@ void readArucoFiles(int total_camera){
 }
 
 void getEulerAngles(
-	cv::Mat &rotCamerMatrix,
-	cv::Vec3d &eulerAngles
+	Mat &rotCamerMatrix,
+	Vec3d &eulerAngles
 	) {
 
-    cv::Mat 
+    Mat 
     	cameraMatrix,
     	rotMatrix,
     	transVect,
@@ -104,8 +104,8 @@ void getEulerAngles(
             _r[6], _r[7], _r[8], 0
         };
 
-    cv::decomposeProjectionMatrix( 
-    	cv::Mat(3,4,CV_64FC1,projMatrix),
+    decomposeProjectionMatrix( 
+    	Mat(3,4,CV_64FC1,projMatrix),
         cameraMatrix,
         rotMatrix,
         transVect,
@@ -116,16 +116,16 @@ void getEulerAngles(
     );
 }
 
-void makeSense(cv::Vec3d tvec,cv::Vec3d rvec, int markerID, int camera_no){
+void makeSense(Vec3d tvec,Vec3d rvec, int markerID, int camera_no){
     
     /** Fixed marker IDs **/
     if(markerID < 50) {
         
-        cv::Mat rotMatrix;
+        Mat rotMatrix;
 
         // converts a rotation matrix to a 
         // rotation vector or viceversa
-		cv::Rodrigues(rvec, rotMatrix);
+		Rodrigues(rvec, rotMatrix);
 
 		// transpose rotation matrix
         transpose(rotMatrix, f_rotMat);
@@ -140,23 +140,23 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec, int markerID, int camera_no){
         if (markerID > 50){  
            
            	// if all x pointing in same direction
-            cv::Matx33d rotMattoe0( 
+            Matx33d rotMattoe0( 
             	0.0, -1.0, 0.0,
             	1.0, 0.0, 0.0,
             	0.0, 0.0, 1.0
             );
 
             // 
-            cv::Vec3d reading = 
+            Vec3d reading = 
             	(rotMattoe0 * (f_rotMat * (tvec + f_tvec))) + 
             	transtoe0[f_markerID];
 
             cout << "CAM: using fixed marker ID:" << f_markerID << endl;
             cout << "CAM: origin to truck :" << markerID << "\t" << reading << endl;
             
-            cv::Mat rotationMatrix;
-            cv::Rodrigues(rvec, rotationMatrix);
-            cv::Vec3d angle_rot;
+            Mat rotationMatrix;
+            Rodrigues(rvec, rotationMatrix);
+            Vec3d angle_rot;
 
             
             getEulerAngles(rotationMatrix, angle_rot);
@@ -181,19 +181,19 @@ void makeSense(cv::Vec3d tvec,cv::Vec3d rvec, int markerID, int camera_no){
     }
 }
 
-void arucoPipeline(cv::Mat img, int camera_no) {
+void arucoPipeline(Mat img, int camera_no) {
     
     // reset for each frame
     f_markerID = 0; 
-    std::vector<int> markerIds;
-    std::vector< std::vector<cv::Point2f> > markerCorners,rejectedCandidates;
-    std::vector< cv::Vec3d >  rvecs, tvecs;
+    vector<int> markerIds;
+    vector< vector<Point2f> > markerCorners,rejectedCandidates;
+    vector< Vec3d >  rvecs, tvecs;
     
     // fixed and moving markers have different dictionaries hence the search algorithm is changed 
-    cv::Ptr<cv::aruco::Dictionary> dictionary = cv::aruco::getPredefinedDictionary(cv::aruco::DICT_6X6_250);
+    Ptr<aruco::Dictionary> dictionary = aruco::getPredefinedDictionary(aruco::DICT_6X6_250);
 
     // ArUco module function that performs marker detection
-    cv::aruco::detectMarkers(
+    aruco::detectMarkers(
     	img,				// image where markers are detected
     	dictionary,			// dictionary used
     	markerCorners,		// where to store marker corners
@@ -203,10 +203,10 @@ void arucoPipeline(cv::Mat img, int camera_no) {
 	);
 
     // ArUco module function that draws detected markers on input image
-    cv::aruco::drawDetectedMarkers(img,markerCorners,markerIds);
+    aruco::drawDetectedMarkers(img,markerCorners,markerIds);
 
     // rejected candidates
-    //cv::aruco::drawDetectedMarkers(img,rejectedCandidates , cv::noArray(), cv::Scalar(100, 0, 255)); 
+    //aruco::drawDetectedMarkers(img,rejectedCandidates , noArray(), Scalar(100, 0, 255)); 
     
     // if markers have same dictionary 
     if (markerIds.size() > 0) {
@@ -216,18 +216,18 @@ void arucoPipeline(cv::Mat img, int camera_no) {
 
 		for(unsigned int i = 0; i < markerIds.size(); i++){ 
                 
-            std::vector< std::vector< cv::Point2f > > single_markerCorner;
-            std::vector<cv::Vec3d> single_rvec, single_tvec;
+            vector< vector< Point2f > > single_markerCorner;
+            vector<Vec3d> single_rvec, single_tvec;
             single_markerCorner.resize(1);
             single_markerCorner[0] = markerCorners[i];
 
-            //std::cout << "processed markercorner size"<< single_markerCorner.size()<<std::endl;
+            //cout << "processed markercorner size"<< single_markerCorner.size()<<endl;
                 
             /** Fixed marker ID **/
             if (markerIds[i] < 50){
 
             		// estimate pose
-                    cv::aruco::estimatePoseSingleMarkers(single_markerCorner, 
+                    aruco::estimatePoseSingleMarkers(single_markerCorner, 
                     	markerLength_fixed, 
                     	camMatrix[camera_no], 
                     	distCoeffs[camera_no], 
@@ -235,10 +235,10 @@ void arucoPipeline(cv::Mat img, int camera_no) {
                     	single_tvec
                     );
 
-                    //std::cout<<"fixed markers:"<<markerIds[i]<<std::endl;
+                    //cout<<"fixed markers:"<<markerIds[i]<<endl;
 
                     // draws X, Y, Z axes
-                    cv::aruco::drawAxis(
+                    aruco::drawAxis(
                     	img, 
                     	camMatrix[camera_no], 
                     	distCoeffs[camera_no], 
@@ -259,15 +259,15 @@ void arucoPipeline(cv::Mat img, int camera_no) {
 
       	for(unsigned int i = 0; i < markerIds.size(); i++){
 
-            std::vector< std::vector<cv::Point2f> > single_markerCorner;
-            std::vector<cv::Vec3d> single_rvec,single_tvec;
+            vector< vector<Point2f> > single_markerCorner;
+            vector<Vec3d> single_rvec,single_tvec;
             single_markerCorner.resize(1);
             single_markerCorner[0] = markerCorners[i];
             
             /** Moving marker ID **/
             if(markerIds[i] > 50){
 
-                    cv::aruco::estimatePoseSingleMarkers( single_markerCorner, 
+                    aruco::estimatePoseSingleMarkers( single_markerCorner, 
                     	markerLength_moving, 
                     	camMatrix[camera_no], 
                     	distCoeffs[camera_no],  
@@ -275,10 +275,10 @@ void arucoPipeline(cv::Mat img, int camera_no) {
                     );
 
                     //verify
-                    //std::cout<<"moving markers:"<<markerIds[i]<<std::endl;
-                    //std::cout<<"moving markers:"<<single_rvec.size()<<std::endl;
+                    //cout<<"moving markers:"<<markerIds[i]<<endl;
+                    //cout<<"moving markers:"<<single_rvec.size()<<endl;
 
-                    cv::aruco::drawAxis(
+                    aruco::drawAxis(
                     	img, 
                     	camMatrix[camera_no], 
                     	distCoeffs[camera_no], 
@@ -318,9 +318,9 @@ dc1394error_t cameraCaptureSingle(
     unsigned int stamp;
     unsigned char* pStamp = (unsigned char*) &stamp;
 
-    cv::Mat BImage = cv::Mat( 480, 640, CV_8UC1 );
-    cv::Mat dispImage = cv::Mat( 480, 640, CV_8UC3 );
-    cv::Mat finalImage = cv::Mat( 480, 640, CV_8UC3 );
+    Mat BImage = Mat( 480, 640, CV_8UC1 );
+    Mat dispImage = Mat( 480, 640, CV_8UC3 );
+    Mat finalImage = Mat( 480, 640, CV_8UC3 );
     
     /** Capture one frame **/
 
@@ -347,19 +347,19 @@ dc1394error_t cameraCaptureSingle(
 
         clock_gettime(CLOCK_MONOTONIC, &stop_wait);
 
-        std::cout << "---------------------------------------------------" << std::endl;
-        std::cout << "On camera no. " << camera_no << std::endl;
+        cout << "---------------------------------------------------" << endl;
+        cout << "On camera no. " << camera_no << endl;
 
         delta_wait = ( stop_wait.tv_sec - start_wait.tv_sec )
                  + (double)( stop_wait.tv_nsec - start_wait.tv_nsec )
                    / (double)MILLION;
 
-        std::cout << "frame waiting time: " << delta_wait << "\n";
+        cout << "frame waiting time: " << delta_wait << "\n";
 
     } else{
 
-        std::cout << "---------------------------------------------------" << std::endl;
-        std::cout << "On camera no. " << camera_no << std::endl;
+        cout << "---------------------------------------------------" << endl;
+        cout << "On camera no. " << camera_no << endl;
 
     }
 
@@ -378,39 +378,39 @@ dc1394error_t cameraCaptureSingle(
     /* See libc1394 code for what is inside a the dc1394video_frame_t data structure */
     if(camera_no == FRAME_INFO_CAM && SHOW_FRAME_INFO){
         
-        std::cout << "Frame received from camera " << camera_no + 1 << std::endl;
+        cout << "Frame received from camera " << camera_no + 1 << endl;
         
         /* the number of bytes used for the image (image data only, no padding) */
-        std::cout << "Image size: " << frame -> size[0] << "x" << frame -> size[1] << std::endl;
+        cout << "Image size: " << frame -> size[0] << "x" << frame -> size[1] << endl;
         
         /* the color coding used. This field is valid for all video modes. */
-        std::cout << "Color coding: " << frame -> color_coding << std::endl;
+        cout << "Color coding: " << frame -> color_coding << endl;
         
         /* the number of bits per pixel. The number of grayscale levels is 2^(this_number).
         This is independent from the colour coding */
-        std::cout << "Data depth: " << frame -> data_depth << std::endl;
+        cout << "Data depth: " << frame -> data_depth << endl;
         
         /* the video mode used for capturing this frame */
-        std::cout << "Video mode: " << frame -> video_mode << std::endl;
+        cout << "Video mode: " << frame -> video_mode << endl;
         
         /* the number of bytes used for the image (image data only, no padding) */
-        std::cout << "Image bytes: " << frame -> image_bytes << "B" << std::endl;
+        cout << "Image bytes: " << frame -> image_bytes << "B" << endl;
         
         /* the number of extra bytes, i.e. total_bytes-image_bytes.  */
-        std::cout << "Padding bytes: " << frame -> padding_bytes << "B" << std::endl;
+        cout << "Padding bytes: " << frame -> padding_bytes << "B" << endl;
 
         /* the total size of the frame buffer in bytes. May include packet-
         multiple padding and intentional padding (vendor specific) */
-        std::cout << "Total bytes: " << frame -> total_bytes << "B" << std::endl;
+        cout << "Total bytes: " << frame -> total_bytes << "B" << endl;
         
         /* amount of memory allocated in for the *image field. */
-        std::cout << "Allocated image bytes: " << frame -> allocated_image_bytes << "B" << std::endl;
+        cout << "Allocated image bytes: " << frame -> allocated_image_bytes << "B" << endl;
         
         /* the size of a packet in bytes. (IIDC data) */
-        std::cout << "Packet size: " << frame -> packet_size << "B" << std::endl;
+        cout << "Packet size: " << frame -> packet_size << "B" << endl;
         
         /* the number of packets per frame. (IIDC data) */
-        std::cout << "Packets per frame: " << frame -> packets_per_frame << std::endl;
+        cout << "Packets per frame: " << frame -> packets_per_frame << endl;
     }
     
     /** Check if frame is corrupt **/
@@ -445,10 +445,10 @@ dc1394error_t cameraCaptureSingle(
     	static and moving markers **/
     arucoPipeline(finalImage, camera_no);
     
-    cv::Mat undistImg;
+    Mat undistImg;
 
     // Transforms an image to compensate for lens distortion. 
-    cv::undistort(
+    undistort(
     	finalImage,
     	undistImg,
     	camMatrix[camera_no], 
@@ -470,7 +470,7 @@ dc1394error_t cameraCaptureSingle(
              + (double)( stop_proc.tv_nsec - start_proc.tv_nsec )
                / (double)MILLION;
 
-        std::cout << "frame processing time: " << delta_proc << "\n";
+        cout << "frame processing time: " << delta_proc << "\n";
 
     }
 
