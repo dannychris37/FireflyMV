@@ -79,7 +79,7 @@ int init(){
     /** Runtime loop **/
 
     if(!REALTIME_MONITORING){
-        print = true; //print constantly with rolling output
+        print_flag = true; //print constantly with rolling output
     }
 
 }

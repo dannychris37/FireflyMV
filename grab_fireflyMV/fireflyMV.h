@@ -47,23 +47,26 @@
 #include "opencv2/aruco/dictionary.hpp"
 #include "opencv2/videoio/videoio.hpp"
 
+using namespace std;
+using namespace cv;
+
 /** FRAME CAPTURING AND PROCESSING **/
 
 // vector of all processed aruco frames
-std::vector<cv::Mat> frames;
+vector<Mat> frames;
 
 // camera matrix and distance coefficients used in 
 // readArucoFiles function
-std::vector<cv::Mat> camMatrix, distCoeffs;
+vector<Mat> camMatrix, distCoeffs;
 
 // fixed marker rvec->rotmat,tvec (global declaration)
-cv::Matx33d f_rotMat[8];
-cv::Vec3d f_tvec[8];
+Matx33d f_rotMat[8];
+Vec3d f_tvec[8];
 int f_markerID[8];
 
 /** Translations to e0 (ground) coordinate system **/
 
-std::vector<cv::Vec3d> transtoe0 {{0.19,0.055,0.0},     //0 fixed marker in dM
+vector<Vec3d> transtoe0 {{0.19,0.055,0.0},     //0 fixed marker in dM
                                   {0.19,0.4113,0.0},    //1 fixed marker
                                   {0.268,0.0549,0.0},   //2 fixed marker
                                   {0.343,0.41,0.0},     //3 fixed marker
@@ -84,8 +87,8 @@ const float markerLength_moving     = 0.013;//0.0097;
 typedef struct  {
 	bool valuesStored;
 	int fixedMarker;
-	cv::Vec3d coords;
-	cv::Vec3d angles;
+	Vec3d coords;
+	Vec3d angles;
 } markerData;
 
 markerData dataToSend[100][8];
@@ -97,25 +100,25 @@ bool markerFound[100] = {false};
 #define INIT_AVG_POINTS		10
 #define MIN_DIST			0.01
 int firstCnt = 0;
-cv::Vec3d prevCoords;
-cv::Vec3d prevAngles;
-cv::Vec3d compCoords;
-cv::Vec3d compAngles;
+Vec3d prevCoords;
+Vec3d prevAngles;
+Vec3d compCoords;
+Vec3d compAngles;
 bool firstPos = true;
 bool detectingMotion = true;
 
 // vars for average and diff
-cv::Vec3d avgCoords;
-cv::Vec3d avgAngles;
+Vec3d avgCoords;
+Vec3d avgAngles;
 int cameraCount;
-cv::Vec2d diffs[8][8] = {0,0};
+Vec2d diffs[8][8] = {0,0};
 
 // transition
 #define TRANS_STEPS		25
 int prevState;
 int stepCount;
-cv::Vec3d sentCoords;
-cv::Vec3d transStartCoords;
+Vec3d sentCoords;
+Vec3d transStartCoords;
 bool inTransition = false;
 
 //offset mitigation
@@ -127,9 +130,9 @@ double currentBearing;
 /** CAMERA DATA STRUCTURES **/
 
 // vector of camera IDs
-std::vector<long int> cameraID;
+vector<long int> cameraID;
 
-std::vector<dc1394camera_t*> cameras;
+vector<dc1394camera_t*> cameras;
 
 // context in which the library can be used
 dc1394_t* d;
@@ -142,12 +145,13 @@ dc1394error_t err;
 
 /** TIME MEASUREMENT **/
 
-cv::Ptr<cv::aruco::DetectorParameters> detectorParams= cv::aruco::DetectorParameters::create();
+Ptr<aruco::DetectorParameters> detectorParams= aruco::DetectorParameters::create();
 // time measuring flags
 #define MEAS_WHILE 		1
 #define MEAS_WAIT 		1
 #define MEAS_PROC		1
 #define MEAS_SHOW		1
+#define DIFF_OUTP   0
 
 // time measuring vars
 timespec start_while, stop_while;
@@ -161,15 +165,15 @@ double delta_while, delta_wait[8], delta_proc[8], delta_show, delta_wait7;
 /** THREADS AND PRINTING **/
 
 // thread mutex for printing
-std::mutex mtx_wait, mtx_pose_print, mtx_pose_cnt, mtx_proc;	
-std::condition_variable cnd_var_wait, cnd_var_pose_print, cnd_var_pose_cnt, cnd_var_proc; // condition variable for print critical sections
+mutex mtx_wait, mtx_pose_print, mtx_pose_cnt, mtx_proc;	
+condition_variable cnd_var_wait, cnd_var_pose_print, cnd_var_pose_cnt, cnd_var_proc; // condition variable for print critical sections
 int print_wait_cnt = 0, print_proc_cnt = 0, pose_cnt = 0;
 bool can_print_wait_times = false, can_print_poses = false, can_print_proc_times = false;
 
 //clear screen counter and printing flag
-#define REALTIME_MONITORING		1
+#define REALTIME_MONITORING		0
 #define UPDATE_ITS				10
 int cnt = 0;
-bool print = false;
+bool print_flag = false;
 
 #endif

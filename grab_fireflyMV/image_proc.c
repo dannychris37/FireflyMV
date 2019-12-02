@@ -330,7 +330,7 @@ dc1394error_t cameraCaptureSingle(
         std::unique_lock<std::mutex> lck_wait(mtx_wait);
         cnd_var_wait.wait(lck_wait, []{return can_print_wait_times;});
 
-        if(print)
+        if(print_flag)
             std::cout << "Cam " << camera_no << " frame waiting time: " << delta_wait[camera_no] << "\n";
 
         // increment counter
@@ -471,7 +471,7 @@ dc1394error_t cameraCaptureSingle(
         std::unique_lock<std::mutex> lck_proc(mtx_proc);
         cnd_var_proc.wait(lck_proc, []{return can_print_proc_times;});
 
-        if(print)
+        if(print_flag)
             std::cout << "Cam " << camera_no << " frame processing time: " << delta_proc[camera_no] << "\n";
 
         // increment counter
@@ -488,7 +488,7 @@ void captureAndProcess(){
 
     std::thread t[(int)list -> num];
 
-    if(print)
+    if(print_flag)
     std::cout << "---------------------------------------------------\n\n";
 
     // if measure while flag is set
@@ -520,7 +520,7 @@ void captureAndProcess(){
 
     /** COORDINATE WAIT TIME PRINTING **/
 
-    if(print)
+    if(print_flag)
         std::cout << "--- WAITING FOR FRAMES ---\n\n";
 
     // enable wait time printing and notify any waiting thread
@@ -534,7 +534,7 @@ void captureAndProcess(){
 
     /** COORDINATE POSE PRINTING **/        
 
-    if(print)
+    if(print_flag)
         std::cout << "\n--- PROCESSING FRAMES ---\n\n";
 
     // enable pose printing

@@ -25,11 +25,11 @@ void computeAverage(int i){
 
         if(dataToSend[i][j].valuesStored){
 
-            if(print){
-                std::cout << "\nAVG: Marker " << i << " found by camera "<< j << std::endl;
-                std::cout << "AVG: Using fixed marker ID: " << dataToSend[i][j].fixedMarker << std::endl;
-                std::cout << "AVG: Coordinates:\t" << dataToSend[i][j].coords << std::endl;
-                std::cout << "AVG: Angle:\t\t" << dataToSend[i][j].angles << std::endl << std::endl;
+            if(print_flag){
+                cout << "\nAVG: Marker " << i << " found by camera "<< j << endl;
+                cout << "AVG: Using fixed marker ID: " << dataToSend[i][j].fixedMarker << endl;
+                cout << "AVG: Coordinates:\t" << dataToSend[i][j].coords << endl;
+                cout << "AVG: Angle:\t\t" << dataToSend[i][j].angles << endl << endl;
             }
 
             // For averaging
@@ -78,14 +78,14 @@ void detectFirstMotion(int i){
         firstPos = false;
         prevState = cameraCount;
 
-        if (print) {
+        if (print_flag) {
             cout << "\nFMD: Assigning first coordinates to:\t" <<prevCoords<<endl;
             cout << "FMD: Sending first coordinates for marker " << i << endl;
             cout << "FMD: Coordinates to send:\t" << prevCoords << endl;
             cout << "FMD: Angles to send:\t\t" << prevAngles << endl;
             cout << "FMD: Camera count and state are "<< prevState << endl;
         }
-        UDPfarewell(i, prevCoords, prevAngles);
+        UDPSend(i, prevCoords, prevAngles);
 
     } else{     
 
@@ -107,15 +107,15 @@ void detectFirstMotion(int i){
             transStartCoords = prevCoords; // to be used for transition later
 
             detectingMotion = false;
-            if (print){
+            if (print_flag){
                 cout<<"\nFMD: Motion detected at point:\t"<<prevCoords<<" Distance: "<<distance<<endl;
                 cout<<"FMD: Angle set to: "<<currentBearing<<endl;
             }
-            UDPfarewell(i, prevCoords, prevAngles);
+            UDPSend(i, prevCoords, prevAngles);
 
         } else {
 
-            if (print) cout<<"\nFMD: Motion not yet detected at point:\t"<<compCoords<<" Distance: "<<distance<<endl;
+            if (print_flag) cout<<"\nFMD: Motion not yet detected at point:\t"<<compCoords<<" Distance: "<<distance<<endl;
             compCoords = 0;
             compAngles = 0;
             firstCnt = 0;
@@ -127,13 +127,13 @@ void detectFirstMotion(int i){
 
 void checkState(){
 
-    //if(print) cout<<"\nSTATE: Camera count - "<<cameraCount<<"; previous state - "<<prevState<<endl;
+    //if(print_flag) cout<<"\nSTATE: Camera count - "<<cameraCount<<"; previous state - "<<prevState<<endl;
 
     if(cameraCount != prevState){
 
-        if(print) cout<<"\nSTATE: Changed state to "<<cameraCount<<" cameras"<<endl;
+        if(print_flag) cout<<"\nSTATE: Changed state to "<<cameraCount<<" cameras"<<endl;
         if(inTransition){
-            if(print) cout<<"\nSTATE: Transition break. Changing start coordinates from "<<transStartCoords<<" to "<<prevCoords<<endl;
+            if(print_flag) cout<<"\nSTATE: Transition break. Changing start coordinates from "<<transStartCoords<<" to "<<prevCoords<<endl;
             transStartCoords = prevCoords;
         }
         prevState = cameraCount;
@@ -153,7 +153,7 @@ void checkState(){
 
             // transition from start to average bit by bit
             stepCount++;
-            if(print) 
+            if(print_flag) 
                 cout<<"\nSTATE: Transition step "<<stepCount<<endl;
             compCoords = (transStartCoords * (TRANS_STEPS - stepCount) + avgCoords * stepCount) / TRANS_STEPS;
 
@@ -175,13 +175,13 @@ void checkAngleAndDist(int i){
         double distance = sqrt(
             pow(prevCoords[0] - compCoords[0], 2) +
             pow(prevCoords[1] - compCoords[1], 2)
-        );
+        )*1000;
 
-        if(print) cout<<"\nANGLE: Angle diff is below/equal set value |"<<compBearing<<" - "<<currentBearing<<"| = "<<angleDiff<<endl;
+        if(print_flag) cout<<"\nANGLE: Angle diff is below/equal set value |"<<compBearing<<" - "<<currentBearing<<"| = "<<angleDiff<<endl;
 
         if(distance <= MAX_DIST){
 
-            if(print) cout<<"\nDIST: Distance is below/equal set value: "<<distance<<endl;
+            if(print_flag) cout<<"\nDIST: Distance is below/equal set value: "<<distance<<endl;
             
             currentBearing = compBearing;
 
@@ -191,20 +191,26 @@ void checkAngleAndDist(int i){
             // no transition needed
             prevCoords = compCoords;
 
+        } else {
+            if(print_flag){
+                cout<<"\nDIST: Dist diff with last value is too large |"<<compBearing<<" - "<<currentBearing<<"| = "<<angleDiff<<endl;
+                cout<<"DIST: Previously sent:\t "<<prevCoords<<endl;
+                cout<<"DIST: Current coords:\t\t "<<compCoords<<endl;
+            }
         }
 
 
 
     } else{ //else do nothing, send same coords
 
-        if(print){
+        if(print_flag){
             cout<<"\nANGLE: Angle diff with last value is too large |"<<compBearing<<" - "<<currentBearing<<"| = "<<angleDiff<<endl;
             cout<<"ANGLE: Previously sent:\t "<<prevCoords<<endl;
             cout<<"ANGLE: Current coords:\t\t "<<compCoords<<endl;
         }
     }
 
-    if(print) {
+    if(print_flag && DIFF_OUTP) {
         cout << fixed;
         cout << setprecision(2); 
         cout << "\nDiffs for marker " << i << " (in cm): " << endl;
@@ -222,11 +228,13 @@ void checkAngleAndDist(int i){
             }
             cout<<"|"<<endl;
         }
+    }
+    if(print_flag){
         cout << fixed;
         cout << setprecision(6);
         cout << "\nSEND: Sending data for marker " << i << endl;
         cout << "SEND: Coordinates to send:\t" << prevCoords << endl;
         cout << "SEND: Angles to send:\t\t" << avgAngles << endl;
     }
-    UDPfarewell(i, prevCoords, avgAngles);
+    UDPSend(i, prevCoords, avgAngles);
 }
