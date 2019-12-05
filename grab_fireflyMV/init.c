@@ -51,7 +51,7 @@ int init(){
 
                 // no. of GUIDs provided is smaller than
                 // ammount of detected cameras
-                std::cout << "Not enough GUID's to verify camera order" << std::endl;
+                cout << "Not enough GUID's to verify camera order" << endl;
                 return 1;
             }
         }
@@ -68,7 +68,7 @@ int init(){
 
         // initialize physical cameras: operation mode, iso speed, image size etc.
         initializeCamera(cameras[i]);
-        std::cout << "Initialised " << i+1 << " cameras" << std::endl;
+        cout << "Initialised " << i+1 << " cameras" << endl;
                 
     }
 
