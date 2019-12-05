@@ -171,7 +171,7 @@ int print_wait_cnt = 0, print_proc_cnt = 0, pose_cnt = 0;
 bool can_print_wait_times = false, can_print_poses = false, can_print_proc_times = false;
 
 //clear screen counter and printing flag
-#define REALTIME_MONITORING		0
+#define REALTIME_MONITORING		1
 #define UPDATE_ITS				10
 int cnt = 0;
 bool print_flag = false;
