@@ -93,6 +93,9 @@ int main(int argc, char *argv[]){
 
     readArucoFiles(list->num);
 
+    if(!REALTIME_MONITORING) print_flag = true;
+    int cnt = 0;
+
     /** Runtime loop **/
 
     
@@ -106,7 +109,7 @@ int main(int argc, char *argv[]){
 
     	}
 
-        cout << "\n--------------------- LOOP BEGIN ---------------------" << endl;
+        if(print_flag) cout << "\n--------------------- LOOP BEGIN ---------------------" << endl;
 
 		// assigns 0's to sent_data vector (vector of 2 bools inside image_proc.c)
 		// 1st value is for marker id 51, 2nd is for marker id 52 (markers used on trucks)
@@ -143,7 +146,7 @@ int main(int argc, char *argv[]){
 	             + (double)( stop_while.tv_nsec - start_show.tv_nsec )
 	               / (double)MILLION;
 
-	    	cout << "frame show time: " << delta_show << "\n";
+	    	if(print_flag) cout << "frame show time: " << delta_show << "\n";
 
 		}
 
@@ -154,11 +157,22 @@ int main(int argc, char *argv[]){
 	             + (double)( stop_while.tv_nsec - start_while.tv_nsec )
 	               / (double)MILLION;
 
-	    	cout << "while loop time: " << delta_while << "\n";
+	    	if(print_flag) cout << "while loop time: " << delta_while << "\n";
 
 		}
 
-		cout << "---------------------- LOOP END ----------------------" << endl;
+		if(print_flag) cout << "---------------------- LOOP END ----------------------" << endl;
+
+        if(REALTIME_MONITORING){
+            cnt++;
+            if(cnt == UPDATE_ITS){
+                system("clear");
+                print_flag = true;
+                cnt = 0;
+            }else{
+                print_flag = false;
+            }
+        }
         
     }
 

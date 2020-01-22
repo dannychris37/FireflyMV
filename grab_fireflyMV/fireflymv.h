@@ -62,4 +62,9 @@ timespec start_show;
 
 double delta_while, delta_wait, delta_proc, delta_show;
 
+// printing
+#define REALTIME_MONITORING		1
+#define UPDATE_ITS				12
+bool print_flag;
+
 #endif

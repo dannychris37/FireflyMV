@@ -151,8 +151,10 @@ void makeSense(Vec3d tvec,Vec3d rvec, int markerID, int camera_no){
             	(rotMattoe0 * (f_rotMat * (tvec + f_tvec))) + 
             	transtoe0[f_markerID];
 
-            cout << "CAM: using fixed marker ID:" << f_markerID << endl;
-            cout << "CAM: origin to truck :" << markerID << "\t" << reading << endl;
+            if(print_flag){
+                cout << "\nCAM: using fixed marker ID:" << f_markerID << endl;
+                cout << "CAM: origin to truck :\t" << markerID << "\t" << reading << endl;
+            }
             
             Mat rotationMatrix;
             Rodrigues(rvec, rotationMatrix);
@@ -160,12 +162,14 @@ void makeSense(Vec3d tvec,Vec3d rvec, int markerID, int camera_no){
 
             
             getEulerAngles(rotationMatrix, angle_rot);
-            cout << "CAM: rotation angle(deg):" << "\t" << angle_rot << endl;
+            if(print_flag) cout << "CAM: rotation angle(deg):" << "\t" << angle_rot << endl;
             
             if (sent_data[markerID-51] == 0){
-                cout << "\nSEND: Cam "<<camera_no<<" first to find marker "<<markerID<<endl;
-                cout << "SEND: Coordinates to send:\t" << reading << endl;
-                cout << "SEND: Angles to send:\t\t" << angle_rot << endl;
+                if(print_flag){
+                    cout << "\nSEND: Cam "<<camera_no<<" first to find marker "<<markerID<<endl;
+                    cout << "SEND: Coordinates to send:\t" << reading << endl;
+                    cout << "SEND: Angles to send:\t\t\t" << angle_rot << endl;
+                }
             	// angles in degreee and x,y,z 
                 UDPfarewell(markerID, reading, angle_rot);
                 sent_data[markerID-51] = 1;
@@ -174,7 +178,7 @@ void makeSense(Vec3d tvec,Vec3d rvec, int markerID, int camera_no){
             
             else{
 
-                cout << "\nSKIP: Cam "<<camera_no<<" skipped: " << markerID << endl;
+                if(print_flag) cout << "\nSKIP: Cam "<<camera_no<<" skipped: " << markerID << endl;
 
             }
         }
@@ -347,19 +351,23 @@ dc1394error_t cameraCaptureSingle(
 
         clock_gettime(CLOCK_MONOTONIC, &stop_wait);
 
-        cout << "---------------------------------------------------" << endl;
-        cout << "On camera no. " << camera_no << endl;
+        if(print_flag){
+            cout << "---------------------------------------------------" << endl;
+            cout << "On camera no. " << camera_no << endl;
+        }
 
         delta_wait = ( stop_wait.tv_sec - start_wait.tv_sec )
                  + (double)( stop_wait.tv_nsec - start_wait.tv_nsec )
                    / (double)MILLION;
 
-        cout << "frame waiting time: " << delta_wait << "\n";
+        if(print_flag) cout << "frame waiting time: " << delta_wait << "\n";
 
     } else{
 
-        cout << "---------------------------------------------------" << endl;
-        cout << "On camera no. " << camera_no << endl;
+        if(print_flag){
+            cout << "---------------------------------------------------" << endl;
+            cout << "On camera no. " << camera_no << endl;
+        }
 
     }
 
@@ -470,7 +478,7 @@ dc1394error_t cameraCaptureSingle(
              + (double)( stop_proc.tv_nsec - start_proc.tv_nsec )
                / (double)MILLION;
 
-        cout << "frame processing time: " << delta_proc << "\n";
+        if(print_flag) cout << "frame processing time: " << delta_proc << "\n";
 
     }
 
