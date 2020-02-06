@@ -117,7 +117,6 @@ Vec2d diffs[8][8] = {0,0};
 #define TRANS_STEPS		25
 int prevState;
 int stepCount;
-Vec3d sentCoords;
 Vec3d transStartCoords;
 bool inTransition = false;
 
@@ -126,6 +125,10 @@ bool inTransition = false;
 #define MAX_DIST      60   // in cm
 double compBearing;
 double currentBearing;
+
+//coords and angles ultimately sent
+Vec3d sendCoords;
+Vec3d sendAngles;
 
 /** CAMERA DATA STRUCTURES **/
 

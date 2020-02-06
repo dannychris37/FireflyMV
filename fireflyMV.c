@@ -23,8 +23,11 @@ int main(int argc, char *argv[]){
 
                 // Marker with id i has been found by at least one camera, start averaging
                 computeAverage(i);
+
+                sendCoords = avgCoords;
+                sendAngles = avgAngles;
             	
-            	if(detectingMotion){
+            	/*if(detectingMotion){
 
                     detectFirstMotion(i);
 
@@ -36,7 +39,9 @@ int main(int argc, char *argv[]){
                     // angle check mitigation
                     checkAngleAndDist(i);
 
-            	} // if/else detectingMotion
+            	} // if/else detectingMotion */
+
+                UDPSend(i, sendCoords, sendAngles);
 
 	        } // if marker found 
 
@@ -50,7 +55,7 @@ int main(int argc, char *argv[]){
 
     for( int i = 0; i < (int)list -> num; i++){
 
-            cameraCleanup(cameras[i]);
+        cameraCleanup(cameras[i]);
 
     }
 

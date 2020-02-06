@@ -40,14 +40,14 @@ void computeAverage(int i){
             cameraCount++;
 
             // For diffs
-            for(int di = j+1; di < 8; di++){
+            /*for(int di = j+1; di < 8; di++){
                 if(dataToSend[i][di].valuesStored){
                     diffs[j][di][0] = abs(dataToSend[i][di].coords[0] - dataToSend[i][j].coords[0]) * 1000;
                     diffs[di][j][0] = diffs[j][di][0];
                     diffs[j][di][1] = abs(dataToSend[i][di].coords[1] - dataToSend[i][j].coords[1]) * 1000;
                     diffs[di][j][1] = diffs[j][di][1];
                 }
-            }
+            }*/
         }
 
     } // for j
@@ -58,6 +58,7 @@ void computeAverage(int i){
     }
 }
 
+// curently not in use
 void detectFirstMotion(int i){
 
     if(firstCnt < INIT_AVG_POINTS){ 
@@ -125,6 +126,7 @@ void detectFirstMotion(int i){
 
 }
 
+// cuurently not in use
 void checkState(){
 
     //if(print_flag) cout<<"\nSTATE: Camera count - "<<cameraCount<<"; previous state - "<<prevState<<endl;
@@ -165,6 +167,7 @@ void checkState(){
 
 }
 
+// currently not in use
 void checkAngleAndDist(int i){
     // mitigating large angle shifts
     compBearing = bearing(prevCoords[0], prevCoords[1], compCoords[0], compCoords[1]);
@@ -229,12 +232,4 @@ void checkAngleAndDist(int i){
             cout<<"|"<<endl;
         }
     }
-    if(print_flag){
-        cout << fixed;
-        cout << setprecision(6);
-        cout << "\nSEND: Sending data for marker " << i << endl;
-        cout << "SEND: Coordinates to send:\t" << prevCoords << endl;
-        cout << "SEND: Angles to send:\t\t" << avgAngles << endl;
-    }
-    UDPSend(i, prevCoords, avgAngles);
 }

@@ -83,7 +83,7 @@ void getEulerAngles(
 void makeSense(cv::Vec3d tvec, cv::Vec3d rvec, int markerID, int camera_no){
     
     /** Fixed marker IDs **/
-    if(markerID < 50) {
+    if(markerID < 10) {
         
         cv::Mat rotMatrix;
 
@@ -101,7 +101,7 @@ void makeSense(cv::Vec3d tvec, cv::Vec3d rvec, int markerID, int camera_no){
     else{
         
         // only moving markers
-        if (markerID > 50){  
+        if (markerID > 10){  
            
            	// if all x pointing in same direction
             cv::Matx33d rotMattoe0( 
@@ -186,7 +186,7 @@ void arucoPipeline(cv::Mat img, int camera_no) {
             //std::cout << "processed markercorner size"<< single_markerCorner.size()<<std::endl;
                 
             /** Fixed marker ID **/
-            if (markerIds[i] < 50){
+            if (markerIds[i] < 10){
 
             		// estimate pose
                     cv::aruco::estimatePoseSingleMarkers(
@@ -228,7 +228,7 @@ void arucoPipeline(cv::Mat img, int camera_no) {
             single_markerCorner[0] = markerCorners[i];
             
             /** Moving marker ID **/
-            if(markerIds[i] > 50){
+            if(markerIds[i] > 10){
 
                     cv::aruco::estimatePoseSingleMarkers( 
                         single_markerCorner,       // marker corners
@@ -242,6 +242,9 @@ void arucoPipeline(cv::Mat img, int camera_no) {
                     //verify
                     //std::cout<<"moving markers:"<<markerIds[i]<<std::endl;
                     //std::cout<<"moving markers:"<<single_rvec.size()<<std::endl;
+
+                    //find center
+                    //if(print_flag && markerIds[i]==13) cout<<"Camera "<<camera_no<<" tvec: "<<single_tvec[0]<<endl;
 
                     cv::aruco::drawAxis(
                     	img, 
